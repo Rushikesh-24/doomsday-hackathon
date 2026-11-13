@@ -1,0 +1,64 @@
+# Measurement engine configuration. See docs/MEASUREMENT.md for the method and its limits.
+
+models:
+  depth:
+    default: auto            # auto = indoor/outdoor DA-V2 metric chosen from semantic scene content
+    da2_metric_indoor_small:
+      hf_id: depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf
+      version: "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)"
+      license: "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)"
+      metric: true
+      estimates_fov: false
+    da2_metric_outdoor_small:
+      hf_id: depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf
+      version: "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)"
+      license: "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)"
+      metric: true
+      estimates_fov: false
+    depth_pro:
+      hf_id: apple/DepthPro-hf
+      version: "Apple Depth Pro (HF transformers)"
+      license: "apple-amlr (Apple ML Research licence - research use; NOT for commercial deployment)"
+      metric: true
+      estimates_fov: true     # predicts field of view -> intrinsics when EXIF/user calibration absent
+      accelerator_only: true  # ~11 s/image on Apple MPS but ~500 s on CPU (measured)
+  segmentation:
+    hf_id: openmmlab/upernet-convnext-tiny
+    version: "UperNet ConvNeXt-T ADE20K-150"
+    license: MIT
+  box_segmenter:
+    hf_id: Zigeng/SlimSAM-uniform-50
+    version: "SlimSAM-uniform-50 (pruned SAM ViT-B)"
+    license: Apache-2.0
+
+analysis:
+  max_side: 1280             # images are analysed at <= this resolution (results mapped back)
+  min_mask_pixels: 1200      # below this a facility is too small to measure -> INSUFFICIENT_DATA
+  min_valid_points: 400
+  min_plane_inlier_ratio: 0.55
+  max_grazing_angle_deg: 78  # surfaces seen more obliquely than this are not measured
+  border_margin_px: 3        # mask touching the image border => extent is only a lower bound
+
+camera:
+  # used only when no user intrinsics, no EXIF focal length and no FOV-estimating depth model
+  prior_focal_35mm: 26       # typical smartphone main camera
+  prior_focal_rel_sigma: 0.15
+
+uncertainty:                 # 1-sigma priors. Depth terms were re-set from MEASURED errors on real photos with
+                             # laser depth (DIODE val subset, 8 images of one outdoor scene - small sample;
+                             # outputs/validation/diode-geometry*.json). Synthetic checks in docs/MEASUREMENT.md.
+  uncalibrated_depth_scale_rel: 0.45   # measured: net/laser scale ratio 0.55-2.09, mean |ln| 0.37 (DA-V2 auto)
+  depth_relative_rel: 0.20             # measured: lateral lengths after a single ground reference, median |rel err| 0.23
+  depth_relative_per_log_ratio: 0.06   # extra relative error per |ln(z_target / z_reference)| (heuristic)
+  along_view_extra_rel: 0.45           # measured: lengths along the viewing direction, median |rel err| 0.57-0.69
+  same_plane_ratio_rel: 0.03           # measurement on the same planar object as the user reference (ratio)
+  slope_model_floor_deg: 7.0           # measured: ground-plane normal error 6.8 / 8.8 deg (n=2 only)
+  pixel_localisation_px: 2.0
+  user_reference_rel: 0.005            # tolerance of a user's tape measurement
+
+reference_priors:            # known-object priors, used only when enabled and no user reference exists
+  door_height_m: {mean: 2.06, sigma: 0.06, note: "Typical doorset heights 2.03 m (US 80in) - 2.1 m (IN/EU)"}
+  person_height_m: {mean: 1.68, sigma: 0.10, note: "Adult standing height, mixed population"}
+
+door:
+  clear_width_deduction_m: {mean: 0.06, sigma: 0.03, note: "door leaf thickness + stops when open 90deg"}

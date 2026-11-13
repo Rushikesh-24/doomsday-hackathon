@@ -1,0 +1,58 @@
+# Maps class names found in public datasets (Roboflow Universe / Kaggle / Zenodo exports)
+# onto the canonical PS32 taxonomy. Matching is case-insensitive after replacing
+# '-', '_' with spaces. Map to null to drop a class explicitly. Unknown classes are
+# dropped and reported in the dataset manifest so you can extend this file.
+mapping:
+  stairs: staircase
+  stair: staircase
+  staircase: staircase
+  steps: staircase
+  step: staircase
+  upstair: staircase
+  downstair: staircase
+  upstairs: staircase
+  downstairs: staircase
+  pothole stairs: null
+  ramp: ramp
+  slope: ramp
+  wheelchair ramp: ramp
+  elevator: elevator
+  lift: elevator
+  elevator door: elevator
+  door: door
+  doors: door
+  open door: door
+  closed door: door
+  glass door: door
+  entrance: entrance_exit
+  exit: entrance_exit
+  handrail: handrail
+  handrails: handrail
+  railing: handrail
+  grab bar: handrail
+  grab bars: handrail
+  tactile paving: tactile_paving
+  tactile: tactile_paving
+  braille block: tactile_paving
+  braille blocks: tactile_paving
+  corridor: corridor
+  hallway: corridor
+  sidewalk: walkway
+  walkway: walkway
+  footpath: walkway
+  crosswalk: null
+  accessibility symbol: accessibility_symbol
+  wheelchair sign: accessibility_symbol
+  sign: signboard
+  signboard: signboard
+  exit sign: signboard
+  chair: obstacle
+  bench: obstacle
+  trash can: obstacle
+  bin: obstacle
+  pole: obstacle
+  bollard: obstacle
+  pothole: obstacle
+  person: person
+  people: person
+  wheelchair: wheelchair_user

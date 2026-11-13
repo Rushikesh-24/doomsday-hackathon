@@ -1,0 +1,84 @@
+{
+  "scale_status": "relative",
+  "metres_per_sfm_unit": null,
+  "scale_rel_sigma": null,
+  "metric": false,
+  "gravity": {
+    "up": [
+      -0.21630907030586496,
+      -0.8928946991705798,
+      -0.39490434575538974
+    ],
+    "method": "ground_plane",
+    "camera_up_spread_deg": 2.89,
+    "confidence": "medium-high",
+    "ground_inliers": 144,
+    "ground_point": [
+      0.19871370311355568,
+      2.4321520569126824,
+      -3.18798892742397
+    ],
+    "camera_height_sfm_units": 0.95861,
+    "agreement_with_camera_up_deg": 17.35
+  },
+  "sources": {
+    "aruco": [],
+    "segments": [],
+    "camera_height_prior": {
+      "used": true,
+      "scale_m_per_unit": 1.4604479402468156,
+      "rel_sigma": 0.10714285714285715,
+      "note": "assumes the phone was held ~1.4 m above the floor (+-0.15 m)"
+    },
+    "monocular_depth": {
+      "used": true,
+      "scale_m_per_unit": 0.22652310161003408,
+      "rel_sigma": 0.45,
+      "per_frame": [
+        0.6111,
+        0.1933,
+        0.1885,
+        0.2421,
+        0.2183,
+        0.2347,
+        0.2111,
+        0.2371
+      ],
+      "note": "monocular metric depth (DA-V2) vs SfM depth; validated scale error ~45% (docs/MEASUREMENT.md)"
+    },
+    "prior_conflict": "priors disagree by x6.4 (> x3.2 allowed by their uncertainties); e.g. camera-height prior on stairs/slopes"
+  },
+  "frames": {
+    "sfm": "COLMAP world (arbitrary similarity)",
+    "local": "gravity-aligned (+Y up), origin = first registered camera; units = metres if scale_status is scale_calibrated/approximate_metric, else SfM units",
+    "geo": "local ENU metres (only when georeferenced)"
+  },
+  "T_local_from_sfm": [
+    [
+      0.5631438076897194,
+      0.21630907030586496,
+      -0.797545884550938,
+      -5.198550135372345
+    ],
+    [
+      -0.21630907030586496,
+      -0.8928946991705826,
+      -0.39490434575538974,
+      0.1345301719035059
+    ],
+    [
+      -0.797545884550938,
+      0.39490434575538974,
+      -0.4560385068603021,
+      -3.5544824175379643
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "georeferenced": false,
+  "T_geo_from_local": null
+}

@@ -1,0 +1,1 @@
+{"steps": 1000, "res": 320, "seconds": 10.3, "gaussians": 5199, "train_psnr": 18.21, "test_psnr": 17.61, "test_ssim": 0.488}

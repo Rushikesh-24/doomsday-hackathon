@@ -1,0 +1,707 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "320204ac54d5",
+  "image": {
+    "name": "stairs_handrail_sydney.jpg",
+    "width": 1280,
+    "height": 1912,
+    "format": "JPEG",
+    "channels": 3,
+    "exif_transposed": false
+  },
+  "model": {
+    "key": "campus_ensemble",
+    "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+    "version": "ensemble(owlv2_base + yolo11_coco)",
+    "source": "composed",
+    "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+    "device": "mps",
+    "weights_sha256": null,
+    "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+  },
+  "thresholds": {
+    "staircase": 0.15,
+    "ramp": 0.15,
+    "elevator": 0.15,
+    "door": 0.195,
+    "entrance_exit": 0.15,
+    "handrail": 0.15,
+    "tactile_paving": 0.15,
+    "corridor": 0.18,
+    "walkway": 0.18,
+    "accessibility_symbol": 0.3,
+    "signboard": 0.195,
+    "obstacle": 0.35,
+    "person": 0.35,
+    "wheelchair_user": 0.15,
+    "elevator_panel": 0.15
+  },
+  "detections": [
+    {
+      "id": "320204ac54d5-000",
+      "class_name": "staircase",
+      "category": "facility",
+      "confidence": 0.5767,
+      "bbox": {
+        "x1": 0.0,
+        "y1": 743.52,
+        "x2": 1280.0,
+        "y2": 1912.0,
+        "x1n": 0.0,
+        "y1n": 0.38887,
+        "x2n": 1.0,
+        "y2n": 1.0,
+        "width": 1280.0,
+        "height": 1168.48
+      },
+      "source": {
+        "name": "stairs_handrail_sydney.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "stairs",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "handrail_present": {
+          "value": true,
+          "status": "detected",
+          "method": "handrail detection overlaps expanded stair box",
+          "note": null,
+          "confidence": 0.294
+        },
+        "handrail_ids": {
+          "value": [
+            "320204ac54d5-008",
+            "320204ac54d5-009",
+            "320204ac54d5-010"
+          ],
+          "status": "detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "handrail_sides_visible": {
+          "value": [
+            "left",
+            "right"
+          ],
+          "status": "estimated",
+          "method": "handrail box centres vs stair centre",
+          "note": null,
+          "confidence": null
+        },
+        "tactile_warning_surface": {
+          "value": false,
+          "status": "not_detected",
+          "method": "no tactile paving detection near stairs",
+          "note": "absence of a detection is not proof of absence",
+          "confidence": null
+        },
+        "visible_step_count": {
+          "value": 6,
+          "status": "estimated",
+          "method": "row profile of horizontal-edge energy, peaks counted after deskew",
+          "note": "counts visible step edges; occlusion/viewpoint can bias it",
+          "confidence": 0.607
+        },
+        "riser_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Riser height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "tread_depth": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Tread depth cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "direction_up_or_down": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "ascending vs descending is ambiguous in 2D",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:22.578+00:00"
+    },
+    {
+      "id": "320204ac54d5-001",
+      "class_name": "obstacle",
+      "category": "obstacle",
+      "confidence": 0.5669,
+      "bbox": {
+        "x1": 659.32,
+        "y1": 1270.44,
+        "x2": 1280.0,
+        "y2": 1417.24,
+        "x1n": 0.5151,
+        "y1n": 0.66445,
+        "x2n": 1.0,
+        "y2n": 0.74123,
+        "width": 620.68,
+        "height": 146.8
+      },
+      "source": {
+        "name": "stairs_handrail_sydney.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "bench",
+      "detector": "yolo11_coco",
+      "track_id": null,
+      "attributes": {
+        "obstacle_type": {
+          "value": "bench",
+          "status": "detected",
+          "method": "label from yolo11_coco",
+          "note": null,
+          "confidence": 0.567
+        },
+        "relative_to_walkway": {
+          "value": "no walkway/corridor detected",
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "potential_obstruction": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "no path detected to compare against",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:22.578+00:00"
+    },
+    {
+      "id": "320204ac54d5-002",
+      "class_name": "obstacle",
+      "category": "obstacle",
+      "confidence": 0.5493,
+      "bbox": {
+        "x1": 878.59,
+        "y1": 1130.04,
+        "x2": 1280.0,
+        "y2": 1179.74,
+        "x1n": 0.6864,
+        "y1n": 0.59103,
+        "x2n": 1.0,
+        "y2n": 0.61702,
+        "width": 401.41,
+        "height": 49.7
+      },
+      "source": {
+        "name": "stairs_handrail_sydney.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "chair",
+      "detector": "yolo11_coco",
+      "track_id": null,
+      "attributes": {
+        "obstacle_type": {
+          "value": "chair",
+          "status": "detected",
+          "method": "label from yolo11_coco",
+          "note": null,
+          "confidence": 0.549
+        },
+        "relative_to_walkway": {
+          "value": "no walkway/corridor detected",
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "potential_obstruction": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "no path detected to compare against",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:22.578+00:00"
+    },
+    {
+      "id": "320204ac54d5-003",
+      "class_name": "obstacle",
+      "category": "obstacle",
+      "confidence": 0.509,
+      "bbox": {
+        "x1": 821.77,
+        "y1": 1168.9,
+        "x2": 1277.29,
+        "y2": 1244.61,
+        "x1n": 0.64201,
+        "y1n": 0.61135,
+        "x2n": 0.99788,
+        "y2n": 0.65095,
+        "width": 455.52,
+        "height": 75.71
+      },
+      "source": {
+        "name": "stairs_handrail_sydney.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "chair",
+      "detector": "yolo11_coco",
+      "track_id": null,
+      "attributes": {
+        "obstacle_type": {
+          "value": "chair",
+          "status": "detected",
+          "method": "label from yolo11_coco",
+          "note": null,
+          "confidence": 0.509
+        },
+        "relative_to_walkway": {
+          "value": "no walkway/corridor detected",
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "potential_obstruction": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "no path detected to compare against",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:22.578+00:00"
+    },
+    {
+      "id": "320204ac54d5-004",
+      "class_name": "obstacle",
+      "category": "obstacle",
+      "confidence": 0.4662,
+      "bbox": {
+        "x1": 743.49,
+        "y1": 1212.14,
+        "x2": 1279.69,
+        "y2": 1320.16,
+        "x1n": 0.58085,
+        "y1n": 0.63396,
+        "x2n": 0.99976,
+        "y2n": 0.69046,
+        "width": 536.2,
+        "height": 108.03
+      },
+      "source": {
+        "name": "stairs_handrail_sydney.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "chair",
+      "detector": "yolo11_coco",
+      "track_id": null,
+      "attributes": {
+        "obstacle_type": {
+          "value": "chair",
+          "status": "detected",
+          "method": "label from yolo11_coco",
+          "note": null,
+          "confidence": 0.466
+        },
+        "relative_to_walkway": {
+          "value": "no walkway/corridor detected",
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "potential_obstruction": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "no path detected to compare against",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:22.578+00:00"
+    },
+    {
+      "id": "320204ac54d5-005",
+      "class_name": "obstacle",
+      "category": "obstacle",
+      "confidence": 0.4573,
+      "bbox": {
+        "x1": 925.15,
+        "y1": 1094.96,
+        "x2": 1280.0,
+        "y2": 1141.23,
+        "x1n": 0.72277,
+        "y1n": 0.57268,
+        "x2n": 1.0,
+        "y2n": 0.59688,
+        "width": 354.85,
+        "height": 46.27
+      },
+      "source": {
+        "name": "stairs_handrail_sydney.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "chair",
+      "detector": "yolo11_coco",
+      "track_id": null,
+      "attributes": {
+        "obstacle_type": {
+          "value": "chair",
+          "status": "detected",
+          "method": "label from yolo11_coco",
+          "note": null,
+          "confidence": 0.457
+        },
+        "relative_to_walkway": {
+          "value": "no walkway/corridor detected",
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "potential_obstruction": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "no path detected to compare against",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:22.578+00:00"
+    },
+    {
+      "id": "320204ac54d5-006",
+      "class_name": "obstacle",
+      "category": "obstacle",
+      "confidence": 0.4121,
+      "bbox": {
+        "x1": 545.37,
+        "y1": 1338.6,
+        "x2": 1280.0,
+        "y2": 1533.64,
+        "x1n": 0.42607,
+        "y1n": 0.7001,
+        "x2n": 1.0,
+        "y2n": 0.80212,
+        "width": 734.63,
+        "height": 195.05
+      },
+      "source": {
+        "name": "stairs_handrail_sydney.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "bench",
+      "detector": "yolo11_coco",
+      "track_id": null,
+      "attributes": {
+        "obstacle_type": {
+          "value": "bench",
+          "status": "detected",
+          "method": "label from yolo11_coco",
+          "note": null,
+          "confidence": 0.412
+        },
+        "relative_to_walkway": {
+          "value": "no walkway/corridor detected",
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "potential_obstruction": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "no path detected to compare against",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:22.578+00:00"
+    },
+    {
+      "id": "320204ac54d5-007",
+      "class_name": "obstacle",
+      "category": "obstacle",
+      "confidence": 0.3652,
+      "bbox": {
+        "x1": 3.95,
+        "y1": 1411.23,
+        "x2": 1275.85,
+        "y2": 1910.25,
+        "x1n": 0.00309,
+        "y1n": 0.73809,
+        "x2n": 0.99675,
+        "y2n": 0.99909,
+        "width": 1271.89,
+        "height": 499.02
+      },
+      "source": {
+        "name": "stairs_handrail_sydney.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "couch",
+      "detector": "yolo11_coco",
+      "track_id": null,
+      "attributes": {
+        "obstacle_type": {
+          "value": "couch",
+          "status": "detected",
+          "method": "label from yolo11_coco",
+          "note": null,
+          "confidence": 0.365
+        },
+        "relative_to_walkway": {
+          "value": "no walkway/corridor detected",
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "potential_obstruction": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "no path detected to compare against",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:22.578+00:00"
+    },
+    {
+      "id": "320204ac54d5-008",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.2945,
+      "bbox": {
+        "x1": 265.34,
+        "y1": 724.55,
+        "x2": 1141.52,
+        "y2": 996.12,
+        "x1n": 0.2073,
+        "y1n": 0.37895,
+        "x2n": 0.89181,
+        "y2n": 0.52098,
+        "width": 876.18,
+        "height": 271.56
+      },
+      "source": {
+        "name": "stairs_handrail_sydney.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "320204ac54d5-000",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:22.578+00:00"
+    },
+    {
+      "id": "320204ac54d5-009",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.2365,
+      "bbox": {
+        "x1": 23.3,
+        "y1": 575.41,
+        "x2": 1146.69,
+        "y2": 1116.78,
+        "x1n": 0.0182,
+        "y1n": 0.30095,
+        "x2n": 0.89585,
+        "y2n": 0.58409,
+        "width": 1123.39,
+        "height": 541.37
+      },
+      "source": {
+        "name": "stairs_handrail_sydney.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "stair railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "320204ac54d5-000",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:22.578+00:00"
+    },
+    {
+      "id": "320204ac54d5-010",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.1553,
+      "bbox": {
+        "x1": 771.52,
+        "y1": 796.03,
+        "x2": 1133.89,
+        "y2": 952.17,
+        "x1n": 0.60275,
+        "y1n": 0.41633,
+        "x2n": 0.88585,
+        "y2n": 0.498,
+        "width": 362.36,
+        "height": 156.15
+      },
+      "source": {
+        "name": "stairs_handrail_sydney.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "320204ac54d5-000",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:22.578+00:00"
+    }
+  ],
+  "counts_by_class": {
+    "staircase": 1,
+    "obstacle": 7,
+    "handrail": 3
+  },
+  "findings": [
+    {
+      "code": "NO_STEP_FREE_ALTERNATIVE_IN_VIEW",
+      "message": "Stairs visible but no ramp or lift detected in this view.",
+      "severity": "warning",
+      "detection_ids": [
+        "320204ac54d5-000"
+      ]
+    }
+  ],
+  "timing": {
+    "preprocess_ms": 0.0,
+    "inference_ms": 1044.4,
+    "postprocess_ms": 0.4,
+    "attributes_ms": 10.1,
+    "total_ms": 1054.9
+  },
+  "processed_at": "2026-11-13T11:12:22.578+00:00",
+  "annotated_image": "samples/demo_outputs/stairs_handrail_sydney_annotated.jpg",
+  "json_path": "samples/demo_outputs/stairs_handrail_sydney.json",
+  "warnings": []
+}

@@ -1,0 +1,75 @@
+campus_entrance_rmcad.jpg  1280x960  detections=computed (833aa1ac667a)
+camera: prior hfov=67.3 deg | depth: da2_metric_outdoor_small | gravity: ground_plane | scale: prior_reference_object x0.414 (+-3.3%)
+  ref prior:door: door 833aa1ac667a-004 assumed 2.06 m tall -> used implies x0.414
+  note: scale from typical object dimensions; supply a measured reference for calibrated results
+
+[door 833aa1ac667a-004] conf=0.38 mask=sam truncated=- depth~7.43
+  doorway_width                  0.835 +-0.188 m  [ESTIMATED, conf 0.52]
+  clear_width_estimate           0.775 +-0.177 m  [ESTIMATED, conf 0.44]
+  door_height                    2.060 +-0.426 m  [ESTIMATED, conf 0.53]
+  width_to_height_ratio          0.405 +-0.043   [ESTIMATED, conf 0.90]
+  threshold_height               -- REQUIRES_MANUAL_MEASUREMENT: door threshold height is a few mm - below image resolution
+  opening_force_and_swing        -- REQUIRES_MANUAL_MEASUREMENT: door swing and opening force require on-site check
+
+[staircase 833aa1ac667a-005] conf=0.38 mask=sam + ade20k_stairs truncated=- depth~5.84
+  step_count                     -- INSUFFICIENT_DATA: 3D: step edges not regular in enough strips (0); 2D: staircase region too small (<150px tall) to resolve steps
+  riser_height                   -- INSUFFICIENT_DATA: step geometry not recovered (step edges not regular in enough strips (0))
+  tread_depth                    -- INSUFFICIENT_DATA: step geometry not recovered (step edges not regular in enough strips (0))
+  stair_width                    -- INSUFFICIENT_DATA: stair geometry not recovered (step edges not regular in enough strips (0))
+  handrail_present               False   [ESTIMATED, conf 0.40]
+  handrail_both_sides            False   [ESTIMATED, conf 0.45]
+  tactile_warning_surface        False   [ESTIMATED, conf 0.35]
+  nosing_contrast_and_profile    -- REQUIRES_MANUAL_MEASUREMENT: nosing projection/contrast needs close inspection
+
+[door 833aa1ac667a-008] conf=0.30 mask=sam truncated=- depth~7.426
+  doorway_width                  0.673 +-0.156 m  [ESTIMATED, conf 0.51]
+  clear_width_estimate           0.613 +-0.145 m  [ESTIMATED, conf 0.43]
+  door_height                    2.035 +-0.419 m  [ESTIMATED, conf 0.54]
+  width_to_height_ratio          0.331 +-0.039   [ESTIMATED, conf 0.90]
+  threshold_height               -- REQUIRES_MANUAL_MEASUREMENT: door threshold height is a few mm - below image resolution
+  opening_force_and_swing        -- REQUIRES_MANUAL_MEASUREMENT: door swing and opening force require on-site check
+
+[walkway 833aa1ac667a-009] conf=0.27 mask=None truncated=- depth~None
+  clear_width                    1.725 +-0.408 m  [ESTIMATED, conf 0.56]
+  min_available_clearance        >= 2.008 +-0.465 m  [ESTIMATED, conf 0.57]
+  permanent_obstruction_present  True   [ESTIMATED, conf 0.55]
+
+[ramp 833aa1ac667a-012] conf=0.16 mask=sam truncated=['left'] depth~4.94
+  running_slope_deg              0.963 +-7.028 deg  [ESTIMATED, conf 0.04]
+  running_slope_percent          1.681 +-12.270 %  [ESTIMATED, conf 0.04]
+  running_slope_ratio            1:59.5   [ESTIMATED, conf 0.04]
+  ramp_length                    >= 2.772 +-1.397 m  [ESTIMATED, conf 0.30]
+  horizontal_run                 >= 2.771 +-1.397 m  [ESTIMATED, conf 0.30]
+  rise                           >= 0.047 +-0.027 m  [ESTIMATED, conf 0.21]
+  clear_width                    >= 4.727 +-1.074 m  [ESTIMATED, conf 0.57]
+  handrail_present               False   [ESTIMATED, conf 0.40]
+  handrail_coverage_left         0.000 +-0.150 fraction  [ESTIMATED, conf 0.50]
+  handrail_coverage_right        0.000 +-0.150 fraction  [ESTIMATED, conf 0.50]
+  handrail_continuous            False   [ESTIMATED, conf 0.45]
+  surface_irregularity_ratio     0.006 rms/length  [ESTIMATED, conf 0.35]
+  surface_condition              regular   [ESTIMATED, conf 0.30]
+  slip_resistance                -- REQUIRES_MANUAL_MEASUREMENT: slip resistance needs a pendulum/tribometer test
+
+[staircase 833aa1ac667a-014] conf=0.15 mask=sam + ade20k_stairs truncated=- depth~6.025
+  step_count                     -- INSUFFICIENT_DATA: 3D: step edges not regular in enough strips (0); 2D: staircase region too small (<150px tall) to resolve steps
+  riser_height                   -- INSUFFICIENT_DATA: step geometry not recovered (step edges not regular in enough strips (0))
+  tread_depth                    -- INSUFFICIENT_DATA: step geometry not recovered (step edges not regular in enough strips (0))
+  stair_width                    -- INSUFFICIENT_DATA: stair geometry not recovered (step edges not regular in enough strips (0))
+  handrail_present               False   [ESTIMATED, conf 0.40]
+  handrail_both_sides            False   [ESTIMATED, conf 0.45]
+  tactile_warning_surface        False   [ESTIMATED, conf 0.35]
+  nosing_contrast_and_profile    -- REQUIRES_MANUAL_MEASUREMENT: nosing projection/contrast needs close inspection
+
+assessment (ada_2010): {'POSSIBLE_ISSUE': 9, 'CANNOT_ASSESS': 6, 'NO_ISSUE_INDICATED': 3}
+  POSSIBLE_ISSUE   door_clear_width         clear_width_estimate 0.775 m +- 0.347 m (95%) vs min 0.815 m: estimate is below the minimum (within uncertainty)
+  POSSIBLE_ISSUE   stair_handrails          handrail_present = False in image evidence - may be missed by the detector; verify
+  POSSIBLE_ISSUE   stair_tactile            tactile_warning_surface = False in image evidence - may be missed by the detector; verify
+  POSSIBLE_ISSUE   door_clear_width         clear_width_estimate 0.613 m +- 0.284 m (95%) vs min 0.815 m: estimate is below the minimum (within uncertainty)
+  POSSIBLE_ISSUE   route_obstruction        permanent_obstruction_present = True in image evidence - may be missed by the detector; verify
+  POSSIBLE_ISSUE   ramp_running_slope       running_slope_percent 1.681 % +- 24.049 % (95%) vs max 8.330 %: maximum lies inside the 95% uncertainty band
+  POSSIBLE_ISSUE   ramp_handrails           handrail_present = False in image evidence - may be missed by the detector; verify. Required only when rise > 150 mm; rise is checked when measured
+  POSSIBLE_ISSUE   stair_handrails          handrail_present = False in image evidence - may be missed by the detector; verify
+  POSSIBLE_ISSUE   stair_tactile            tactile_warning_surface = False in image evidence - may be missed by the detector; verify
+Screening only. No compliance determination is made; flagged items and all unverified measurements require on-site verification by a qualified assessor.
+annotated: samples/measurement_demo/campus_entrance_rmcad/campus_entrance_rmcad_measured.jpg 
+json: samples/measurement_demo/campus_entrance_rmcad/report.json

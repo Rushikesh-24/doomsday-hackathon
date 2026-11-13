@@ -1,0 +1,37 @@
+elevator_lobby_hotel.jpg  1280x1375  detections=computed (a3d1dde2cdb7)
+camera: prior hfov=59.1 deg | depth: da2_metric_indoor_small | gravity: vanishing_point | scale: uncalibrated_monocular x1.000 (+-45.0%)
+  ref segment: user segment [[10.0, 10.0], [12.0, 12.0]] -> REJECTED: segment too short (3 px)
+  note: all supplied references were rejected: segment too short (3 px)
+  note: no reference available: absolute lengths are withheld (REQUIRES_CALIBRATION)
+
+[elevator a3d1dde2cdb7-001] conf=0.61 mask=sam truncated=['bottom'] depth~3.321
+  doorway_width                  -- REQUIRES_CALIBRATION (provisional 1.739 m, not a measurement)
+  clear_width_estimate           -- REQUIRES_CALIBRATION (provisional 1.739 m, not a measurement)
+  door_height                    -- REQUIRES_CALIBRATION (provisional 3.091 m, not a measurement)
+  threshold_height               -- REQUIRES_MANUAL_MEASUREMENT: door threshold height is a few mm - below image resolution
+  opening_force_and_swing        -- REQUIRES_MANUAL_MEASUREMENT: door swing and opening force require on-site check
+
+[corridor a3d1dde2cdb7-003] conf=0.36 mask=None truncated=- depth~None
+  clear_width                    -- INSUFFICIENT_DATA: segmented floor is not horizontal (likely wrong surface)
+  min_available_clearance        -- INSUFFICIENT_DATA: segmented floor is not horizontal (likely wrong surface)
+
+[door a3d1dde2cdb7-004] conf=0.27 mask=sam truncated=- depth~3.328
+  doorway_width                  -- REQUIRES_CALIBRATION (provisional 0.788 m, not a measurement)
+  clear_width_estimate           -- REQUIRES_CALIBRATION (provisional 0.728 m, not a measurement)
+  door_height                    -- REQUIRES_CALIBRATION (provisional 3.05 m, not a measurement)
+  width_to_height_ratio          0.258 +-0.007   [ESTIMATED, conf 0.90]
+  threshold_height               -- REQUIRES_MANUAL_MEASUREMENT: door threshold height is a few mm - below image resolution
+  opening_force_and_swing        -- REQUIRES_MANUAL_MEASUREMENT: door swing and opening force require on-site check
+
+[door a3d1dde2cdb7-007] conf=0.23 mask=sam truncated=- depth~3.324
+  doorway_width                  -- REQUIRES_CALIBRATION (provisional 0.801 m, not a measurement)
+  clear_width_estimate           -- REQUIRES_CALIBRATION (provisional 0.741 m, not a measurement)
+  door_height                    -- REQUIRES_CALIBRATION (provisional 3.03 m, not a measurement)
+  width_to_height_ratio          0.265 +-0.007   [ESTIMATED, conf 0.90]
+  threshold_height               -- REQUIRES_MANUAL_MEASUREMENT: door threshold height is a few mm - below image resolution
+  opening_force_and_swing        -- REQUIRES_MANUAL_MEASUREMENT: door swing and opening force require on-site check
+
+assessment (ada_2010): {'CANNOT_ASSESS': 6}
+Screening only. No compliance determination is made; flagged items and all unverified measurements require on-site verification by a qualified assessor.
+annotated: samples/measurement_demo/elevator_rejected_reference/elevator_lobby_hotel_measured.jpg 
+json: samples/measurement_demo/elevator_rejected_reference/report.json

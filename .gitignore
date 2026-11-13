@@ -1,0 +1,37 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+models_cache/
+outputs/
+runs/
+.pytest_cache/
+samples/videos/*.mp4
+samples/validation/diode/
+tools/brush/
+
+# Brush / wgpu autotune cache
+target/
+
+# environment and secrets (examples are kept)
+.env
+.env.*
+!.env.example
+*.pem
+
+# logs
+*.log
+
+# Node / Next.js (web/.gitignore covers the rest)
+node_modules/
+web/.next/
+web/out/
+*.tsbuildinfo
+
+# local tool settings
+.claude/settings.local.json
+
+# editor / OS
+.vscode/
+.idea/
+*.swp

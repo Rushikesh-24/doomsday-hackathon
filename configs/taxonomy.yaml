@@ -1,0 +1,95 @@
+# Canonical facility taxonomy for PS32.
+#
+# Each canonical class is detected through one or more natural-language prompts
+# (open-vocabulary models) and/or mapped from closed-set model labels (e.g. COCO).
+# Detections from all prompts of a class are merged and de-duplicated with NMS.
+#
+# category:
+#   facility       - physical accessibility infrastructure
+#   navigation     - spaces / routes
+#   signage        - signs and indicators
+#   obstacle       - things that may block a route
+#   auxiliary      - helper detections used only to derive attributes (hidden by default)
+#
+# merge_fragments: union overlapping/stacked boxes of this class into one region (for
+#   "stuff"-like classes that models often split into pieces, e.g. one box per step).
+# threshold_scale multiplies the model's base confidence threshold for this class
+# (use >1 for classes that produce many false positives).
+
+classes:
+  staircase:
+    category: facility
+    prompts: ["staircase", "stairs", "flight of steps"]
+    color: [230, 57, 70]
+    merge_fragments: true   # OWLv2 tends to box individual steps; merge touching boxes
+  ramp:
+    category: facility
+    prompts: ["wheelchair ramp", "accessibility ramp", "sloped ramp"]
+    color: [42, 157, 143]
+  elevator:
+    category: facility
+    prompts: ["elevator", "elevator door", "lift door"]
+    color: [69, 123, 157]
+  door:
+    category: facility
+    prompts: ["door", "glass door", "double door"]
+    color: [244, 162, 97]
+    threshold_scale: 1.3
+  entrance_exit:
+    category: navigation
+    prompts: ["building entrance", "doorway entrance"]
+    color: [233, 196, 106]
+  handrail:
+    category: facility
+    prompts: ["handrail", "railing", "stair railing"]
+    color: [131, 56, 236]
+  tactile_paving:
+    category: facility
+    prompts: ["tactile paving", "yellow tactile paving", "tactile warning strip"]
+    color: [255, 214, 10]
+    merge_fragments: true
+  corridor:
+    category: navigation
+    prompts: ["corridor", "hallway"]
+    color: [100, 149, 237]
+    threshold_scale: 1.2
+    merge_fragments: true
+  walkway:
+    category: navigation
+    prompts: ["walkway", "sidewalk", "footpath", "paved path"]
+    color: [96, 211, 148]
+    threshold_scale: 1.2
+    merge_fragments: true
+  accessibility_symbol:
+    category: signage
+    prompts: ["wheelchair symbol", "accessibility sign", "disabled access sign"]
+    color: [0, 119, 182]
+    # OWLv2 scores subtitle/text panels 0.2-0.3 here; genuine wheelchair symbols scored ~0.5 in tests
+    threshold_scale: 2.0
+  signboard:
+    category: signage
+    prompts: ["signboard", "information sign", "directional sign", "exit sign"]
+    color: [255, 0, 110]
+    threshold_scale: 1.3
+  obstacle:
+    category: obstacle
+    # The prompt that fired is reported as attribute `obstacle_type`.
+    prompts: ["chair", "bench", "trash can", "bicycle", "traffic cone", "cardboard box",
+              "potted plant", "suitcase", "barrier", "table", "motorcycle"]
+    coco_labels: ["chair", "bench", "bicycle", "suitcase", "potted plant", "dining table",
+                  "motorcycle", "fire hydrant", "backpack", "car", "couch"]
+    color: [255, 87, 34]
+  person:
+    category: obstacle
+    prompts: ["person"]
+    coco_labels: ["person"]
+    color: [180, 180, 180]
+  wheelchair_user:
+    category: facility
+    prompts: ["wheelchair"]
+    color: [0, 180, 216]
+  # ---- auxiliary (used for attribute derivation, hidden in annotations by default)
+  elevator_panel:
+    category: auxiliary
+    prompts: ["elevator call button", "elevator floor indicator display"]
+    color: [120, 120, 120]

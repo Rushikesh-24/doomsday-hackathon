@@ -1,0 +1,437 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "987db9b8ccf0",
+  "image": {
+    "name": "elevator_lobby_hotel.jpg",
+    "width": 1280,
+    "height": 1375,
+    "format": "JPEG",
+    "channels": 3,
+    "exif_transposed": false
+  },
+  "model": {
+    "key": "campus_ensemble",
+    "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+    "version": "ensemble(owlv2_base + yolo11_coco)",
+    "source": "composed",
+    "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+    "device": "mps",
+    "weights_sha256": null,
+    "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+  },
+  "thresholds": {
+    "staircase": 0.15,
+    "ramp": 0.15,
+    "elevator": 0.15,
+    "door": 0.195,
+    "entrance_exit": 0.15,
+    "handrail": 0.15,
+    "tactile_paving": 0.15,
+    "corridor": 0.18,
+    "walkway": 0.18,
+    "accessibility_symbol": 0.3,
+    "signboard": 0.195,
+    "obstacle": 0.35,
+    "person": 0.35,
+    "wheelchair_user": 0.15,
+    "elevator_panel": 0.15
+  },
+  "detections": [
+    {
+      "id": "987db9b8ccf0-001",
+      "class_name": "elevator",
+      "category": "facility",
+      "confidence": 0.6103,
+      "bbox": {
+        "x1": 286.47,
+        "y1": 238.08,
+        "x2": 924.98,
+        "y2": 1352.06,
+        "x1n": 0.22381,
+        "y1n": 0.17315,
+        "x2n": 0.72264,
+        "y2n": 0.98332,
+        "width": 638.51,
+        "height": 1113.98
+      },
+      "source": {
+        "name": "elevator_lobby_hotel.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "elevator door",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "lift_entrance_detected": {
+          "value": true,
+          "status": "detected",
+          "method": null,
+          "note": null,
+          "confidence": 0.61
+        },
+        "status_indicators": {
+          "value": [
+            {
+              "id": "987db9b8ccf0-000",
+              "prompt": "elevator floor indicator display"
+            },
+            {
+              "id": "987db9b8ccf0-002",
+              "prompt": "elevator floor indicator display"
+            },
+            {
+              "id": "987db9b8ccf0-006",
+              "prompt": "elevator floor indicator display"
+            },
+            {
+              "id": "987db9b8ccf0-008",
+              "prompt": "elevator floor indicator display"
+            }
+          ],
+          "status": "detected",
+          "method": "call-button / floor-display detections beside the lift",
+          "note": null,
+          "confidence": null
+        },
+        "accessibility_signage": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "door_state": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "car_dimensions": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Lift car size cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:19.701+00:00"
+    },
+    {
+      "id": "987db9b8ccf0-003",
+      "class_name": "corridor",
+      "category": "navigation",
+      "confidence": 0.361,
+      "bbox": {
+        "x1": 3.1,
+        "y1": 9.06,
+        "x2": 1216.42,
+        "y2": 1371.61,
+        "x1n": 0.00242,
+        "y1n": 0.00659,
+        "x2n": 0.95033,
+        "y2n": 0.99753,
+        "width": 1213.32,
+        "height": 1362.55
+      },
+      "source": {
+        "name": "elevator_lobby_hotel.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "hallway",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "objects_on_path": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "clear_width": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Clear path width cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "surface_condition": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:19.701+00:00"
+    },
+    {
+      "id": "987db9b8ccf0-004",
+      "class_name": "door",
+      "category": "facility",
+      "confidence": 0.2684,
+      "bbox": {
+        "x1": 295.19,
+        "y1": 255.94,
+        "x2": 640.47,
+        "y2": 1322.68,
+        "x1n": 0.23062,
+        "y1n": 0.18614,
+        "x2n": 0.50037,
+        "y2n": 0.96195,
+        "width": 345.28,
+        "height": 1066.74
+      },
+      "source": {
+        "name": "elevator_lobby_hotel.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "glass door",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "bbox_aspect_ratio_h_over_w": {
+          "value": 3.09,
+          "status": "estimated",
+          "method": "bounding box geometry",
+          "note": null,
+          "confidence": null
+        },
+        "viewing_orientation": {
+          "value": "oblique / side view",
+          "status": "estimated",
+          "method": "box aspect ratio vs typical door proportions",
+          "note": "orientation of the door relative to the camera, not its swing direction",
+          "confidence": null
+        },
+        "opening_orientation": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "hinge side / swing direction is not reliably inferable from a single 2D view; needs annotated training data or on-site survey",
+          "confidence": null
+        },
+        "door_type": {
+          "value": "glass door",
+          "status": "detected",
+          "method": "matched text prompt",
+          "note": null,
+          "confidence": 0.268
+        },
+        "accessibility_indicators": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "part_of_elevator": {
+          "value": "987db9b8ccf0-001",
+          "status": "detected",
+          "method": "door box lies inside elevator box",
+          "note": null,
+          "confidence": null
+        },
+        "clear_opening_width": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Clear opening width cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "threshold_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Threshold height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:19.701+00:00"
+    },
+    {
+      "id": "987db9b8ccf0-005",
+      "class_name": "entrance_exit",
+      "category": "navigation",
+      "confidence": 0.2428,
+      "bbox": {
+        "x1": 169.6,
+        "y1": 29.99,
+        "x2": 1104.41,
+        "y2": 1361.97,
+        "x1n": 0.1325,
+        "y1n": 0.02181,
+        "x2n": 0.86282,
+        "y2n": 0.99053,
+        "width": 934.82,
+        "height": 1331.98
+      },
+      "source": {
+        "name": "elevator_lobby_hotel.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "doorway entrance",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "step_free_access_visible": {
+          "value": true,
+          "status": "estimated",
+          "method": "ramp/elevator detected near entrance",
+          "note": "visible step-free option; continuity of the route not verified",
+          "confidence": null
+        },
+        "door_ids": {
+          "value": [
+            "987db9b8ccf0-004",
+            "987db9b8ccf0-007"
+          ],
+          "status": "detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "entrance_or_exit": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "needs signage text (OCR) or map context",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:19.701+00:00"
+    },
+    {
+      "id": "987db9b8ccf0-007",
+      "class_name": "door",
+      "category": "facility",
+      "confidence": 0.2267,
+      "bbox": {
+        "x1": 591.02,
+        "y1": 256.43,
+        "x2": 918.78,
+        "y2": 1329.91,
+        "x1n": 0.46173,
+        "y1n": 0.1865,
+        "x2n": 0.7178,
+        "y2n": 0.96721,
+        "width": 327.77,
+        "height": 1073.48
+      },
+      "source": {
+        "name": "elevator_lobby_hotel.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "glass door",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "bbox_aspect_ratio_h_over_w": {
+          "value": 3.28,
+          "status": "estimated",
+          "method": "bounding box geometry",
+          "note": null,
+          "confidence": null
+        },
+        "viewing_orientation": {
+          "value": "oblique / side view",
+          "status": "estimated",
+          "method": "box aspect ratio vs typical door proportions",
+          "note": "orientation of the door relative to the camera, not its swing direction",
+          "confidence": null
+        },
+        "opening_orientation": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "hinge side / swing direction is not reliably inferable from a single 2D view; needs annotated training data or on-site survey",
+          "confidence": null
+        },
+        "door_type": {
+          "value": "glass door",
+          "status": "detected",
+          "method": "matched text prompt",
+          "note": null,
+          "confidence": 0.227
+        },
+        "accessibility_indicators": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "part_of_elevator": {
+          "value": "987db9b8ccf0-001",
+          "status": "detected",
+          "method": "door box lies inside elevator box",
+          "note": null,
+          "confidence": null
+        },
+        "clear_opening_width": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Clear opening width cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "threshold_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Threshold height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:19.701+00:00"
+    }
+  ],
+  "counts_by_class": {
+    "elevator": 1,
+    "corridor": 1,
+    "door": 2,
+    "entrance_exit": 1
+  },
+  "findings": [
+    {
+      "code": "STEP_FREE_FACILITY_VISIBLE",
+      "message": "Ramp or lift detected in view.",
+      "severity": "info",
+      "detection_ids": [
+        "987db9b8ccf0-001"
+      ]
+    }
+  ],
+  "timing": {
+    "preprocess_ms": 0.0,
+    "inference_ms": 986.5,
+    "postprocess_ms": 0.3,
+    "attributes_ms": 0.1,
+    "total_ms": 986.9
+  },
+  "processed_at": "2026-11-13T11:12:19.701+00:00",
+  "annotated_image": "samples/demo_outputs/elevator_lobby_hotel_annotated.jpg",
+  "json_path": "samples/demo_outputs/elevator_lobby_hotel.json",
+  "warnings": []
+}

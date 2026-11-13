@@ -1,0 +1,83 @@
+# Model registry. Every entry records provenance (source, license) so outputs are traceable.
+# `conf` is the base confidence threshold for that model family (scores are NOT comparable
+# across model families: YOLO-World region-text scores are much lower than Grounding DINO's).
+
+default_model: campus_ensemble
+
+models:
+  yolo_world_s:
+    type: yolo_world
+    weights: yolov8s-worldv2.pt
+    version: "yolov8s-worldv2 (ultralytics 8.4.x)"
+    source: "https://github.com/ultralytics/assets/releases (YOLO-World v2, Tencent AILab CVC / Ultralytics)"
+    license: "AGPL-3.0 (Ultralytics); commercial use needs Ultralytics Enterprise licence"
+    conf: 0.08
+    imgsz: 640
+    open_vocabulary: true
+
+  yolo_world_l:
+    type: yolo_world
+    weights: yolov8l-worldv2.pt
+    version: "yolov8l-worldv2 (ultralytics 8.4.x)"
+    source: "https://github.com/ultralytics/assets/releases (YOLO-World v2, Tencent AILab CVC / Ultralytics)"
+    license: "AGPL-3.0 (Ultralytics); commercial use needs Ultralytics Enterprise licence"
+    conf: 0.08
+    imgsz: 640
+    open_vocabulary: true
+
+  grounding_dino_tiny:
+    type: grounding_dino
+    hf_id: IDEA-Research/grounding-dino-tiny
+    version: "grounding-dino-tiny (Swin-T, HF transformers)"
+    source: "https://huggingface.co/IDEA-Research/grounding-dino-tiny"
+    license: "Apache-2.0"
+    conf: 0.30
+    text_threshold: 0.25
+    prompts_per_pass: 12      # keep text under the 256-token limit
+    open_vocabulary: true
+
+  owlv2_base:
+    type: owlv2
+    hf_id: google/owlv2-base-patch16-ensemble
+    version: "owlv2-base-patch16-ensemble (HF transformers)"
+    source: "https://huggingface.co/google/owlv2-base-patch16-ensemble"
+    license: "Apache-2.0"
+    conf: 0.15
+    open_vocabulary: true
+
+  yolo11_coco:
+    type: yolo_coco
+    weights: yolo11m.pt
+    version: "yolo11m COCO-80 (ultralytics 8.4.x)"
+    source: "https://github.com/ultralytics/assets/releases"
+    license: "AGPL-3.0 (Ultralytics)"
+    conf: 0.35
+    imgsz: 640
+    open_vocabulary: false
+
+  # DEFAULT. Chosen from the side-by-side benchmark (outputs/benchmark, see docs/MODEL_SELECTION.md):
+  # OWLv2 gave the best facility recall (stairs, tactile paving, handrails, elevators) of the three
+  # open-vocab models; the closed-set COCO detector is far more reliable for people/furniture.
+  campus_ensemble:
+    type: ensemble
+    members: [owlv2_base, yolo11_coco]
+    member_classes:          # classes a member is the sole provider of
+      yolo11_coco: [obstacle, person]
+    shared_classes: [obstacle] # ...except obstacles COCO cannot name (cones, barriers, bins, boxes) also come from OWLv2
+    exclude_prompts:           # OWLv2 prompts dropped because COCO covers them better
+      owlv2_base: ["chair", "bench", "bicycle", "suitcase", "potted plant", "table", "motorcycle", "person"]
+    version: "ensemble(owlv2_base + yolo11_coco)"
+    source: "composed"
+    license: "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)"
+    open_vocabulary: true
+
+  # Faster alternative (~3x) with weaker facility recall.
+  campus_ensemble_fast:
+    type: ensemble
+    members: [yolo_world_l, yolo11_coco]
+    member_classes:
+      yolo11_coco: [obstacle, person]
+    version: "ensemble(yolo_world_l + yolo11_coco)"
+    source: "composed"
+    license: "AGPL-3.0 (Ultralytics)"
+    open_vocabulary: true

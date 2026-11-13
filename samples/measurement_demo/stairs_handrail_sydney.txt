@@ -1,0 +1,21 @@
+stairs_handrail_sydney.jpg  1280x1912  detections=computed (dc0b3ec4e680)
+camera: prior hfov=49.68 deg | depth: da2_metric_indoor_small | gravity: vanishing_point | scale: uncalibrated_monocular x1.000 (+-45.0%)
+  note: no reference available: absolute lengths are withheld (REQUIRES_CALIBRATION)
+
+[staircase dc0b3ec4e680-000] conf=0.58 mask=sam + ade20k_stairs truncated=['bottom', 'left', 'right'] depth~2.023
+  step_count                     >= 9 +-2.965 steps  [ESTIMATED, conf 0.35]
+  pitch_deg                      36.104 +-3.000 deg  [ESTIMATED, conf 0.22]
+  riser_to_tread_ratio           0.729 +-0.109   [ESTIMATED, conf 0.20]
+  riser_height                   -- REQUIRES_CALIBRATION (provisional 0.152 m, not a measurement)
+  tread_depth                    -- REQUIRES_CALIBRATION (provisional 0.208 m, not a measurement)
+  stair_width                    -- REQUIRES_CALIBRATION (provisional 1.96 m, not a measurement)
+  handrail_present               True   [ESTIMATED, conf 0.65]
+  handrail_both_sides            True   [ESTIMATED, conf 0.45]
+  tactile_warning_surface        False   [ESTIMATED, conf 0.35]
+  nosing_contrast_and_profile    -- REQUIRES_MANUAL_MEASUREMENT: nosing projection/contrast needs close inspection
+
+assessment (ada_2010): {'CANNOT_ASSESS': 3, 'NO_ISSUE_INDICATED': 1, 'POSSIBLE_ISSUE': 1}
+  POSSIBLE_ISSUE   stair_tactile            tactile_warning_surface = False in image evidence - may be missed by the detector; verify
+Screening only. No compliance determination is made; flagged items and all unverified measurements require on-site verification by a qualified assessor.
+annotated: samples/measurement_demo/stairs_handrail_sydney/stairs_handrail_sydney_measured.jpg 
+json: samples/measurement_demo/stairs_handrail_sydney/report.json

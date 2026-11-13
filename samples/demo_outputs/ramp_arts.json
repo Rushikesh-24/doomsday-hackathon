@@ -1,0 +1,1372 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "5fbf4ed77163",
+  "image": {
+    "name": "ramp_arts.jpg",
+    "width": 1280,
+    "height": 960,
+    "format": "JPEG",
+    "channels": 3,
+    "exif_transposed": false
+  },
+  "model": {
+    "key": "campus_ensemble",
+    "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+    "version": "ensemble(owlv2_base + yolo11_coco)",
+    "source": "composed",
+    "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+    "device": "mps",
+    "weights_sha256": null,
+    "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+  },
+  "thresholds": {
+    "staircase": 0.15,
+    "ramp": 0.15,
+    "elevator": 0.15,
+    "door": 0.195,
+    "entrance_exit": 0.15,
+    "handrail": 0.15,
+    "tactile_paving": 0.15,
+    "corridor": 0.18,
+    "walkway": 0.18,
+    "accessibility_symbol": 0.3,
+    "signboard": 0.195,
+    "obstacle": 0.35,
+    "person": 0.35,
+    "wheelchair_user": 0.15,
+    "elevator_panel": 0.15
+  },
+  "detections": [
+    {
+      "id": "5fbf4ed77163-000",
+      "class_name": "entrance_exit",
+      "category": "navigation",
+      "confidence": 0.3966,
+      "bbox": {
+        "x1": 1095.51,
+        "y1": 323.44,
+        "x2": 1161.85,
+        "y2": 457.57,
+        "x1n": 0.85587,
+        "y1n": 0.33691,
+        "x2n": 0.9077,
+        "y2n": 0.47664,
+        "width": 66.34,
+        "height": 134.14
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "doorway entrance",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "step_free_access_visible": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "door_ids": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "entrance_or_exit": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "needs signage text (OCR) or map context",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-001",
+      "class_name": "staircase",
+      "category": "facility",
+      "confidence": 0.3546,
+      "bbox": {
+        "x1": 8.3,
+        "y1": 113.81,
+        "x2": 963.42,
+        "y2": 916.07,
+        "x1n": 0.00649,
+        "y1n": 0.11855,
+        "x2n": 0.75268,
+        "y2n": 0.95424,
+        "width": 955.12,
+        "height": 802.26
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "stairs",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "handrail_present": {
+          "value": true,
+          "status": "detected",
+          "method": "handrail detection overlaps expanded stair box",
+          "note": null,
+          "confidence": 0.301
+        },
+        "handrail_ids": {
+          "value": [
+            "5fbf4ed77163-004",
+            "5fbf4ed77163-005",
+            "5fbf4ed77163-010",
+            "5fbf4ed77163-011",
+            "5fbf4ed77163-012",
+            "5fbf4ed77163-014",
+            "5fbf4ed77163-015",
+            "5fbf4ed77163-016",
+            "5fbf4ed77163-018",
+            "5fbf4ed77163-020",
+            "5fbf4ed77163-021",
+            "5fbf4ed77163-022"
+          ],
+          "status": "detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "handrail_sides_visible": {
+          "value": [
+            "left",
+            "right"
+          ],
+          "status": "estimated",
+          "method": "handrail box centres vs stair centre",
+          "note": null,
+          "confidence": null
+        },
+        "tactile_warning_surface": {
+          "value": false,
+          "status": "not_detected",
+          "method": "no tactile paving detection near stairs",
+          "note": "absence of a detection is not proof of absence",
+          "confidence": null
+        },
+        "visible_step_count": {
+          "value": 6,
+          "status": "not_determinable",
+          "method": "row profile of horizontal-edge energy",
+          "note": "edge pattern not regular enough (low regularity)",
+          "confidence": 0.222
+        },
+        "riser_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Riser height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "tread_depth": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Tread depth cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "direction_up_or_down": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "ascending vs descending is ambiguous in 2D",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-002",
+      "class_name": "signboard",
+      "category": "signage",
+      "confidence": 0.352,
+      "bbox": {
+        "x1": 1011.53,
+        "y1": 244.7,
+        "x2": 1123.59,
+        "y2": 314.02,
+        "x1n": 0.79026,
+        "y1n": 0.2549,
+        "x2n": 0.87781,
+        "y2n": 0.32711,
+        "width": 112.06,
+        "height": 69.32
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "information sign",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "contains_accessibility_symbol": {
+          "value": false,
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "sign_kind": {
+          "value": "information sign",
+          "status": "detected",
+          "method": "matched text prompt",
+          "note": null,
+          "confidence": 0.352
+        },
+        "text_content": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "OCR not yet integrated (see DEVELOPMENT_STATUS.md)",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-003",
+      "class_name": "signboard",
+      "category": "signage",
+      "confidence": 0.3103,
+      "bbox": {
+        "x1": 935.37,
+        "y1": 132.26,
+        "x2": 962.25,
+        "y2": 161.47,
+        "x1n": 0.73076,
+        "y1n": 0.13777,
+        "x2n": 0.75176,
+        "y2n": 0.16819,
+        "width": 26.88,
+        "height": 29.2
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "exit sign",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "contains_accessibility_symbol": {
+          "value": false,
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "sign_kind": {
+          "value": "exit sign",
+          "status": "detected",
+          "method": "matched text prompt",
+          "note": null,
+          "confidence": 0.31
+        },
+        "text_content": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "OCR not yet integrated (see DEVELOPMENT_STATUS.md)",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-004",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.3013,
+      "bbox": {
+        "x1": 701.45,
+        "y1": 461.77,
+        "x2": 971.27,
+        "y2": 651.47,
+        "x1n": 0.54801,
+        "y1n": 0.48101,
+        "x2n": 0.75881,
+        "y2n": 0.67862,
+        "width": 269.83,
+        "height": 189.7
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-001",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-005",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.2893,
+      "bbox": {
+        "x1": 113.76,
+        "y1": 235.91,
+        "x2": 710.53,
+        "y2": 627.35,
+        "x1n": 0.08888,
+        "y1n": 0.24574,
+        "x2n": 0.5551,
+        "y2n": 0.65349,
+        "width": 596.77,
+        "height": 391.44
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "handrail",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-001",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-006",
+      "class_name": "signboard",
+      "category": "signage",
+      "confidence": 0.2829,
+      "bbox": {
+        "x1": 1035.95,
+        "y1": 347.8,
+        "x2": 1073.81,
+        "y2": 388.44,
+        "x1n": 0.80934,
+        "y1n": 0.36229,
+        "x2n": 0.83891,
+        "y2n": 0.40462,
+        "width": 37.86,
+        "height": 40.64
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "information sign",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "contains_accessibility_symbol": {
+          "value": false,
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "sign_kind": {
+          "value": "information sign",
+          "status": "detected",
+          "method": "matched text prompt",
+          "note": null,
+          "confidence": 0.283
+        },
+        "text_content": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "OCR not yet integrated (see DEVELOPMENT_STATUS.md)",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-007",
+      "class_name": "walkway",
+      "category": "navigation",
+      "confidence": 0.282,
+      "bbox": {
+        "x1": 243.18,
+        "y1": 501.5,
+        "x2": 1280.0,
+        "y2": 935.6,
+        "x1n": 0.18998,
+        "y1n": 0.5224,
+        "x2n": 1.0,
+        "y2n": 0.97458,
+        "width": 1036.82,
+        "height": 434.1
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "walkway",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "objects_on_path": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "clear_width": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Clear path width cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "surface_condition": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-008",
+      "class_name": "signboard",
+      "category": "signage",
+      "confidence": 0.2793,
+      "bbox": {
+        "x1": 994.73,
+        "y1": 347.93,
+        "x2": 1032.06,
+        "y2": 387.71,
+        "x1n": 0.77714,
+        "y1n": 0.36243,
+        "x2n": 0.8063,
+        "y2n": 0.40386,
+        "width": 37.33,
+        "height": 39.77
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "information sign",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "contains_accessibility_symbol": {
+          "value": false,
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "sign_kind": {
+          "value": "information sign",
+          "status": "detected",
+          "method": "matched text prompt",
+          "note": null,
+          "confidence": 0.279
+        },
+        "text_content": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "OCR not yet integrated (see DEVELOPMENT_STATUS.md)",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-009",
+      "class_name": "obstacle",
+      "category": "obstacle",
+      "confidence": 0.2584,
+      "bbox": {
+        "x1": 1019.67,
+        "y1": 396.27,
+        "x2": 1068.16,
+        "y2": 453.07,
+        "x1n": 0.79662,
+        "y1n": 0.41278,
+        "x2n": 0.8345,
+        "y2n": 0.47195,
+        "width": 48.49,
+        "height": 56.8
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "trash can",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "obstacle_type": {
+          "value": "trash can",
+          "status": "detected",
+          "method": "label from owlv2_base",
+          "note": null,
+          "confidence": 0.258
+        },
+        "relative_to_walkway": {
+          "value": {
+            "path_id": "5fbf4ed77163-019",
+            "path_class": "corridor",
+            "lateral_position": "right side"
+          },
+          "status": "estimated",
+          "method": "ground-contact point inside path box",
+          "note": null,
+          "confidence": null
+        },
+        "image_width_fraction_of_path": {
+          "value": 0.044,
+          "status": "estimated",
+          "method": "obstacle box width / path box width (image plane)",
+          "note": "not a metric clear-width; perspective affects it",
+          "confidence": null
+        },
+        "potential_obstruction": {
+          "value": false,
+          "status": "estimated",
+          "method": "on path and (centred or >=15% of path width)",
+          "note": null,
+          "confidence": null
+        },
+        "remaining_clear_width": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Remaining clear width cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-010",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.2535,
+      "bbox": {
+        "x1": 668.01,
+        "y1": 143.07,
+        "x2": 967.91,
+        "y2": 385.91,
+        "x1n": 0.52188,
+        "y1n": 0.14903,
+        "x2n": 0.75618,
+        "y2n": 0.40199,
+        "width": 299.91,
+        "height": 242.84
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "handrail",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-001",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-011",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.2489,
+      "bbox": {
+        "x1": 118.74,
+        "y1": 0.0,
+        "x2": 603.32,
+        "y2": 123.26,
+        "x1n": 0.09277,
+        "y1n": 0.0,
+        "x2n": 0.47134,
+        "y2n": 0.1284,
+        "width": 484.58,
+        "height": 123.26
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-001",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-012",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.2489,
+      "bbox": {
+        "x1": 0.37,
+        "y1": 0.0,
+        "x2": 605.35,
+        "y2": 219.47,
+        "x1n": 0.00029,
+        "y1n": 0.0,
+        "x2n": 0.47293,
+        "y2n": 0.22862,
+        "width": 604.98,
+        "height": 219.47
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-001",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-013",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.237,
+      "bbox": {
+        "x1": 1149.19,
+        "y1": 471.35,
+        "x2": 1280.0,
+        "y2": 904.19,
+        "x1n": 0.8978,
+        "y1n": 0.49099,
+        "x2n": 1.0,
+        "y2n": 0.94186,
+        "width": 130.81,
+        "height": 432.84
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [],
+          "status": "not_detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-014",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.2281,
+      "bbox": {
+        "x1": 130.29,
+        "y1": 488.66,
+        "x2": 703.75,
+        "y2": 642.04,
+        "x1n": 0.10179,
+        "y1n": 0.50903,
+        "x2n": 0.5498,
+        "y2n": 0.66879,
+        "width": 573.46,
+        "height": 153.38
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "handrail",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-001",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-015",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.2259,
+      "bbox": {
+        "x1": 456.94,
+        "y1": 135.19,
+        "x2": 913.28,
+        "y2": 554.03,
+        "x1n": 0.35699,
+        "y1n": 0.14083,
+        "x2n": 0.7135,
+        "y2n": 0.57711,
+        "width": 456.34,
+        "height": 418.83
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "stair railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-001",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-016",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.2125,
+      "bbox": {
+        "x1": 656.26,
+        "y1": 140.01,
+        "x2": 784.85,
+        "y2": 236.26,
+        "x1n": 0.5127,
+        "y1n": 0.14584,
+        "x2n": 0.61316,
+        "y2n": 0.24611,
+        "width": 128.59,
+        "height": 96.25
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "handrail",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-001",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-018",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.2019,
+      "bbox": {
+        "x1": 972.37,
+        "y1": 137.36,
+        "x2": 1187.07,
+        "y2": 156.55,
+        "x1n": 0.75966,
+        "y1n": 0.14308,
+        "x2n": 0.9274,
+        "y2n": 0.16307,
+        "width": 214.7,
+        "height": 19.19
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "handrail",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-001",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-019",
+      "class_name": "corridor",
+      "category": "navigation",
+      "confidence": 0.1847,
+      "bbox": {
+        "x1": 0.0,
+        "y1": 6.39,
+        "x2": 1113.52,
+        "y2": 960.0,
+        "x1n": 0.0,
+        "y1n": 0.00666,
+        "x2n": 0.86994,
+        "y2n": 1.0,
+        "width": 1113.52,
+        "height": 953.61
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "corridor",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "objects_on_path": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-009",
+              "class": "obstacle",
+              "type": "trash can"
+            }
+          ],
+          "status": "detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "clear_width": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Clear path width cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "surface_condition": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-020",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.1675,
+      "bbox": {
+        "x1": 3.2,
+        "y1": 201.35,
+        "x2": 636.22,
+        "y2": 472.08,
+        "x1n": 0.0025,
+        "y1n": 0.20974,
+        "x2n": 0.49705,
+        "y2n": 0.49175,
+        "width": 633.03,
+        "height": 270.73
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "handrail",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-001",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-021",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.1554,
+      "bbox": {
+        "x1": 145.21,
+        "y1": 72.59,
+        "x2": 856.8,
+        "y2": 486.99,
+        "x1n": 0.11345,
+        "y1n": 0.07561,
+        "x2n": 0.66937,
+        "y2n": 0.50728,
+        "width": 711.58,
+        "height": 414.4
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "stair railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-001",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    },
+    {
+      "id": "5fbf4ed77163-022",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.152,
+      "bbox": {
+        "x1": 852.97,
+        "y1": 461.53,
+        "x2": 970.61,
+        "y2": 569.69,
+        "x1n": 0.66638,
+        "y1n": 0.48076,
+        "x2n": 0.75829,
+        "y2n": 0.59343,
+        "width": 117.64,
+        "height": 108.17
+      },
+      "source": {
+        "name": "ramp_arts.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "handrail",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "5fbf4ed77163-001",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:20.551+00:00"
+    }
+  ],
+  "counts_by_class": {
+    "entrance_exit": 1,
+    "staircase": 1,
+    "signboard": 4,
+    "handrail": 13,
+    "walkway": 1,
+    "obstacle": 1,
+    "corridor": 1
+  },
+  "findings": [
+    {
+      "code": "NO_STEP_FREE_ALTERNATIVE_IN_VIEW",
+      "message": "Stairs visible but no ramp or lift detected in this view.",
+      "severity": "warning",
+      "detection_ids": [
+        "5fbf4ed77163-001"
+      ]
+    }
+  ],
+  "timing": {
+    "preprocess_ms": 0.0,
+    "inference_ms": 839.3,
+    "postprocess_ms": 0.6,
+    "attributes_ms": 5.6,
+    "total_ms": 845.5
+  },
+  "processed_at": "2026-11-13T11:12:20.551+00:00",
+  "annotated_image": "samples/demo_outputs/ramp_arts_annotated.jpg",
+  "json_path": "samples/demo_outputs/ramp_arts.json",
+  "warnings": []
+}

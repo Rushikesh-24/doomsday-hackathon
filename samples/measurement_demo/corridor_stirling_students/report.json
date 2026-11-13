@@ -1,0 +1,517 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "3e4486b934d4",
+  "image": {
+    "name": "corridor_stirling_students.jpg",
+    "width": 1280,
+    "height": 786,
+    "format": "JPEG",
+    "channels": 3,
+    "exif_transposed": false
+  },
+  "vision_request_id": "3d8b1cb24a64",
+  "detections_source": "computed",
+  "camera": {
+    "fx": 902.6280764769309,
+    "fy": 902.6280764769309,
+    "cx": 640.0,
+    "cy": 393.0,
+    "width": 1280,
+    "height": 786,
+    "hfov_deg": 70.68,
+    "source": "prior",
+    "focal_rel_sigma": 0.15,
+    "distortion_corrected": false
+  },
+  "scale": {
+    "status": "prior_reference_object",
+    "scale_factor": 0.8220097963105453,
+    "rel_sigma": 0.0820477137651935,
+    "reference_depth_m": 7.876229711742362,
+    "references": [
+      {
+        "kind": "prior:person",
+        "description": "person 3d8b1cb24a64-000 assumed 1.68 m tall",
+        "detection_id": null,
+        "true_length_m": 1.68,
+        "measured_unscaled": 1.7447,
+        "implied_scale": 0.9629326667148888,
+        "rel_sigma": 0.08952380952380953,
+        "used": true,
+        "reason": null
+      },
+      {
+        "kind": "prior:person",
+        "description": "person 3d8b1cb24a64-001 assumed 1.68 m tall",
+        "detection_id": null,
+        "true_length_m": 1.68,
+        "measured_unscaled": 1.9372,
+        "implied_scale": 0.867231793103449,
+        "rel_sigma": 0.08952380952380953,
+        "used": true,
+        "reason": null
+      },
+      {
+        "kind": "prior:person",
+        "description": "person 3d8b1cb24a64-002 assumed 1.68 m tall",
+        "detection_id": null,
+        "true_length_m": 1.68,
+        "measured_unscaled": 1.8848,
+        "implied_scale": 0.8913584255521612,
+        "rel_sigma": 0.08952380952380953,
+        "used": true,
+        "reason": null
+      },
+      {
+        "kind": "prior:person",
+        "description": "person 3d8b1cb24a64-003 assumed 1.68 m tall",
+        "detection_id": null,
+        "true_length_m": 1.68,
+        "measured_unscaled": 1.9497,
+        "implied_scale": 0.8616620787925954,
+        "rel_sigma": 0.08952380952380953,
+        "used": true,
+        "reason": null
+      },
+      {
+        "kind": "prior:person",
+        "description": "person 3d8b1cb24a64-008 assumed 1.68 m tall",
+        "detection_id": null,
+        "true_length_m": 1.68,
+        "measured_unscaled": 1.8456,
+        "implied_scale": 0.9102717611741725,
+        "rel_sigma": 0.08952380952380953,
+        "used": true,
+        "reason": null
+      },
+      {
+        "kind": "prior:person",
+        "description": "person 3d8b1cb24a64-011 assumed 1.68 m tall",
+        "detection_id": null,
+        "true_length_m": 1.68,
+        "measured_unscaled": 3.1794,
+        "implied_scale": 0.5284092655813121,
+        "rel_sigma": 0.08952380952380953,
+        "used": true,
+        "reason": null
+      }
+    ],
+    "notes": [
+      "scale from typical object dimensions; supply a measured reference for calibrated results",
+      "reference 'person 3d8b1cb24a64-011 assumed 1.68 m tall' disagrees with the others (implies x0.64); check it"
+    ]
+  },
+  "models": [
+    {
+      "role": "detection",
+      "key": "campus_ensemble",
+      "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "version": "ensemble(owlv2_base + yolo11_coco)",
+      "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+      "device": "mps",
+      "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+    },
+    {
+      "role": "depth",
+      "key": "da2_metric_indoor_small",
+      "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+      "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+      "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+      "device": "mps",
+      "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+    },
+    {
+      "role": "semantic_segmentation",
+      "key": "upernet_ade20k",
+      "name": "openmmlab/upernet-convnext-tiny",
+      "version": "UperNet ConvNeXt-T ADE20K-150",
+      "license": "MIT",
+      "device": "cpu",
+      "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+    },
+    {
+      "role": "box_segmenter",
+      "key": "slimsam",
+      "name": "Zigeng/SlimSAM-uniform-50",
+      "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+      "license": "Apache-2.0",
+      "device": "mps",
+      "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+    }
+  ],
+  "scene": {
+    "indoor_outdoor": "indoor",
+    "sky_fraction": 0.0,
+    "depth_model": "da2_metric_indoor_small",
+    "analysis_size": [
+      1280,
+      786
+    ],
+    "gravity_source": "ground_plane",
+    "gravity_sigma_deg": 0.54,
+    "gravity_ground_vs_vp_deg": 4.61,
+    "vertical_lines": 26,
+    "ground_plane_inlier_ratio": 0.783,
+    "camera_height_m": 1.22,
+    "measured_detections": 1,
+    "detections_total": 25
+  },
+  "facilities": [
+    {
+      "detection_id": "3d8b1cb24a64-018",
+      "class_name": "corridor",
+      "detection_confidence": 0.2316,
+      "bbox": [
+        0.0,
+        3.96,
+        1280.0,
+        786.0
+      ],
+      "mask_area_px": null,
+      "mask_source": null,
+      "truncated_sides": [],
+      "mean_depth_m": null,
+      "measurements": [
+        {
+          "id": "3e4486b934d4-m001",
+          "detection_id": "3d8b1cb24a64-018",
+          "facility_class": "corridor",
+          "name": "clear_width",
+          "value": 1.744,
+          "unit": "m",
+          "uncertainty": 0.448,
+          "interval_95": [
+            0.867,
+            2.621
+          ],
+          "lower_bound": false,
+          "confidence": 0.543,
+          "status": "ESTIMATED",
+          "method": "minimum floor width over 10 cross-sections along the corridor axis (ray-plane intersection with fitted floor plane)",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_indoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "prior_reference_object",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "scale from typical object dimensions (prior)",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [
+            "floor = ADE20K floor/road/sidewalk/path/... pixels inside the detection, minus objects",
+            "width is between the visible floor boundaries; skirting, mats or mis-segmentation shift it",
+            "2/8 cross-sections with both floor edges visible (others truncated or occluded by objects/people)"
+          ],
+          "ground_truth": null,
+          "overlay": {
+            "lines": [
+              [
+                1082.6,
+                615.4,
+                438.8,
+                799.6
+              ],
+              [
+                800.6,
+                521.6,
+                366.8,
+                595.4
+              ],
+              [
+                689.4,
+                465.9,
+                377.9,
+                504.6
+              ],
+              [
+                354.2,
+                408.3,
+                283.8,
+                413.5
+              ],
+              [
+                346.3,
+                393.8,
+                242.6,
+                400.6
+              ],
+              [
+                340.7,
+                382.7,
+                231.3,
+                389.3
+              ],
+              [
+                342.6,
+                373.6,
+                229.5,
+                379.8
+              ],
+              [
+                344.3,
+                366.3,
+                211.8,
+                373.1
+              ]
+            ],
+            "points": [],
+            "polygon": null,
+            "label_at": null
+          },
+          "timestamp": "2026-11-13T12:41:13.688+00:00"
+        },
+        {
+          "id": "3e4486b934d4-m002",
+          "detection_id": "3d8b1cb24a64-018",
+          "facility_class": "corridor",
+          "name": "min_available_clearance",
+          "value": 0.929,
+          "unit": "m",
+          "uncertainty": 0.286,
+          "interval_95": [
+            0.369,
+            1.49
+          ],
+          "lower_bound": false,
+          "confidence": 0.492,
+          "status": "ESTIMATED",
+          "method": "largest free lateral gap beside the obstacle footprint (box bottom edge on floor plane) in the nearest cross-section",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_indoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "prior_reference_object",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "scale from typical object dimensions (prior)",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [
+            "limiting object: cardboard box (3d8b1cb24a64-024)",
+            "footprint from the 2D box bottom edge: wide-based objects may be underestimated"
+          ],
+          "ground_truth": null,
+          "overlay": {
+            "lines": [
+              [
+                203.2,
+                335.8,
+                218.4,
+                335.8
+              ]
+            ],
+            "points": [],
+            "polygon": null,
+            "label_at": null
+          },
+          "timestamp": "2026-11-13T12:41:13.688+00:00"
+        },
+        {
+          "id": "3e4486b934d4-m003",
+          "detection_id": "3d8b1cb24a64-018",
+          "facility_class": "corridor",
+          "name": "permanent_obstruction_present",
+          "value": true,
+          "unit": null,
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.55,
+          "status": "ESTIMATED",
+          "method": "non-person obstacle detections standing on the floor region",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_indoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "prior_reference_object",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [
+            "20 objects on this path (11 people)"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:41:13.688+00:00"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "assessment": [
+    {
+      "rule_id": "route_clear_width",
+      "profile": "ada_2010",
+      "clause": "403.5.1",
+      "detection_id": "3d8b1cb24a64-018",
+      "facility_class": "corridor",
+      "measurement_id": "3e4486b934d4-m001",
+      "measurement_name": "clear_width",
+      "outcome": "POSSIBLE_ISSUE",
+      "severity": "standard",
+      "threshold": 0.915,
+      "measured_value": 1.744,
+      "uncertainty": 0.448,
+      "message": "clear_width 1.744 m +- 0.878 m (95%) vs min 0.915 m: minimum lies inside the 95% uncertainty band"
+    },
+    {
+      "rule_id": "route_available_clearance",
+      "profile": "ada_2010",
+      "clause": "403.5.1 exception",
+      "detection_id": "3d8b1cb24a64-018",
+      "facility_class": "corridor",
+      "measurement_id": "3e4486b934d4-m002",
+      "measurement_name": "min_available_clearance",
+      "outcome": "POSSIBLE_ISSUE",
+      "severity": "standard",
+      "threshold": 0.815,
+      "measured_value": 0.929,
+      "uncertainty": 0.286,
+      "message": "min_available_clearance 0.929 m +- 0.561 m (95%) vs min 0.815 m: minimum lies inside the 95% uncertainty band"
+    },
+    {
+      "rule_id": "route_obstruction",
+      "profile": "ada_2010",
+      "clause": "403.5 (clear width)",
+      "detection_id": "3d8b1cb24a64-018",
+      "facility_class": "corridor",
+      "measurement_id": "3e4486b934d4-m003",
+      "measurement_name": "permanent_obstruction_present",
+      "outcome": "POSSIBLE_ISSUE",
+      "severity": "advisory",
+      "threshold": null,
+      "measured_value": true,
+      "uncertainty": null,
+      "message": "permanent_obstruction_present = True in image evidence - may be missed by the detector; verify"
+    }
+  ],
+  "assessment_summary": {
+    "profile": "ada_2010",
+    "profile_title": "2010 ADA Standards for Accessible Design (US)",
+    "counts": {
+      "POSSIBLE_ISSUE": 3
+    },
+    "statement": "Screening only. No compliance determination is made; flagged items and all unverified measurements require on-site verification by a qualified assessor."
+  },
+  "timing_ms": {
+    "decode": 8.5,
+    "detections": 4041.3,
+    "segmentation": 2824.5,
+    "depth": 854.4,
+    "masks": 1922.6,
+    "scale": 169.0,
+    "analysis": 57.9,
+    "total": 9974.4
+  },
+  "processed_at": "2026-11-13T12:41:15.933+00:00",
+  "annotated_image": "samples/measurement_demo/corridor_stirling_students/corridor_stirling_students_measured.jpg",
+  "json_path": "samples/measurement_demo/corridor_stirling_students/report.json",
+  "warnings": [
+    "no calibration/EXIF: assumed 26 mm-equivalent focal (+-15%)"
+  ]
+}

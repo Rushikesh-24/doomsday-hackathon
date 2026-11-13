@@ -1,0 +1,151 @@
+# Configurable accessibility rule profiles. Thresholds are SCREENING thresholds: the engine flags
+# potential issues; it never certifies compliance. Values marked null are not configured because
+# they could not be verified against the official text - fill them in from the standard you apply.
+#
+# measurement names refer to vision/measurement analyzers.
+# comparison: max -> issue if value > threshold; min -> issue if value < threshold;
+#             required -> issue if value is False
+
+default_profile: ada_2010
+
+profiles:
+  ada_2010:
+    title: "2010 ADA Standards for Accessible Design (US)"
+    source: "https://www.access-board.gov/ada/"
+    rules:
+      - id: ramp_running_slope
+        facility: ramp
+        measurement: running_slope_percent
+        comparison: max
+        threshold: 8.33            # 1:12, section 405.2
+        clause: "405.2"
+      - id: ramp_clear_width
+        facility: ramp
+        measurement: clear_width
+        comparison: min
+        threshold: 0.915           # 36 in, 405.5
+        unit: m
+        clause: "405.5"
+      - id: ramp_handrails
+        facility: ramp
+        measurement: handrail_present
+        comparison: required
+        clause: "405.8 (ramps with rise > 6 in)"
+        note: "Required only when rise > 150 mm; rise is checked when measured"
+      - id: stair_riser_max
+        facility: staircase
+        measurement: riser_height
+        comparison: max
+        threshold: 0.178           # 7 in, 504.2
+        unit: m
+        clause: "504.2"
+      - id: stair_riser_min
+        facility: staircase
+        measurement: riser_height
+        comparison: min
+        threshold: 0.102           # 4 in, 504.2
+        unit: m
+        clause: "504.2"
+      - id: stair_tread_min
+        facility: staircase
+        measurement: tread_depth
+        comparison: min
+        threshold: 0.279           # 11 in, 504.2
+        unit: m
+        clause: "504.2"
+      - id: stair_handrails
+        facility: staircase
+        measurement: handrail_present
+        comparison: required
+        clause: "504.6"
+      - id: stair_tactile
+        facility: staircase
+        measurement: tactile_warning_surface
+        comparison: required
+        clause: "not an ADA 2010 stair requirement - local/ISO 21542 practice"
+        severity: advisory
+      - id: door_clear_width
+        facility: door
+        measurement: clear_width_estimate
+        comparison: min
+        threshold: 0.815           # 32 in, 404.2.3
+        unit: m
+        clause: "404.2.3"
+      - id: route_clear_width
+        facility: [corridor, walkway]
+        measurement: clear_width
+        comparison: min
+        threshold: 0.915           # 36 in, 403.5.1
+        unit: m
+        clause: "403.5.1"
+      - id: route_available_clearance
+        facility: [corridor, walkway]
+        measurement: min_available_clearance
+        comparison: min
+        threshold: 0.815           # 32 in for max 24 in length (403.5.1 exception)
+        unit: m
+        optional: true             # only measured when an object stands on the path
+        clause: "403.5.1 exception"
+      - id: route_obstruction
+        facility: [corridor, walkway]
+        measurement: permanent_obstruction_present
+        comparison: forbidden
+        clause: "403.5 (clear width)"
+        severity: advisory
+
+  india_hg_2021:
+    title: "Harmonised Guidelines and Standards for Universal Accessibility in India 2021 (MoHUA)"
+    source: "https://divyangjan.depwd.gov.in/ (official PDF) - verify values before use"
+    rules:
+      - id: ramp_running_slope
+        facility: ramp
+        measurement: running_slope_percent
+        comparison: max
+        threshold: 8.33            # 1:12 (confirmed in secondary summaries of the guidelines)
+      - id: ramp_clear_width
+        facility: ramp
+        measurement: clear_width
+        comparison: min
+        threshold: 1.2             # 1200 mm (confirmed in secondary summaries)
+        unit: m
+      - id: ramp_handrails
+        facility: ramp
+        measurement: handrail_present
+        comparison: required
+      - id: stair_riser_max
+        facility: staircase
+        measurement: riser_height
+        comparison: max
+        threshold: null            # NOT VERIFIED - fill from official text
+        unit: m
+      - id: stair_tread_min
+        facility: staircase
+        measurement: tread_depth
+        comparison: min
+        threshold: null            # NOT VERIFIED - fill from official text
+        unit: m
+      - id: stair_handrails
+        facility: staircase
+        measurement: handrail_present
+        comparison: required
+      - id: stair_tactile
+        facility: staircase
+        measurement: tactile_warning_surface
+        comparison: required
+      - id: door_clear_width
+        facility: door
+        measurement: clear_width_estimate
+        comparison: min
+        threshold: null            # NOT VERIFIED - fill from official text
+        unit: m
+      - id: route_clear_width
+        facility: [corridor, walkway]
+        measurement: clear_width
+        comparison: min
+        threshold: null            # secondary sources disagree (900 / 1200 / 1500 mm) - verify
+        unit: m
+      - id: route_obstruction
+        facility: [corridor, walkway]
+        measurement: permanent_obstruction_present
+        comparison: forbidden
+        severity: advisory

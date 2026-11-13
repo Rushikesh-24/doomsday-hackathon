@@ -1,0 +1,1017 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "2ae86421c1ad",
+  "image": {
+    "name": "ramp_hull_museum.jpg",
+    "width": 1280,
+    "height": 853,
+    "format": "JPEG",
+    "channels": 3,
+    "exif_transposed": false
+  },
+  "model": {
+    "key": "campus_ensemble",
+    "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+    "version": "ensemble(owlv2_base + yolo11_coco)",
+    "source": "composed",
+    "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+    "device": "mps",
+    "weights_sha256": null,
+    "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+  },
+  "thresholds": {
+    "staircase": 0.15,
+    "ramp": 0.15,
+    "elevator": 0.15,
+    "door": 0.195,
+    "entrance_exit": 0.15,
+    "handrail": 0.15,
+    "tactile_paving": 0.15,
+    "corridor": 0.18,
+    "walkway": 0.18,
+    "accessibility_symbol": 0.3,
+    "signboard": 0.195,
+    "obstacle": 0.35,
+    "person": 0.35,
+    "wheelchair_user": 0.15,
+    "elevator_panel": 0.15
+  },
+  "detections": [
+    {
+      "id": "2ae86421c1ad-000",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.5785,
+      "bbox": {
+        "x1": 758.46,
+        "y1": 320.31,
+        "x2": 1277.04,
+        "y2": 651.92,
+        "x1n": 0.59255,
+        "y1n": 0.37551,
+        "x2n": 0.99769,
+        "y2n": 0.76427,
+        "width": 518.58,
+        "height": 331.61
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [],
+          "status": "not_detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-001",
+      "class_name": "staircase",
+      "category": "facility",
+      "confidence": 0.4482,
+      "bbox": {
+        "x1": 317.73,
+        "y1": 456.54,
+        "x2": 580.69,
+        "y2": 571.71,
+        "x1n": 0.24823,
+        "y1n": 0.53522,
+        "x2n": 0.45366,
+        "y2n": 0.67023,
+        "width": 262.96,
+        "height": 115.17
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "stairs",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "handrail_present": {
+          "value": false,
+          "status": "not_detected",
+          "method": "no handrail detection near stairs",
+          "note": "absence of a detection is not proof that no handrail exists",
+          "confidence": null
+        },
+        "handrail_ids": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "tactile_warning_surface": {
+          "value": true,
+          "status": "detected",
+          "method": "tactile paving detection at/near stairs",
+          "note": null,
+          "confidence": 0.16
+        },
+        "visible_step_count": {
+          "value": null,
+          "status": "not_determinable",
+          "method": "row profile of horizontal-edge energy",
+          "note": "edge pattern not regular enough (staircase region too small (<150px tall) to resolve steps)",
+          "confidence": 0.0
+        },
+        "riser_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Riser height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "tread_depth": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Tread depth cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "direction_up_or_down": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "ascending vs descending is ambiguous in 2D",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-002",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.3897,
+      "bbox": {
+        "x1": 782.97,
+        "y1": 359.82,
+        "x2": 1241.0,
+        "y2": 404.57,
+        "x1n": 0.61169,
+        "y1n": 0.42183,
+        "x2n": 0.96953,
+        "y2n": 0.47429,
+        "width": 458.03,
+        "height": 44.75
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [],
+          "status": "not_detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-003",
+      "class_name": "walkway",
+      "category": "navigation",
+      "confidence": 0.3556,
+      "bbox": {
+        "x1": 7.54,
+        "y1": 458.29,
+        "x2": 1269.19,
+        "y2": 851.45,
+        "x1n": 0.00589,
+        "y1n": 0.53727,
+        "x2n": 0.99155,
+        "y2n": 0.99818,
+        "width": 1261.65,
+        "height": 393.15
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "walkway",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "objects_on_path": {
+          "value": [
+            {
+              "id": "2ae86421c1ad-013",
+              "class": "obstacle",
+              "type": "barrier"
+            }
+          ],
+          "status": "detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "clear_width": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Clear path width cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "surface_condition": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-004",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.3308,
+      "bbox": {
+        "x1": 160.42,
+        "y1": 419.79,
+        "x2": 237.76,
+        "y2": 440.94,
+        "x1n": 0.12533,
+        "y1n": 0.49213,
+        "x2n": 0.18575,
+        "y2n": 0.51693,
+        "width": 77.34,
+        "height": 21.15
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [],
+          "status": "not_detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-005",
+      "class_name": "signboard",
+      "category": "signage",
+      "confidence": 0.267,
+      "bbox": {
+        "x1": 698.1,
+        "y1": 178.78,
+        "x2": 735.95,
+        "y2": 240.03,
+        "x1n": 0.54539,
+        "y1n": 0.20959,
+        "x2n": 0.57496,
+        "y2n": 0.28139,
+        "width": 37.86,
+        "height": 61.24
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "signboard",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "contains_accessibility_symbol": {
+          "value": false,
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "sign_kind": {
+          "value": "signboard",
+          "status": "detected",
+          "method": "matched text prompt",
+          "note": null,
+          "confidence": 0.267
+        },
+        "text_content": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "OCR not yet integrated (see DEVELOPMENT_STATUS.md)",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-006",
+      "class_name": "entrance_exit",
+      "category": "navigation",
+      "confidence": 0.2438,
+      "bbox": {
+        "x1": 152.1,
+        "y1": 347.35,
+        "x2": 249.09,
+        "y2": 503.98,
+        "x1n": 0.11883,
+        "y1n": 0.40721,
+        "x2n": 0.1946,
+        "y2n": 0.59084,
+        "width": 96.98,
+        "height": 156.63
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "building entrance",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "step_free_access_visible": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "door_ids": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "entrance_or_exit": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "needs signage text (OCR) or map context",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-007",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.2347,
+      "bbox": {
+        "x1": 786.94,
+        "y1": 396.5,
+        "x2": 1250.04,
+        "y2": 426.22,
+        "x1n": 0.6148,
+        "y1n": 0.46483,
+        "x2n": 0.97659,
+        "y2n": 0.49967,
+        "width": 463.09,
+        "height": 29.72
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [],
+          "status": "not_detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-008",
+      "class_name": "entrance_exit",
+      "category": "navigation",
+      "confidence": 0.2347,
+      "bbox": {
+        "x1": 914.35,
+        "y1": 10.04,
+        "x2": 995.99,
+        "y2": 393.81,
+        "x1n": 0.71434,
+        "y1n": 0.01177,
+        "x2n": 0.77811,
+        "y2n": 0.46168,
+        "width": 81.63,
+        "height": 383.78
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "doorway entrance",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "step_free_access_visible": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "door_ids": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "entrance_or_exit": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "needs signage text (OCR) or map context",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-009",
+      "class_name": "ramp",
+      "category": "facility",
+      "confidence": 0.2051,
+      "bbox": {
+        "x1": 628.8,
+        "y1": 466.59,
+        "x2": 770.51,
+        "y2": 505.77,
+        "x1n": 0.49125,
+        "y1n": 0.547,
+        "x2n": 0.60196,
+        "y2n": 0.59293,
+        "width": 141.72,
+        "height": 39.18
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "wheelchair ramp",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "image_plane_edge_angle_deg": {
+          "value": -25.8,
+          "status": "estimated",
+          "method": "length-weighted median of Hough line angles inside ramp box",
+          "note": "angle in the IMAGE plane (perspective-distorted), not the ramp gradient",
+          "confidence": 0.2
+        },
+        "approx_orientation": {
+          "value": "edges rise toward image left",
+          "status": "estimated",
+          "method": "sign of dominant edge angle",
+          "note": null,
+          "confidence": null
+        },
+        "handrail_present": {
+          "value": false,
+          "status": "not_detected",
+          "method": null,
+          "note": "absence of detection is not proof",
+          "confidence": null
+        },
+        "handrail_ids": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "gradient_ratio": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Ramp gradient (e.g. 1:12) cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "clear_width": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Clear width cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "landing_present": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-010",
+      "class_name": "entrance_exit",
+      "category": "navigation",
+      "confidence": 0.1851,
+      "bbox": {
+        "x1": 958.72,
+        "y1": 31.94,
+        "x2": 999.96,
+        "y2": 354.94,
+        "x1n": 0.749,
+        "y1n": 0.03745,
+        "x2n": 0.78122,
+        "y2n": 0.41611,
+        "width": 41.24,
+        "height": 323.0
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "building entrance",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "step_free_access_visible": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "door_ids": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "entrance_or_exit": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "needs signage text (OCR) or map context",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-011",
+      "class_name": "entrance_exit",
+      "category": "navigation",
+      "confidence": 0.1767,
+      "bbox": {
+        "x1": 457.94,
+        "y1": 235.96,
+        "x2": 510.45,
+        "y2": 332.94,
+        "x1n": 0.35777,
+        "y1n": 0.27662,
+        "x2n": 0.39879,
+        "y2n": 0.39032,
+        "width": 52.51,
+        "height": 96.98
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "building entrance",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "step_free_access_visible": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "door_ids": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "entrance_or_exit": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "needs signage text (OCR) or map context",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-012",
+      "class_name": "entrance_exit",
+      "category": "navigation",
+      "confidence": 0.1668,
+      "bbox": {
+        "x1": 698.12,
+        "y1": 181.46,
+        "x2": 735.53,
+        "y2": 347.32,
+        "x1n": 0.54541,
+        "y1n": 0.21273,
+        "x2n": 0.57463,
+        "y2n": 0.40717,
+        "width": 37.4,
+        "height": 165.86
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "building entrance",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "step_free_access_visible": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "door_ids": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "entrance_or_exit": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "needs signage text (OCR) or map context",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-013",
+      "class_name": "obstacle",
+      "category": "obstacle",
+      "confidence": 0.1666,
+      "bbox": {
+        "x1": 4.35,
+        "y1": 343.77,
+        "x2": 609.79,
+        "y2": 521.8,
+        "x1n": 0.0034,
+        "y1n": 0.40301,
+        "x2n": 0.47639,
+        "y2n": 0.61173,
+        "width": 605.44,
+        "height": 178.04
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "barrier",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "obstacle_type": {
+          "value": "barrier",
+          "status": "detected",
+          "method": "label from owlv2_base",
+          "note": null,
+          "confidence": 0.167
+        },
+        "relative_to_walkway": {
+          "value": {
+            "path_id": "2ae86421c1ad-003",
+            "path_class": "walkway",
+            "lateral_position": "left side"
+          },
+          "status": "estimated",
+          "method": "ground-contact point inside path box",
+          "note": null,
+          "confidence": null
+        },
+        "image_width_fraction_of_path": {
+          "value": 0.48,
+          "status": "estimated",
+          "method": "obstacle box width / path box width (image plane)",
+          "note": "not a metric clear-width; perspective affects it",
+          "confidence": null
+        },
+        "potential_obstruction": {
+          "value": true,
+          "status": "estimated",
+          "method": "on path and (centred or >=15% of path width)",
+          "note": null,
+          "confidence": null
+        },
+        "remaining_clear_width": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Remaining clear width cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-014",
+      "class_name": "tactile_paving",
+      "category": "facility",
+      "confidence": 0.1597,
+      "bbox": {
+        "x1": 172.91,
+        "y1": 521.29,
+        "x2": 318.61,
+        "y2": 574.05,
+        "x1n": 0.13508,
+        "y1n": 0.61112,
+        "x2n": 0.24892,
+        "y2n": 0.67298,
+        "width": 145.71,
+        "height": 52.76
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "tactile paving",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "high_contrast_yellow": {
+          "value": false,
+          "status": "estimated",
+          "method": "HSV yellow pixel fraction in box",
+          "note": "yellow fraction=0.00",
+          "confidence": 1.0
+        },
+        "pattern_type": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "warning (blister) vs guidance (bar) needs a fine-tuned classifier",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    },
+    {
+      "id": "2ae86421c1ad-015",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.1595,
+      "bbox": {
+        "x1": 634.75,
+        "y1": 371.4,
+        "x2": 671.62,
+        "y2": 454.79,
+        "x1n": 0.4959,
+        "y1n": 0.4354,
+        "x2n": 0.5247,
+        "y2n": 0.53316,
+        "width": 36.87,
+        "height": 83.39
+      },
+      "source": {
+        "name": "ramp_hull_museum.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [],
+          "status": "not_detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:21.518+00:00"
+    }
+  ],
+  "counts_by_class": {
+    "handrail": 5,
+    "staircase": 1,
+    "walkway": 1,
+    "signboard": 1,
+    "entrance_exit": 5,
+    "ramp": 1,
+    "obstacle": 1,
+    "tactile_paving": 1
+  },
+  "findings": [
+    {
+      "code": "STAIRS_WITHOUT_VISIBLE_HANDRAIL",
+      "message": "Staircase(s) detected with no handrail detection nearby (verify on site).",
+      "severity": "warning",
+      "detection_ids": [
+        "2ae86421c1ad-001"
+      ]
+    },
+    {
+      "code": "STEP_FREE_FACILITY_VISIBLE",
+      "message": "Ramp or lift detected in view.",
+      "severity": "info",
+      "detection_ids": [
+        "2ae86421c1ad-009"
+      ]
+    },
+    {
+      "code": "POTENTIAL_PATH_OBSTRUCTION",
+      "message": "Object(s) located on a detected walkway/corridor may obstruct the route.",
+      "severity": "warning",
+      "detection_ids": [
+        "2ae86421c1ad-013"
+      ]
+    },
+    {
+      "code": "TACTILE_PAVING_PRESENT",
+      "message": "Tactile paving detected.",
+      "severity": "info",
+      "detection_ids": [
+        "2ae86421c1ad-014"
+      ]
+    }
+  ],
+  "timing": {
+    "preprocess_ms": 0.0,
+    "inference_ms": 951.7,
+    "postprocess_ms": 0.4,
+    "attributes_ms": 0.5,
+    "total_ms": 952.6
+  },
+  "processed_at": "2026-11-13T11:12:21.518+00:00",
+  "annotated_image": "samples/demo_outputs/ramp_hull_museum_annotated.jpg",
+  "json_path": "samples/demo_outputs/ramp_hull_museum.json",
+  "warnings": []
+}

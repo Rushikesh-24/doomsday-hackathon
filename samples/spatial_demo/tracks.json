@@ -1,0 +1,5984 @@
+{
+ "method": "iou_centre",
+ "frames": 156,
+ "detections": 354,
+ "tracks": [
+  {
+   "track_id": 1,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_000010.jpg",
+     "frame_index": 10,
+     "t": 0.334,
+     "detection_id": "03ca751272bc-000",
+     "bbox": [
+      320.5,
+      107.81,
+      633.68,
+      531.04
+     ],
+     "confidence": 0.2519,
+     "prompt": "footpath"
+    }
+   ],
+   "first_t": 0.334,
+   "last_t": 0.334,
+   "n_observations": 1,
+   "max_confidence": 0.2519,
+   "mean_confidence": 0.2519,
+   "track_confidence": 0.1511,
+   "confirmed": false
+  },
+  {
+   "track_id": 2,
+   "class_name": "staircase",
+   "observations": [
+    {
+     "frame": "frame_000020.jpg",
+     "frame_index": 20,
+     "t": 0.668,
+     "detection_id": "8ee1a42698e8-000",
+     "bbox": [
+      313.67,
+      89.13,
+      634.28,
+      536.96
+     ],
+     "confidence": 0.2742,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000035.jpg",
+     "frame_index": 35,
+     "t": 1.17,
+     "detection_id": "e350d8bc2b04-000",
+     "bbox": [
+      316.65,
+      117.47,
+      641.56,
+      536.2
+     ],
+     "confidence": 0.2693,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000050.jpg",
+     "frame_index": 50,
+     "t": 1.671,
+     "detection_id": "763ca8feafb8-000",
+     "bbox": [
+      315.45,
+      106.77,
+      594.03,
+      537.48
+     ],
+     "confidence": 0.363,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000065.jpg",
+     "frame_index": 65,
+     "t": 2.172,
+     "detection_id": "22f8d5fec0de-000",
+     "bbox": [
+      273.99,
+      79.04,
+      579.24,
+      534.88
+     ],
+     "confidence": 0.426,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000080.jpg",
+     "frame_index": 80,
+     "t": 2.674,
+     "detection_id": "f2ba4be16ad7-000",
+     "bbox": [
+      259.78,
+      127.98,
+      520.92,
+      532.48
+     ],
+     "confidence": 0.2286,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000100.jpg",
+     "frame_index": 100,
+     "t": 3.342,
+     "detection_id": "402c634149d1-000",
+     "bbox": [
+      256.48,
+      127.16,
+      539.7,
+      537.35
+     ],
+     "confidence": 0.4372,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000115.jpg",
+     "frame_index": 115,
+     "t": 3.844,
+     "detection_id": "eefa1208355a-000",
+     "bbox": [
+      304.18,
+      139.75,
+      552.17,
+      530.23
+     ],
+     "confidence": 0.4863,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000125.jpg",
+     "frame_index": 125,
+     "t": 4.178,
+     "detection_id": "03681cf92d75-000",
+     "bbox": [
+      311.47,
+      129.53,
+      572.75,
+      517.94
+     ],
+     "confidence": 0.7205,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000135.jpg",
+     "frame_index": 135,
+     "t": 4.512,
+     "detection_id": "5cafe77a8c3b-000",
+     "bbox": [
+      293.38,
+      124.91,
+      533.07,
+      526.84
+     ],
+     "confidence": 0.6335,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000150.jpg",
+     "frame_index": 150,
+     "t": 5.013,
+     "detection_id": "0f96ae2a88d7-000",
+     "bbox": [
+      245.63,
+      105.8,
+      529.28,
+      530.18
+     ],
+     "confidence": 0.4382,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000160.jpg",
+     "frame_index": 160,
+     "t": 5.348,
+     "detection_id": "2deb507ab9b4-000",
+     "bbox": [
+      242.17,
+      113.52,
+      535.22,
+      528.75
+     ],
+     "confidence": 0.7773,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000185.jpg",
+     "frame_index": 185,
+     "t": 6.183,
+     "detection_id": "b84e876ed7c5-000",
+     "bbox": [
+      275.19,
+      161.12,
+      574.86,
+      534.36
+     ],
+     "confidence": 0.7388,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000200.jpg",
+     "frame_index": 200,
+     "t": 6.684,
+     "detection_id": "29c443f76ca0-000",
+     "bbox": [
+      248.84,
+      149.27,
+      543.14,
+      535.83
+     ],
+     "confidence": 0.7139,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000210.jpg",
+     "frame_index": 210,
+     "t": 7.019,
+     "detection_id": "67f00ffbc19a-000",
+     "bbox": [
+      230.91,
+      137.4,
+      586.89,
+      534.56
+     ],
+     "confidence": 0.6573,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000225.jpg",
+     "frame_index": 225,
+     "t": 7.52,
+     "detection_id": "d186c0819dba-000",
+     "bbox": [
+      254.68,
+      161.64,
+      553.88,
+      539.68
+     ],
+     "confidence": 0.7553,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000235.jpg",
+     "frame_index": 235,
+     "t": 7.854,
+     "detection_id": "393ed72fda4f-000",
+     "bbox": [
+      275.67,
+      164.02,
+      613.92,
+      535.95
+     ],
+     "confidence": 0.5441,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000245.jpg",
+     "frame_index": 245,
+     "t": 8.189,
+     "detection_id": "aaec66b8c9e6-001",
+     "bbox": [
+      250.34,
+      159.99,
+      587.34,
+      539.56
+     ],
+     "confidence": 0.3217,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000295.jpg",
+     "frame_index": 295,
+     "t": 9.86,
+     "detection_id": "c81457319b74-000",
+     "bbox": [
+      266.61,
+      157.63,
+      605.59,
+      536.55
+     ],
+     "confidence": 0.7541,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000310.jpg",
+     "frame_index": 310,
+     "t": 10.361,
+     "detection_id": "b4865f5f57a6-000",
+     "bbox": [
+      262.44,
+      153.53,
+      629.41,
+      535.43
+     ],
+     "confidence": 0.8205,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000320.jpg",
+     "frame_index": 320,
+     "t": 10.695,
+     "detection_id": "a62788d56808-000",
+     "bbox": [
+      306.83,
+      179.25,
+      589.56,
+      530.95
+     ],
+     "confidence": 0.8371,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000325.jpg",
+     "frame_index": 325,
+     "t": 10.862,
+     "detection_id": "b4795e4dec56-000",
+     "bbox": [
+      276.01,
+      190.28,
+      609.19,
+      539.65
+     ],
+     "confidence": 0.8553,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000340.jpg",
+     "frame_index": 340,
+     "t": 11.364,
+     "detection_id": "56c6e3132b02-000",
+     "bbox": [
+      295.12,
+      235.05,
+      598.3,
+      525.86
+     ],
+     "confidence": 0.7875,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000345.jpg",
+     "frame_index": 345,
+     "t": 11.531,
+     "detection_id": "6f0dff5a7dff-000",
+     "bbox": [
+      278.2,
+      204.18,
+      602.64,
+      527.67
+     ],
+     "confidence": 0.5991,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000360.jpg",
+     "frame_index": 360,
+     "t": 12.032,
+     "detection_id": "c08423b6c985-000",
+     "bbox": [
+      257.22,
+      218.24,
+      579.75,
+      532.05
+     ],
+     "confidence": 0.7987,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000370.jpg",
+     "frame_index": 370,
+     "t": 12.366,
+     "detection_id": "e5b17575ad4b-000",
+     "bbox": [
+      273.47,
+      209.41,
+      606.13,
+      534.97
+     ],
+     "confidence": 0.8647,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000385.jpg",
+     "frame_index": 385,
+     "t": 12.868,
+     "detection_id": "49f40b03428e-000",
+     "bbox": [
+      253.58,
+      322.84,
+      588.46,
+      518.92
+     ],
+     "confidence": 0.5399,
+     "prompt": "stairs"
+    }
+   ],
+   "first_t": 0.668,
+   "last_t": 12.868,
+   "n_observations": 26,
+   "max_confidence": 0.8647,
+   "mean_confidence": 0.6016,
+   "track_confidence": 0.6016,
+   "confirmed": true
+  },
+  {
+   "track_id": 3,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000065.jpg",
+     "frame_index": 65,
+     "t": 2.172,
+     "detection_id": "22f8d5fec0de-001",
+     "bbox": [
+      42.76,
+      67.28,
+      466.86,
+      539.43
+     ],
+     "confidence": 0.2307,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000080.jpg",
+     "frame_index": 80,
+     "t": 2.674,
+     "detection_id": "f2ba4be16ad7-001",
+     "bbox": [
+      72.13,
+      113.28,
+      444.84,
+      538.25
+     ],
+     "confidence": 0.2118,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000090.jpg",
+     "frame_index": 90,
+     "t": 3.008,
+     "detection_id": "385e11cae248-001",
+     "bbox": [
+      30.17,
+      116.04,
+      456.9,
+      542.0
+     ],
+     "confidence": 0.2454,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000100.jpg",
+     "frame_index": 100,
+     "t": 3.342,
+     "detection_id": "402c634149d1-001",
+     "bbox": [
+      40.1,
+      94.33,
+      440.8,
+      541.67
+     ],
+     "confidence": 0.248,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000115.jpg",
+     "frame_index": 115,
+     "t": 3.844,
+     "detection_id": "eefa1208355a-001",
+     "bbox": [
+      44.86,
+      108.05,
+      471.71,
+      539.69
+     ],
+     "confidence": 0.2332,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000125.jpg",
+     "frame_index": 125,
+     "t": 4.178,
+     "detection_id": "03681cf92d75-001",
+     "bbox": [
+      44.28,
+      97.87,
+      461.62,
+      540.85
+     ],
+     "confidence": 0.2956,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000135.jpg",
+     "frame_index": 135,
+     "t": 4.512,
+     "detection_id": "5cafe77a8c3b-001",
+     "bbox": [
+      47.06,
+      98.87,
+      411.25,
+      540.88
+     ],
+     "confidence": 0.2681,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000150.jpg",
+     "frame_index": 150,
+     "t": 5.013,
+     "detection_id": "0f96ae2a88d7-001",
+     "bbox": [
+      18.85,
+      77.8,
+      453.54,
+      540.84
+     ],
+     "confidence": 0.2637,
+     "prompt": "stair railing"
+    },
+    {
+     "frame": "frame_000160.jpg",
+     "frame_index": 160,
+     "t": 5.348,
+     "detection_id": "2deb507ab9b4-001",
+     "bbox": [
+      39.91,
+      86.37,
+      422.42,
+      541.16
+     ],
+     "confidence": 0.5148,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000175.jpg",
+     "frame_index": 175,
+     "t": 5.849,
+     "detection_id": "b07615164f1e-001",
+     "bbox": [
+      57.44,
+      132.55,
+      430.9,
+      542.0
+     ],
+     "confidence": 0.3142,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000185.jpg",
+     "frame_index": 185,
+     "t": 6.183,
+     "detection_id": "b84e876ed7c5-001",
+     "bbox": [
+      90.08,
+      126.36,
+      423.64,
+      541.06
+     ],
+     "confidence": 0.2662,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000200.jpg",
+     "frame_index": 200,
+     "t": 6.684,
+     "detection_id": "29c443f76ca0-001",
+     "bbox": [
+      13.34,
+      105.3,
+      407.34,
+      541.27
+     ],
+     "confidence": 0.2747,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000210.jpg",
+     "frame_index": 210,
+     "t": 7.019,
+     "detection_id": "67f00ffbc19a-001",
+     "bbox": [
+      16.93,
+      102.96,
+      428.92,
+      542.0
+     ],
+     "confidence": 0.404,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000225.jpg",
+     "frame_index": 225,
+     "t": 7.52,
+     "detection_id": "d186c0819dba-001",
+     "bbox": [
+      34.0,
+      124.16,
+      385.63,
+      540.91
+     ],
+     "confidence": 0.5033,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000235.jpg",
+     "frame_index": 235,
+     "t": 7.854,
+     "detection_id": "393ed72fda4f-001",
+     "bbox": [
+      70.41,
+      139.75,
+      414.34,
+      540.51
+     ],
+     "confidence": 0.4232,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000245.jpg",
+     "frame_index": 245,
+     "t": 8.189,
+     "detection_id": "aaec66b8c9e6-000",
+     "bbox": [
+      48.63,
+      115.16,
+      386.69,
+      538.41
+     ],
+     "confidence": 0.4605,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000265.jpg",
+     "frame_index": 265,
+     "t": 8.857,
+     "detection_id": "2ca950504aca-001",
+     "bbox": [
+      38.64,
+      113.7,
+      419.28,
+      541.1
+     ],
+     "confidence": 0.3872,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000280.jpg",
+     "frame_index": 280,
+     "t": 9.358,
+     "detection_id": "d6cf935cb6cb-001",
+     "bbox": [
+      0.2,
+      76.48,
+      450.79,
+      541.28
+     ],
+     "confidence": 0.3473,
+     "prompt": "stair railing"
+    },
+    {
+     "frame": "frame_000285.jpg",
+     "frame_index": 285,
+     "t": 9.525,
+     "detection_id": "2a676478faeb-001",
+     "bbox": [
+      1.28,
+      47.34,
+      458.37,
+      542.0
+     ],
+     "confidence": 0.3782,
+     "prompt": "stair railing"
+    },
+    {
+     "frame": "frame_000295.jpg",
+     "frame_index": 295,
+     "t": 9.86,
+     "detection_id": "c81457319b74-001",
+     "bbox": [
+      3.14,
+      89.39,
+      395.53,
+      542.0
+     ],
+     "confidence": 0.4458,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000310.jpg",
+     "frame_index": 310,
+     "t": 10.361,
+     "detection_id": "b4865f5f57a6-001",
+     "bbox": [
+      3.2,
+      73.82,
+      388.61,
+      542.0
+     ],
+     "confidence": 0.4917,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000320.jpg",
+     "frame_index": 320,
+     "t": 10.695,
+     "detection_id": "a62788d56808-001",
+     "bbox": [
+      12.2,
+      78.04,
+      520.0,
+      541.39
+     ],
+     "confidence": 0.4632,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000325.jpg",
+     "frame_index": 325,
+     "t": 10.862,
+     "detection_id": "b4795e4dec56-001",
+     "bbox": [
+      29.83,
+      80.99,
+      542.25,
+      542.0
+     ],
+     "confidence": 0.3305,
+     "prompt": "stair railing"
+    },
+    {
+     "frame": "frame_000340.jpg",
+     "frame_index": 340,
+     "t": 11.364,
+     "detection_id": "56c6e3132b02-001",
+     "bbox": [
+      27.06,
+      113.4,
+      521.47,
+      542.0
+     ],
+     "confidence": 0.3856,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000345.jpg",
+     "frame_index": 345,
+     "t": 11.531,
+     "detection_id": "6f0dff5a7dff-001",
+     "bbox": [
+      8.43,
+      58.33,
+      496.48,
+      540.68
+     ],
+     "confidence": 0.5817,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000360.jpg",
+     "frame_index": 360,
+     "t": 12.032,
+     "detection_id": "c08423b6c985-002",
+     "bbox": [
+      3.97,
+      68.22,
+      493.6,
+      541.57
+     ],
+     "confidence": 0.3702,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000370.jpg",
+     "frame_index": 370,
+     "t": 12.366,
+     "detection_id": "e5b17575ad4b-002",
+     "bbox": [
+      17.08,
+      70.71,
+      519.04,
+      540.18
+     ],
+     "confidence": 0.3036,
+     "prompt": "stair railing"
+    },
+    {
+     "frame": "frame_000385.jpg",
+     "frame_index": 385,
+     "t": 12.868,
+     "detection_id": "49f40b03428e-002",
+     "bbox": [
+      2.17,
+      97.53,
+      460.81,
+      540.93
+     ],
+     "confidence": 0.4307,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000390.jpg",
+     "frame_index": 390,
+     "t": 13.035,
+     "detection_id": "fb2a5ab5c692-002",
+     "bbox": [
+      1.98,
+      90.37,
+      627.66,
+      542.0
+     ],
+     "confidence": 0.2127,
+     "prompt": "stair railing"
+    },
+    {
+     "frame": "frame_000410.jpg",
+     "frame_index": 410,
+     "t": 13.703,
+     "detection_id": "1e854b388bee-003",
+     "bbox": [
+      0.0,
+      136.93,
+      886.92,
+      541.92
+     ],
+     "confidence": 0.2638,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000420.jpg",
+     "frame_index": 420,
+     "t": 14.037,
+     "detection_id": "1d9917d15829-003",
+     "bbox": [
+      11.6,
+      90.78,
+      959.46,
+      539.26
+     ],
+     "confidence": 0.2218,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000430.jpg",
+     "frame_index": 430,
+     "t": 14.372,
+     "detection_id": "c4c6096ecda2-000",
+     "bbox": [
+      6.29,
+      119.68,
+      955.75,
+      540.96
+     ],
+     "confidence": 0.4124,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000435.jpg",
+     "frame_index": 435,
+     "t": 14.539,
+     "detection_id": "10a958671973-002",
+     "bbox": [
+      12.15,
+      151.91,
+      954.85,
+      541.2
+     ],
+     "confidence": 0.2999,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000450.jpg",
+     "frame_index": 450,
+     "t": 15.04,
+     "detection_id": "30677a300cb6-000",
+     "bbox": [
+      9.57,
+      210.32,
+      959.49,
+      540.34
+     ],
+     "confidence": 0.2873,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 2.172,
+   "last_t": 15.04,
+   "n_observations": 34,
+   "max_confidence": 0.5817,
+   "mean_confidence": 0.3462,
+   "track_confidence": 0.3462,
+   "confirmed": true
+  },
+  {
+   "track_id": 4,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_000090.jpg",
+     "frame_index": 90,
+     "t": 3.008,
+     "detection_id": "385e11cae248-000",
+     "bbox": [
+      282.68,
+      143.04,
+      533.09,
+      524.95
+     ],
+     "confidence": 0.3861,
+     "prompt": "footpath"
+    }
+   ],
+   "first_t": 3.008,
+   "last_t": 3.008,
+   "n_observations": 1,
+   "max_confidence": 0.3861,
+   "mean_confidence": 0.3861,
+   "track_confidence": 0.2317,
+   "confirmed": false
+  },
+  {
+   "track_id": 5,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_000175.jpg",
+     "frame_index": 175,
+     "t": 5.849,
+     "detection_id": "b07615164f1e-000",
+     "bbox": [
+      269.24,
+      170.63,
+      551.34,
+      532.32
+     ],
+     "confidence": 0.3208,
+     "prompt": "footpath"
+    }
+   ],
+   "first_t": 5.849,
+   "last_t": 5.849,
+   "n_observations": 1,
+   "max_confidence": 0.3208,
+   "mean_confidence": 0.3208,
+   "track_confidence": 0.1925,
+   "confirmed": false
+  },
+  {
+   "track_id": 6,
+   "class_name": "ramp",
+   "observations": [
+    {
+     "frame": "frame_000260.jpg",
+     "frame_index": 260,
+     "t": 8.69,
+     "detection_id": "d1c7ea9a7de8-000",
+     "bbox": [
+      28.77,
+      123.48,
+      411.64,
+      540.63
+     ],
+     "confidence": 0.4642,
+     "prompt": "sloped ramp"
+    }
+   ],
+   "first_t": 8.69,
+   "last_t": 8.69,
+   "n_observations": 1,
+   "max_confidence": 0.4642,
+   "mean_confidence": 0.4642,
+   "track_confidence": 0.2785,
+   "confirmed": false
+  },
+  {
+   "track_id": 7,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_000260.jpg",
+     "frame_index": 260,
+     "t": 8.69,
+     "detection_id": "d1c7ea9a7de8-001",
+     "bbox": [
+      317.45,
+      177.27,
+      554.9,
+      537.15
+     ],
+     "confidence": 0.4062,
+     "prompt": "footpath"
+    },
+    {
+     "frame": "frame_000265.jpg",
+     "frame_index": 265,
+     "t": 8.857,
+     "detection_id": "2ca950504aca-000",
+     "bbox": [
+      316.1,
+      168.89,
+      549.43,
+      534.37
+     ],
+     "confidence": 0.5579,
+     "prompt": "footpath"
+    },
+    {
+     "frame": "frame_000280.jpg",
+     "frame_index": 280,
+     "t": 9.358,
+     "detection_id": "d6cf935cb6cb-000",
+     "bbox": [
+      303.71,
+      140.64,
+      597.35,
+      525.94
+     ],
+     "confidence": 0.4789,
+     "prompt": "footpath"
+    },
+    {
+     "frame": "frame_000285.jpg",
+     "frame_index": 285,
+     "t": 9.525,
+     "detection_id": "2a676478faeb-000",
+     "bbox": [
+      265.2,
+      126.86,
+      600.29,
+      538.41
+     ],
+     "confidence": 0.5549,
+     "prompt": "footpath"
+    }
+   ],
+   "first_t": 8.69,
+   "last_t": 9.525,
+   "n_observations": 4,
+   "max_confidence": 0.5579,
+   "mean_confidence": 0.4995,
+   "track_confidence": 0.4495,
+   "confirmed": true
+  },
+  {
+   "track_id": 8,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000265.jpg",
+     "frame_index": 265,
+     "t": 8.857,
+     "detection_id": "2ca950504aca-002",
+     "bbox": [
+      329.07,
+      96.44,
+      472.81,
+      194.38
+     ],
+     "confidence": 0.2277,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000280.jpg",
+     "frame_index": 280,
+     "t": 9.358,
+     "detection_id": "d6cf935cb6cb-002",
+     "bbox": [
+      365.54,
+      75.09,
+      471.64,
+      167.42
+     ],
+     "confidence": 0.2836,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000285.jpg",
+     "frame_index": 285,
+     "t": 9.525,
+     "detection_id": "2a676478faeb-002",
+     "bbox": [
+      309.11,
+      42.62,
+      441.21,
+      147.63
+     ],
+     "confidence": 0.1782,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000310.jpg",
+     "frame_index": 310,
+     "t": 10.361,
+     "detection_id": "b4865f5f57a6-003",
+     "bbox": [
+      324.96,
+      61.86,
+      460.15,
+      197.99
+     ],
+     "confidence": 0.2379,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000320.jpg",
+     "frame_index": 320,
+     "t": 10.695,
+     "detection_id": "a62788d56808-003",
+     "bbox": [
+      316.47,
+      74.1,
+      500.79,
+      255.16
+     ],
+     "confidence": 0.2165,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000325.jpg",
+     "frame_index": 325,
+     "t": 10.862,
+     "detection_id": "b4795e4dec56-003",
+     "bbox": [
+      297.72,
+      79.01,
+      492.87,
+      259.96
+     ],
+     "confidence": 0.2012,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000360.jpg",
+     "frame_index": 360,
+     "t": 12.032,
+     "detection_id": "c08423b6c985-003",
+     "bbox": [
+      292.64,
+      75.35,
+      483.6,
+      343.45
+     ],
+     "confidence": 0.234,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000390.jpg",
+     "frame_index": 390,
+     "t": 13.035,
+     "detection_id": "fb2a5ab5c692-003",
+     "bbox": [
+      206.76,
+      95.32,
+      428.22,
+      236.6
+     ],
+     "confidence": 0.1591,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 8.857,
+   "last_t": 13.035,
+   "n_observations": 8,
+   "max_confidence": 0.2836,
+   "mean_confidence": 0.2173,
+   "track_confidence": 0.2173,
+   "confirmed": true
+  },
+  {
+   "track_id": 9,
+   "class_name": "accessibility_symbol",
+   "observations": [
+    {
+     "frame": "frame_000295.jpg",
+     "frame_index": 295,
+     "t": 9.86,
+     "detection_id": "c81457319b74-002",
+     "bbox": [
+      293.95,
+      60.86,
+      341.02,
+      103.41
+     ],
+     "confidence": 0.3536,
+     "prompt": "accessibility sign"
+    }
+   ],
+   "first_t": 9.86,
+   "last_t": 9.86,
+   "n_observations": 1,
+   "max_confidence": 0.3536,
+   "mean_confidence": 0.3536,
+   "track_confidence": 0.2122,
+   "confirmed": false
+  },
+  {
+   "track_id": 10,
+   "class_name": "signboard",
+   "observations": [
+    {
+     "frame": "frame_000310.jpg",
+     "frame_index": 310,
+     "t": 10.361,
+     "detection_id": "b4865f5f57a6-002",
+     "bbox": [
+      277.49,
+      48.0,
+      328.32,
+      94.66
+     ],
+     "confidence": 0.2762,
+     "prompt": "exit sign"
+    },
+    {
+     "frame": "frame_000360.jpg",
+     "frame_index": 360,
+     "t": 12.032,
+     "detection_id": "c08423b6c985-001",
+     "bbox": [
+      235.75,
+      46.95,
+      308.15,
+      110.08
+     ],
+     "confidence": 0.3875,
+     "prompt": "directional sign"
+    },
+    {
+     "frame": "frame_000370.jpg",
+     "frame_index": 370,
+     "t": 12.366,
+     "detection_id": "e5b17575ad4b-001",
+     "bbox": [
+      215.79,
+      47.97,
+      296.75,
+      118.32
+     ],
+     "confidence": 0.4759,
+     "prompt": "exit sign"
+    }
+   ],
+   "first_t": 10.361,
+   "last_t": 12.366,
+   "n_observations": 3,
+   "max_confidence": 0.4759,
+   "mean_confidence": 0.3799,
+   "track_confidence": 0.3039,
+   "confirmed": true
+  },
+  {
+   "track_id": 11,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000310.jpg",
+     "frame_index": 310,
+     "t": 10.361,
+     "detection_id": "b4865f5f57a6-004",
+     "bbox": [
+      346.05,
+      105.65,
+      457.12,
+      175.72
+     ],
+     "confidence": 0.156,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000360.jpg",
+     "frame_index": 360,
+     "t": 12.032,
+     "detection_id": "c08423b6c985-004",
+     "bbox": [
+      321.14,
+      129.27,
+      477.12,
+      237.9
+     ],
+     "confidence": 0.1627,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000370.jpg",
+     "frame_index": 370,
+     "t": 12.366,
+     "detection_id": "e5b17575ad4b-004",
+     "bbox": [
+      320.64,
+      134.3,
+      479.62,
+      268.51
+     ],
+     "confidence": 0.1721,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 10.361,
+   "last_t": 12.366,
+   "n_observations": 3,
+   "max_confidence": 0.1721,
+   "mean_confidence": 0.1636,
+   "track_confidence": 0.1309,
+   "confirmed": true
+  },
+  {
+   "track_id": 12,
+   "class_name": "signboard",
+   "observations": [
+    {
+     "frame": "frame_000320.jpg",
+     "frame_index": 320,
+     "t": 10.695,
+     "detection_id": "a62788d56808-002",
+     "bbox": [
+      309.14,
+      71.88,
+      362.59,
+      120.23
+     ],
+     "confidence": 0.2848,
+     "prompt": "exit sign"
+    },
+    {
+     "frame": "frame_000325.jpg",
+     "frame_index": 325,
+     "t": 10.862,
+     "detection_id": "b4795e4dec56-002",
+     "bbox": [
+      292.55,
+      78.38,
+      350.91,
+      128.12
+     ],
+     "confidence": 0.2375,
+     "prompt": "exit sign"
+    },
+    {
+     "frame": "frame_000340.jpg",
+     "frame_index": 340,
+     "t": 11.364,
+     "detection_id": "56c6e3132b02-002",
+     "bbox": [
+      299.95,
+      108.32,
+      361.31,
+      160.75
+     ],
+     "confidence": 0.3641,
+     "prompt": "exit sign"
+    }
+   ],
+   "first_t": 10.695,
+   "last_t": 11.364,
+   "n_observations": 3,
+   "max_confidence": 0.3641,
+   "mean_confidence": 0.2955,
+   "track_confidence": 0.2364,
+   "confirmed": true
+  },
+  {
+   "track_id": 13,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000370.jpg",
+     "frame_index": 370,
+     "t": 12.366,
+     "detection_id": "e5b17575ad4b-003",
+     "bbox": [
+      18.59,
+      136.66,
+      308.29,
+      540.9
+     ],
+     "confidence": 0.258,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000405.jpg",
+     "frame_index": 405,
+     "t": 13.536,
+     "detection_id": "db916f3888f8-001",
+     "bbox": [
+      0.68,
+      164.26,
+      459.61,
+      539.39
+     ],
+     "confidence": 0.5186,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000410.jpg",
+     "frame_index": 410,
+     "t": 13.703,
+     "detection_id": "1e854b388bee-001",
+     "bbox": [
+      3.54,
+      146.14,
+      445.07,
+      540.09
+     ],
+     "confidence": 0.3682,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000420.jpg",
+     "frame_index": 420,
+     "t": 14.037,
+     "detection_id": "1d9917d15829-001",
+     "bbox": [
+      3.77,
+      143.39,
+      427.49,
+      542.0
+     ],
+     "confidence": 0.423,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000430.jpg",
+     "frame_index": 430,
+     "t": 14.372,
+     "detection_id": "c4c6096ecda2-002",
+     "bbox": [
+      2.13,
+      152.23,
+      307.94,
+      509.45
+     ],
+     "confidence": 0.284,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000435.jpg",
+     "frame_index": 435,
+     "t": 14.539,
+     "detection_id": "10a958671973-000",
+     "bbox": [
+      2.67,
+      182.36,
+      265.19,
+      540.4
+     ],
+     "confidence": 0.3808,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000450.jpg",
+     "frame_index": 450,
+     "t": 15.04,
+     "detection_id": "30677a300cb6-002",
+     "bbox": [
+      0.96,
+      213.8,
+      163.86,
+      539.44
+     ],
+     "confidence": 0.2513,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000455.jpg",
+     "frame_index": 455,
+     "t": 15.207,
+     "detection_id": "ca1becf66683-000",
+     "bbox": [
+      0.42,
+      241.11,
+      137.63,
+      539.29
+     ],
+     "confidence": 0.2328,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 12.366,
+   "last_t": 15.207,
+   "n_observations": 8,
+   "max_confidence": 0.5186,
+   "mean_confidence": 0.3396,
+   "track_confidence": 0.3396,
+   "confirmed": true
+  },
+  {
+   "track_id": 14,
+   "class_name": "signboard",
+   "observations": [
+    {
+     "frame": "frame_000385.jpg",
+     "frame_index": 385,
+     "t": 12.868,
+     "detection_id": "49f40b03428e-001",
+     "bbox": [
+      122.99,
+      81.53,
+      225.89,
+      159.15
+     ],
+     "confidence": 0.5113,
+     "prompt": "information sign"
+    },
+    {
+     "frame": "frame_000390.jpg",
+     "frame_index": 390,
+     "t": 13.035,
+     "detection_id": "fb2a5ab5c692-000",
+     "bbox": [
+      100.85,
+      73.34,
+      207.9,
+      157.18
+     ],
+     "confidence": 0.6892,
+     "prompt": "information sign"
+    },
+    {
+     "frame": "frame_000405.jpg",
+     "frame_index": 405,
+     "t": 13.536,
+     "detection_id": "db916f3888f8-000",
+     "bbox": [
+      73.64,
+      140.13,
+      205.73,
+      236.07
+     ],
+     "confidence": 0.6844,
+     "prompt": "information sign"
+    },
+    {
+     "frame": "frame_000410.jpg",
+     "frame_index": 410,
+     "t": 13.703,
+     "detection_id": "1e854b388bee-000",
+     "bbox": [
+      27.77,
+      115.73,
+      176.73,
+      222.86
+     ],
+     "confidence": 0.6721,
+     "prompt": "information sign"
+    },
+    {
+     "frame": "frame_000420.jpg",
+     "frame_index": 420,
+     "t": 14.037,
+     "detection_id": "1d9917d15829-000",
+     "bbox": [
+      0.91,
+      109.51,
+      122.52,
+      233.11
+     ],
+     "confidence": 0.6542,
+     "prompt": "information sign"
+    }
+   ],
+   "first_t": 12.868,
+   "last_t": 14.037,
+   "n_observations": 5,
+   "max_confidence": 0.6892,
+   "mean_confidence": 0.6422,
+   "track_confidence": 0.6422,
+   "confirmed": true
+  },
+  {
+   "track_id": 15,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000385.jpg",
+     "frame_index": 385,
+     "t": 12.868,
+     "detection_id": "49f40b03428e-003",
+     "bbox": [
+      768.76,
+      0.0,
+      955.52,
+      124.57
+     ],
+     "confidence": 0.2519,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000420.jpg",
+     "frame_index": 420,
+     "t": 14.037,
+     "detection_id": "1d9917d15829-004",
+     "bbox": [
+      732.62,
+      107.51,
+      960.0,
+      249.87
+     ],
+     "confidence": 0.1793,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 12.868,
+   "last_t": 14.037,
+   "n_observations": 2,
+   "max_confidence": 0.2519,
+   "mean_confidence": 0.2156,
+   "track_confidence": 0.1509,
+   "confirmed": true
+  },
+  {
+   "track_id": 16,
+   "class_name": "staircase",
+   "observations": [
+    {
+     "frame": "frame_000390.jpg",
+     "frame_index": 390,
+     "t": 13.035,
+     "detection_id": "fb2a5ab5c692-001",
+     "bbox": [
+      213.43,
+      98.17,
+      630.98,
+      539.65
+     ],
+     "confidence": 0.5769,
+     "prompt": "stairs"
+    }
+   ],
+   "first_t": 13.035,
+   "last_t": 13.035,
+   "n_observations": 1,
+   "max_confidence": 0.5769,
+   "mean_confidence": 0.5769,
+   "track_confidence": 0.3461,
+   "confirmed": false
+  },
+  {
+   "track_id": 17,
+   "class_name": "ramp",
+   "observations": [
+    {
+     "frame": "frame_000405.jpg",
+     "frame_index": 405,
+     "t": 13.536,
+     "detection_id": "db916f3888f8-002",
+     "bbox": [
+      269.88,
+      462.76,
+      662.62,
+      537.66
+     ],
+     "confidence": 0.3196,
+     "prompt": "sloped ramp"
+    },
+    {
+     "frame": "frame_000410.jpg",
+     "frame_index": 410,
+     "t": 13.703,
+     "detection_id": "1e854b388bee-007",
+     "bbox": [
+      269.1,
+      476.84,
+      643.95,
+      539.32
+     ],
+     "confidence": 0.1572,
+     "prompt": "sloped ramp"
+    }
+   ],
+   "first_t": 13.536,
+   "last_t": 13.703,
+   "n_observations": 2,
+   "max_confidence": 0.3196,
+   "mean_confidence": 0.2384,
+   "track_confidence": 0.1669,
+   "confirmed": true
+  },
+  {
+   "track_id": 18,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_000410.jpg",
+     "frame_index": 410,
+     "t": 13.703,
+     "detection_id": "1e854b388bee-002",
+     "bbox": [
+      663.02,
+      145.18,
+      960.0,
+      538.4
+     ],
+     "confidence": 0.2817,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 13.703,
+   "last_t": 13.703,
+   "n_observations": 1,
+   "max_confidence": 0.2817,
+   "mean_confidence": 0.2817,
+   "track_confidence": 0.169,
+   "confirmed": false
+  },
+  {
+   "track_id": 19,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_000410.jpg",
+     "frame_index": 410,
+     "t": 13.703,
+     "detection_id": "1e854b388bee-004",
+     "bbox": [
+      739.95,
+      1.81,
+      960.0,
+      537.95
+     ],
+     "confidence": 0.2389,
+     "prompt": "footpath"
+    }
+   ],
+   "first_t": 13.703,
+   "last_t": 13.703,
+   "n_observations": 1,
+   "max_confidence": 0.2389,
+   "mean_confidence": 0.2389,
+   "track_confidence": 0.1433,
+   "confirmed": false
+  },
+  {
+   "track_id": 20,
+   "class_name": "ramp",
+   "observations": [
+    {
+     "frame": "frame_000410.jpg",
+     "frame_index": 410,
+     "t": 13.703,
+     "detection_id": "1e854b388bee-005",
+     "bbox": [
+      250.49,
+      372.47,
+      673.94,
+      539.58
+     ],
+     "confidence": 0.2255,
+     "prompt": "sloped ramp"
+    }
+   ],
+   "first_t": 13.703,
+   "last_t": 13.703,
+   "n_observations": 1,
+   "max_confidence": 0.2255,
+   "mean_confidence": 0.2255,
+   "track_confidence": 0.1353,
+   "confirmed": false
+  },
+  {
+   "track_id": 21,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000410.jpg",
+     "frame_index": 410,
+     "t": 13.703,
+     "detection_id": "1e854b388bee-006",
+     "bbox": [
+      660.39,
+      151.91,
+      832.69,
+      435.9
+     ],
+     "confidence": 0.184,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000420.jpg",
+     "frame_index": 420,
+     "t": 14.037,
+     "detection_id": "1d9917d15829-002",
+     "bbox": [
+      692.33,
+      98.44,
+      958.41,
+      504.62
+     ],
+     "confidence": 0.2713,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000430.jpg",
+     "frame_index": 430,
+     "t": 14.372,
+     "detection_id": "c4c6096ecda2-001",
+     "bbox": [
+      621.32,
+      116.31,
+      959.52,
+      537.56
+     ],
+     "confidence": 0.3288,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000435.jpg",
+     "frame_index": 435,
+     "t": 14.539,
+     "detection_id": "10a958671973-001",
+     "bbox": [
+      615.48,
+      150.6,
+      956.28,
+      536.27
+     ],
+     "confidence": 0.3662,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000450.jpg",
+     "frame_index": 450,
+     "t": 15.04,
+     "detection_id": "30677a300cb6-001",
+     "bbox": [
+      680.38,
+      291.47,
+      958.65,
+      538.73
+     ],
+     "confidence": 0.2778,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 13.703,
+   "last_t": 15.04,
+   "n_observations": 5,
+   "max_confidence": 0.3662,
+   "mean_confidence": 0.2856,
+   "track_confidence": 0.2856,
+   "confirmed": true
+  },
+  {
+   "track_id": 22,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_000490.jpg",
+     "frame_index": 490,
+     "t": 16.377,
+     "detection_id": "1178914ec664-000",
+     "bbox": [
+      449.4,
+      10.34,
+      953.68,
+      542.0
+     ],
+     "confidence": 0.5236,
+     "prompt": "footpath"
+    },
+    {
+     "frame": "frame_000495.jpg",
+     "frame_index": 495,
+     "t": 16.544,
+     "detection_id": "022f6984f4c8-002",
+     "bbox": [
+      266.44,
+      51.42,
+      720.59,
+      540.23
+     ],
+     "confidence": 0.2007,
+     "prompt": "footpath"
+    },
+    {
+     "frame": "frame_000505.jpg",
+     "frame_index": 505,
+     "t": 16.878,
+     "detection_id": "65f7a0000096-000",
+     "bbox": [
+      344.64,
+      74.92,
+      794.69,
+      537.61
+     ],
+     "confidence": 0.8364,
+     "prompt": "footpath"
+    },
+    {
+     "frame": "frame_000535.jpg",
+     "frame_index": 535,
+     "t": 17.881,
+     "detection_id": "3d3fac3920d9-000",
+     "bbox": [
+      299.39,
+      117.63,
+      648.67,
+      537.88
+     ],
+     "confidence": 0.7868,
+     "prompt": "footpath"
+    },
+    {
+     "frame": "frame_000550.jpg",
+     "frame_index": 550,
+     "t": 18.382,
+     "detection_id": "f1950f8a661d-000",
+     "bbox": [
+      348.8,
+      93.79,
+      649.23,
+      524.55
+     ],
+     "confidence": 0.651,
+     "prompt": "footpath"
+    },
+    {
+     "frame": "frame_000560.jpg",
+     "frame_index": 560,
+     "t": 18.717,
+     "detection_id": "96097642e2d1-000",
+     "bbox": [
+      312.05,
+      64.61,
+      613.49,
+      534.39
+     ],
+     "confidence": 0.6121,
+     "prompt": "footpath"
+    },
+    {
+     "frame": "frame_000570.jpg",
+     "frame_index": 570,
+     "t": 19.051,
+     "detection_id": "88779c5693d6-000",
+     "bbox": [
+      284.07,
+      38.58,
+      617.44,
+      540.15
+     ],
+     "confidence": 0.6764,
+     "prompt": "footpath"
+    },
+    {
+     "frame": "frame_000585.jpg",
+     "frame_index": 585,
+     "t": 19.552,
+     "detection_id": "7df4a00f071f-000",
+     "bbox": [
+      348.99,
+      54.85,
+      617.28,
+      513.22
+     ],
+     "confidence": 0.4873,
+     "prompt": "footpath"
+    }
+   ],
+   "first_t": 16.377,
+   "last_t": 19.552,
+   "n_observations": 8,
+   "max_confidence": 0.8364,
+   "mean_confidence": 0.5968,
+   "track_confidence": 0.5968,
+   "confirmed": true
+  },
+  {
+   "track_id": 23,
+   "class_name": "staircase",
+   "observations": [
+    {
+     "frame": "frame_000495.jpg",
+     "frame_index": 495,
+     "t": 16.544,
+     "detection_id": "022f6984f4c8-000",
+     "bbox": [
+      387.25,
+      93.53,
+      894.36,
+      533.88
+     ],
+     "confidence": 0.3577,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000500.jpg",
+     "frame_index": 500,
+     "t": 16.711,
+     "detection_id": "ffdff2d2f245-000",
+     "bbox": [
+      316.4,
+      57.34,
+      705.58,
+      536.46
+     ],
+     "confidence": 0.8042,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000520.jpg",
+     "frame_index": 520,
+     "t": 17.38,
+     "detection_id": "da036e79d00d-000",
+     "bbox": [
+      330.45,
+      86.11,
+      701.91,
+      532.88
+     ],
+     "confidence": 0.8317,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000530.jpg",
+     "frame_index": 530,
+     "t": 17.714,
+     "detection_id": "eedc679a16c7-000",
+     "bbox": [
+      333.6,
+      106.65,
+      673.23,
+      533.35
+     ],
+     "confidence": 0.8204,
+     "prompt": "stairs"
+    }
+   ],
+   "first_t": 16.544,
+   "last_t": 17.714,
+   "n_observations": 4,
+   "max_confidence": 0.8317,
+   "mean_confidence": 0.7035,
+   "track_confidence": 0.6331,
+   "confirmed": true
+  },
+  {
+   "track_id": 24,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000495.jpg",
+     "frame_index": 495,
+     "t": 16.544,
+     "detection_id": "022f6984f4c8-001",
+     "bbox": [
+      649.09,
+      103.83,
+      873.18,
+      540.22
+     ],
+     "confidence": 0.3105,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000500.jpg",
+     "frame_index": 500,
+     "t": 16.711,
+     "detection_id": "ffdff2d2f245-001",
+     "bbox": [
+      586.96,
+      59.17,
+      891.44,
+      541.97
+     ],
+     "confidence": 0.4318,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000520.jpg",
+     "frame_index": 520,
+     "t": 17.38,
+     "detection_id": "da036e79d00d-001",
+     "bbox": [
+      511.7,
+      22.43,
+      949.21,
+      540.65
+     ],
+     "confidence": 0.4237,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000530.jpg",
+     "frame_index": 530,
+     "t": 17.714,
+     "detection_id": "eedc679a16c7-001",
+     "bbox": [
+      536.49,
+      50.57,
+      932.89,
+      540.08
+     ],
+     "confidence": 0.4805,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000535.jpg",
+     "frame_index": 535,
+     "t": 17.881,
+     "detection_id": "3d3fac3920d9-001",
+     "bbox": [
+      501.68,
+      61.62,
+      924.38,
+      536.77
+     ],
+     "confidence": 0.5672,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000550.jpg",
+     "frame_index": 550,
+     "t": 18.382,
+     "detection_id": "f1950f8a661d-001",
+     "bbox": [
+      499.77,
+      42.99,
+      864.32,
+      541.79
+     ],
+     "confidence": 0.5086,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000560.jpg",
+     "frame_index": 560,
+     "t": 18.717,
+     "detection_id": "96097642e2d1-001",
+     "bbox": [
+      488.76,
+      4.9,
+      848.45,
+      542.0
+     ],
+     "confidence": 0.5858,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000570.jpg",
+     "frame_index": 570,
+     "t": 19.051,
+     "detection_id": "88779c5693d6-001",
+     "bbox": [
+      445.49,
+      2.14,
+      947.18,
+      541.41
+     ],
+     "confidence": 0.4773,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000590.jpg",
+     "frame_index": 590,
+     "t": 19.719,
+     "detection_id": "8226a6c8239c-001",
+     "bbox": [
+      478.75,
+      0.62,
+      959.45,
+      542.0
+     ],
+     "confidence": 0.4696,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000605.jpg",
+     "frame_index": 605,
+     "t": 20.221,
+     "detection_id": "f53ea5dc9457-001",
+     "bbox": [
+      572.23,
+      29.11,
+      959.41,
+      542.0
+     ],
+     "confidence": 0.4197,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000620.jpg",
+     "frame_index": 620,
+     "t": 20.722,
+     "detection_id": "af8d5786777b-001",
+     "bbox": [
+      565.14,
+      83.69,
+      959.84,
+      541.59
+     ],
+     "confidence": 0.2234,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000625.jpg",
+     "frame_index": 625,
+     "t": 20.889,
+     "detection_id": "1e6c51e89a69-000",
+     "bbox": [
+      605.76,
+      131.51,
+      938.31,
+      538.28
+     ],
+     "confidence": 0.2904,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000630.jpg",
+     "frame_index": 630,
+     "t": 21.056,
+     "detection_id": "0e25ce8bee4e-001",
+     "bbox": [
+      395.69,
+      162.89,
+      919.94,
+      538.8
+     ],
+     "confidence": 0.2782,
+     "prompt": "stair railing"
+    },
+    {
+     "frame": "frame_000650.jpg",
+     "frame_index": 650,
+     "t": 21.725,
+     "detection_id": "c188916b1372-001",
+     "bbox": [
+      366.55,
+      258.64,
+      814.49,
+      539.1
+     ],
+     "confidence": 0.347,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000660.jpg",
+     "frame_index": 660,
+     "t": 22.059,
+     "detection_id": "ecc8f118def4-001",
+     "bbox": [
+      306.51,
+      214.46,
+      826.69,
+      538.38
+     ],
+     "confidence": 0.3072,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000675.jpg",
+     "frame_index": 675,
+     "t": 22.56,
+     "detection_id": "2671dc9da51c-002",
+     "bbox": [
+      213.8,
+      106.75,
+      894.24,
+      536.79
+     ],
+     "confidence": 0.2325,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000680.jpg",
+     "frame_index": 680,
+     "t": 22.727,
+     "detection_id": "4adc1e1f4ec6-001",
+     "bbox": [
+      183.73,
+      80.14,
+      888.2,
+      539.79
+     ],
+     "confidence": 0.294,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000690.jpg",
+     "frame_index": 690,
+     "t": 23.061,
+     "detection_id": "0e5c528c74d6-001",
+     "bbox": [
+      271.23,
+      125.81,
+      945.41,
+      537.82
+     ],
+     "confidence": 0.2951,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000705.jpg",
+     "frame_index": 705,
+     "t": 23.563,
+     "detection_id": "a4cebc0634e3-000",
+     "bbox": [
+      262.82,
+      152.71,
+      960.0,
+      536.62
+     ],
+     "confidence": 0.2921,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000710.jpg",
+     "frame_index": 710,
+     "t": 23.73,
+     "detection_id": "52f572354b3f-001",
+     "bbox": [
+      300.81,
+      135.19,
+      957.04,
+      538.6
+     ],
+     "confidence": 0.248,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000720.jpg",
+     "frame_index": 720,
+     "t": 24.064,
+     "detection_id": "e7da16704de8-001",
+     "bbox": [
+      200.69,
+      55.22,
+      956.32,
+      541.28
+     ],
+     "confidence": 0.5303,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000735.jpg",
+     "frame_index": 735,
+     "t": 24.566,
+     "detection_id": "54619937107a-001",
+     "bbox": [
+      291.83,
+      83.84,
+      950.51,
+      539.7
+     ],
+     "confidence": 0.4207,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000745.jpg",
+     "frame_index": 745,
+     "t": 24.9,
+     "detection_id": "7031afd1217d-001",
+     "bbox": [
+      224.38,
+      23.78,
+      954.83,
+      539.15
+     ],
+     "confidence": 0.2215,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000770.jpg",
+     "frame_index": 770,
+     "t": 25.735,
+     "detection_id": "553febceb6a9-001",
+     "bbox": [
+      212.76,
+      16.07,
+      960.0,
+      542.0
+     ],
+     "confidence": 0.2717,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000775.jpg",
+     "frame_index": 775,
+     "t": 25.902,
+     "detection_id": "4ddaf0f3ec92-000",
+     "bbox": [
+      333.65,
+      47.45,
+      960.0,
+      542.0
+     ],
+     "confidence": 0.224,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000785.jpg",
+     "frame_index": 785,
+     "t": 26.237,
+     "detection_id": "db9ee912ee68-000",
+     "bbox": [
+      342.08,
+      68.33,
+      960.0,
+      542.0
+     ],
+     "confidence": 0.1826,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000835.jpg",
+     "frame_index": 835,
+     "t": 27.908,
+     "detection_id": "9034d8abab97-001",
+     "bbox": [
+      245.92,
+      3.53,
+      913.17,
+      539.39
+     ],
+     "confidence": 0.3388,
+     "prompt": "stair railing"
+    },
+    {
+     "frame": "frame_000845.jpg",
+     "frame_index": 845,
+     "t": 28.242,
+     "detection_id": "cbb19d7e7204-001",
+     "bbox": [
+      253.79,
+      19.11,
+      960.0,
+      541.37
+     ],
+     "confidence": 0.2326,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000850.jpg",
+     "frame_index": 850,
+     "t": 28.409,
+     "detection_id": "748c98658cd4-001",
+     "bbox": [
+      271.05,
+      5.61,
+      957.38,
+      542.0
+     ],
+     "confidence": 0.2081,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000880.jpg",
+     "frame_index": 880,
+     "t": 29.412,
+     "detection_id": "5db7450a094a-001",
+     "bbox": [
+      473.8,
+      167.01,
+      778.01,
+      540.79
+     ],
+     "confidence": 0.1737,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000890.jpg",
+     "frame_index": 890,
+     "t": 29.746,
+     "detection_id": "f9cefc9a4158-000",
+     "bbox": [
+      471.96,
+      205.15,
+      758.13,
+      542.0
+     ],
+     "confidence": 0.2543,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_000905.jpg",
+     "frame_index": 905,
+     "t": 30.247,
+     "detection_id": "0873dabda7c7-000",
+     "bbox": [
+      500.92,
+      291.66,
+      680.2,
+      540.02
+     ],
+     "confidence": 0.2374,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000915.jpg",
+     "frame_index": 915,
+     "t": 30.582,
+     "detection_id": "b1fabee4dbd9-000",
+     "bbox": [
+      435.98,
+      316.31,
+      568.96,
+      539.44
+     ],
+     "confidence": 0.2305,
+     "prompt": "handrail"
+    }
+   ],
+   "first_t": 16.544,
+   "last_t": 30.582,
+   "n_observations": 33,
+   "max_confidence": 0.5858,
+   "mean_confidence": 0.3336,
+   "track_confidence": 0.3336,
+   "confirmed": true
+  },
+  {
+   "track_id": 25,
+   "class_name": "ramp",
+   "observations": [
+    {
+     "frame": "frame_000495.jpg",
+     "frame_index": 495,
+     "t": 16.544,
+     "detection_id": "022f6984f4c8-003",
+     "bbox": [
+      401.69,
+      428.63,
+      733.19,
+      516.81
+     ],
+     "confidence": 0.1845,
+     "prompt": "sloped ramp"
+    }
+   ],
+   "first_t": 16.544,
+   "last_t": 16.544,
+   "n_observations": 1,
+   "max_confidence": 0.1845,
+   "mean_confidence": 0.1845,
+   "track_confidence": 0.1107,
+   "confirmed": false
+  },
+  {
+   "track_id": 26,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000530.jpg",
+     "frame_index": 530,
+     "t": 17.714,
+     "detection_id": "eedc679a16c7-002",
+     "bbox": [
+      673.2,
+      200.54,
+      921.1,
+      540.75
+     ],
+     "confidence": 0.1696,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000535.jpg",
+     "frame_index": 535,
+     "t": 17.881,
+     "detection_id": "3d3fac3920d9-002",
+     "bbox": [
+      649.52,
+      217.31,
+      917.79,
+      542.0
+     ],
+     "confidence": 0.1825,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 17.714,
+   "last_t": 17.881,
+   "n_observations": 2,
+   "max_confidence": 0.1825,
+   "mean_confidence": 0.176,
+   "track_confidence": 0.1232,
+   "confirmed": true
+  },
+  {
+   "track_id": 27,
+   "class_name": "staircase",
+   "observations": [
+    {
+     "frame": "frame_000535.jpg",
+     "frame_index": 535,
+     "t": 17.881,
+     "detection_id": "3d3fac3920d9-003",
+     "bbox": [
+      404.57,
+      370.47,
+      625.53,
+      475.45
+     ],
+     "confidence": 0.1744,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000550.jpg",
+     "frame_index": 550,
+     "t": 18.382,
+     "detection_id": "f1950f8a661d-002",
+     "bbox": [
+      383.59,
+      387.79,
+      609.02,
+      438.8
+     ],
+     "confidence": 0.1727,
+     "prompt": "flight of steps"
+    }
+   ],
+   "first_t": 17.881,
+   "last_t": 18.382,
+   "n_observations": 2,
+   "max_confidence": 0.1744,
+   "mean_confidence": 0.1735,
+   "track_confidence": 0.1215,
+   "confirmed": true
+  },
+  {
+   "track_id": 28,
+   "class_name": "staircase",
+   "observations": [
+    {
+     "frame": "frame_000550.jpg",
+     "frame_index": 550,
+     "t": 18.382,
+     "detection_id": "f1950f8a661d-003",
+     "bbox": [
+      423.72,
+      455.07,
+      633.66,
+      512.66
+     ],
+     "confidence": 0.1661,
+     "prompt": "flight of steps"
+    }
+   ],
+   "first_t": 18.382,
+   "last_t": 18.382,
+   "n_observations": 1,
+   "max_confidence": 0.1661,
+   "mean_confidence": 0.1661,
+   "track_confidence": 0.0997,
+   "confirmed": false
+  },
+  {
+   "track_id": 29,
+   "class_name": "staircase",
+   "observations": [
+    {
+     "frame": "frame_000590.jpg",
+     "frame_index": 590,
+     "t": 19.719,
+     "detection_id": "8226a6c8239c-000",
+     "bbox": [
+      324.99,
+      52.08,
+      627.44,
+      539.4
+     ],
+     "confidence": 0.6741,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000605.jpg",
+     "frame_index": 605,
+     "t": 20.221,
+     "detection_id": "f53ea5dc9457-000",
+     "bbox": [
+      383.46,
+      109.2,
+      720.2,
+      537.8
+     ],
+     "confidence": 0.8512,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000620.jpg",
+     "frame_index": 620,
+     "t": 20.722,
+     "detection_id": "af8d5786777b-000",
+     "bbox": [
+      388.44,
+      143.86,
+      715.19,
+      542.0
+     ],
+     "confidence": 0.455,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000625.jpg",
+     "frame_index": 625,
+     "t": 20.889,
+     "detection_id": "1e6c51e89a69-001",
+     "bbox": [
+      389.86,
+      199.03,
+      707.75,
+      541.03
+     ],
+     "confidence": 0.1814,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000630.jpg",
+     "frame_index": 630,
+     "t": 21.056,
+     "detection_id": "0e25ce8bee4e-000",
+     "bbox": [
+      398.57,
+      227.62,
+      657.77,
+      538.33
+     ],
+     "confidence": 0.5399,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000650.jpg",
+     "frame_index": 650,
+     "t": 21.725,
+     "detection_id": "c188916b1372-000",
+     "bbox": [
+      378.71,
+      338.59,
+      671.91,
+      535.31
+     ],
+     "confidence": 0.4038,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000660.jpg",
+     "frame_index": 660,
+     "t": 22.059,
+     "detection_id": "ecc8f118def4-000",
+     "bbox": [
+      330.33,
+      323.5,
+      661.74,
+      536.53
+     ],
+     "confidence": 0.6826,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000675.jpg",
+     "frame_index": 675,
+     "t": 22.56,
+     "detection_id": "2671dc9da51c-000",
+     "bbox": [
+      274.27,
+      213.8,
+      699.84,
+      535.71
+     ],
+     "confidence": 0.8494,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000680.jpg",
+     "frame_index": 680,
+     "t": 22.727,
+     "detection_id": "4adc1e1f4ec6-000",
+     "bbox": [
+      246.1,
+      210.09,
+      698.18,
+      536.93
+     ],
+     "confidence": 0.7736,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000690.jpg",
+     "frame_index": 690,
+     "t": 23.061,
+     "detection_id": "0e5c528c74d6-000",
+     "bbox": [
+      338.57,
+      241.09,
+      640.18,
+      492.23
+     ],
+     "confidence": 0.8091,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000705.jpg",
+     "frame_index": 705,
+     "t": 23.563,
+     "detection_id": "a4cebc0634e3-001",
+     "bbox": [
+      322.58,
+      256.55,
+      685.36,
+      537.06
+     ],
+     "confidence": 0.2445,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000710.jpg",
+     "frame_index": 710,
+     "t": 23.73,
+     "detection_id": "52f572354b3f-000",
+     "bbox": [
+      328.84,
+      191.03,
+      729.59,
+      536.18
+     ],
+     "confidence": 0.3012,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000720.jpg",
+     "frame_index": 720,
+     "t": 24.064,
+     "detection_id": "e7da16704de8-000",
+     "bbox": [
+      287.61,
+      167.33,
+      730.96,
+      537.21
+     ],
+     "confidence": 0.7258,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000735.jpg",
+     "frame_index": 735,
+     "t": 24.566,
+     "detection_id": "54619937107a-000",
+     "bbox": [
+      343.99,
+      180.16,
+      768.66,
+      537.81
+     ],
+     "confidence": 0.7419,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000745.jpg",
+     "frame_index": 745,
+     "t": 24.9,
+     "detection_id": "7031afd1217d-000",
+     "bbox": [
+      275.25,
+      138.38,
+      749.85,
+      536.74
+     ],
+     "confidence": 0.6325,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000755.jpg",
+     "frame_index": 755,
+     "t": 25.234,
+     "detection_id": "cf70004b1298-000",
+     "bbox": [
+      380.31,
+      117.33,
+      809.72,
+      539.97
+     ],
+     "confidence": 0.6613,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000770.jpg",
+     "frame_index": 770,
+     "t": 25.735,
+     "detection_id": "553febceb6a9-000",
+     "bbox": [
+      295.75,
+      171.51,
+      679.33,
+      535.77
+     ],
+     "confidence": 0.7657,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000785.jpg",
+     "frame_index": 785,
+     "t": 26.237,
+     "detection_id": "db9ee912ee68-001",
+     "bbox": [
+      339.66,
+      96.59,
+      765.76,
+      540.54
+     ],
+     "confidence": 0.1522,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000800.jpg",
+     "frame_index": 800,
+     "t": 26.738,
+     "detection_id": "22c4bcbd2176-000",
+     "bbox": [
+      349.12,
+      130.47,
+      740.93,
+      538.31
+     ],
+     "confidence": 0.456,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000825.jpg",
+     "frame_index": 825,
+     "t": 27.574,
+     "detection_id": "fd0d8fb62bb8-000",
+     "bbox": [
+      343.11,
+      121.1,
+      711.3,
+      537.23
+     ],
+     "confidence": 0.5497,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000835.jpg",
+     "frame_index": 835,
+     "t": 27.908,
+     "detection_id": "9034d8abab97-000",
+     "bbox": [
+      253.57,
+      63.17,
+      660.31,
+      534.77
+     ],
+     "confidence": 0.7814,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000845.jpg",
+     "frame_index": 845,
+     "t": 28.242,
+     "detection_id": "cbb19d7e7204-000",
+     "bbox": [
+      266.75,
+      99.08,
+      732.93,
+      535.73
+     ],
+     "confidence": 0.7135,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000850.jpg",
+     "frame_index": 850,
+     "t": 28.409,
+     "detection_id": "748c98658cd4-000",
+     "bbox": [
+      260.29,
+      64.67,
+      731.35,
+      536.28
+     ],
+     "confidence": 0.3046,
+     "prompt": "flight of steps"
+    },
+    {
+     "frame": "frame_000860.jpg",
+     "frame_index": 860,
+     "t": 28.743,
+     "detection_id": "daf06180cff2-000",
+     "bbox": [
+      296.85,
+      81.47,
+      696.48,
+      538.04
+     ],
+     "confidence": 0.2507,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000870.jpg",
+     "frame_index": 870,
+     "t": 29.078,
+     "detection_id": "fc237199cd8a-000",
+     "bbox": [
+      258.38,
+      177.16,
+      629.95,
+      537.51
+     ],
+     "confidence": 0.5574,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000880.jpg",
+     "frame_index": 880,
+     "t": 29.412,
+     "detection_id": "5db7450a094a-000",
+     "bbox": [
+      304.61,
+      241.21,
+      650.12,
+      537.33
+     ],
+     "confidence": 0.4668,
+     "prompt": "stairs"
+    },
+    {
+     "frame": "frame_000930.jpg",
+     "frame_index": 930,
+     "t": 31.083,
+     "detection_id": "51726170d8dc-002",
+     "bbox": [
+      334.18,
+      351.74,
+      566.03,
+      540.53
+     ],
+     "confidence": 0.1719,
+     "prompt": "flight of steps"
+    }
+   ],
+   "first_t": 19.719,
+   "last_t": 31.083,
+   "n_observations": 27,
+   "max_confidence": 0.8512,
+   "mean_confidence": 0.5443,
+   "track_confidence": 0.5443,
+   "confirmed": true
+  },
+  {
+   "track_id": 30,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000620.jpg",
+     "frame_index": 620,
+     "t": 20.722,
+     "detection_id": "af8d5786777b-002",
+     "bbox": [
+      710.15,
+      218.39,
+      960.0,
+      542.0
+     ],
+     "confidence": 0.1918,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000650.jpg",
+     "frame_index": 650,
+     "t": 21.725,
+     "detection_id": "c188916b1372-002",
+     "bbox": [
+      598.39,
+      294.13,
+      809.56,
+      540.62
+     ],
+     "confidence": 0.245,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000660.jpg",
+     "frame_index": 660,
+     "t": 22.059,
+     "detection_id": "ecc8f118def4-002",
+     "bbox": [
+      581.77,
+      274.28,
+      823.48,
+      540.14
+     ],
+     "confidence": 0.2025,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000675.jpg",
+     "frame_index": 675,
+     "t": 22.56,
+     "detection_id": "2671dc9da51c-001",
+     "bbox": [
+      602.23,
+      210.55,
+      891.5,
+      540.73
+     ],
+     "confidence": 0.275,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000680.jpg",
+     "frame_index": 680,
+     "t": 22.727,
+     "detection_id": "4adc1e1f4ec6-002",
+     "bbox": [
+      600.6,
+      203.19,
+      879.29,
+      538.27
+     ],
+     "confidence": 0.2272,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 20.722,
+   "last_t": 22.727,
+   "n_observations": 5,
+   "max_confidence": 0.275,
+   "mean_confidence": 0.2283,
+   "track_confidence": 0.2283,
+   "confirmed": true
+  },
+  {
+   "track_id": 31,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000625.jpg",
+     "frame_index": 625,
+     "t": 20.889,
+     "detection_id": "1e6c51e89a69-002",
+     "bbox": [
+      434.6,
+      119.38,
+      627.88,
+      267.61
+     ],
+     "confidence": 0.1805,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 20.889,
+   "last_t": 20.889,
+   "n_observations": 1,
+   "max_confidence": 0.1805,
+   "mean_confidence": 0.1805,
+   "track_confidence": 0.1083,
+   "confirmed": false
+  },
+  {
+   "track_id": 32,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_000640.jpg",
+     "frame_index": 640,
+     "t": 21.39,
+     "detection_id": "54aea44e421e-000",
+     "bbox": [
+      355.3,
+      341.29,
+      655.1,
+      537.51
+     ],
+     "confidence": 0.5389,
+     "prompt": "walkway"
+    }
+   ],
+   "first_t": 21.39,
+   "last_t": 21.39,
+   "n_observations": 1,
+   "max_confidence": 0.5389,
+   "mean_confidence": 0.5389,
+   "track_confidence": 0.3233,
+   "confirmed": false
+  },
+  {
+   "track_id": 33,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_000775.jpg",
+     "frame_index": 775,
+     "t": 25.902,
+     "detection_id": "4ddaf0f3ec92-001",
+     "bbox": [
+      378.89,
+      169.55,
+      700.32,
+      540.55
+     ],
+     "confidence": 0.1902,
+     "prompt": "footpath"
+    }
+   ],
+   "first_t": 25.902,
+   "last_t": 25.902,
+   "n_observations": 1,
+   "max_confidence": 0.1902,
+   "mean_confidence": 0.1902,
+   "track_confidence": 0.1141,
+   "confirmed": false
+  },
+  {
+   "track_id": 34,
+   "class_name": "ramp",
+   "observations": [
+    {
+     "frame": "frame_000800.jpg",
+     "frame_index": 800,
+     "t": 26.738,
+     "detection_id": "22c4bcbd2176-001",
+     "bbox": [
+      349.54,
+      65.01,
+      920.47,
+      540.0
+     ],
+     "confidence": 0.2337,
+     "prompt": "sloped ramp"
+    },
+    {
+     "frame": "frame_000825.jpg",
+     "frame_index": 825,
+     "t": 27.574,
+     "detection_id": "fd0d8fb62bb8-001",
+     "bbox": [
+      408.68,
+      86.41,
+      929.92,
+      541.17
+     ],
+     "confidence": 0.2628,
+     "prompt": "sloped ramp"
+    },
+    {
+     "frame": "frame_000850.jpg",
+     "frame_index": 850,
+     "t": 28.409,
+     "detection_id": "748c98658cd4-002",
+     "bbox": [
+      229.38,
+      17.7,
+      955.85,
+      540.77
+     ],
+     "confidence": 0.1747,
+     "prompt": "sloped ramp"
+    }
+   ],
+   "first_t": 26.738,
+   "last_t": 28.409,
+   "n_observations": 3,
+   "max_confidence": 0.2628,
+   "mean_confidence": 0.2237,
+   "track_confidence": 0.179,
+   "confirmed": true
+  },
+  {
+   "track_id": 35,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_000915.jpg",
+     "frame_index": 915,
+     "t": 30.582,
+     "detection_id": "b1fabee4dbd9-001",
+     "bbox": [
+      0.91,
+      95.66,
+      574.98,
+      539.7
+     ],
+     "confidence": 0.1927,
+     "prompt": "walkway"
+    }
+   ],
+   "first_t": 30.582,
+   "last_t": 30.582,
+   "n_observations": 1,
+   "max_confidence": 0.1927,
+   "mean_confidence": 0.1927,
+   "track_confidence": 0.1156,
+   "confirmed": false
+  },
+  {
+   "track_id": 36,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000920.jpg",
+     "frame_index": 920,
+     "t": 30.749,
+     "detection_id": "fa39ef14a487-000",
+     "bbox": [
+      456.21,
+      279.91,
+      632.64,
+      541.71
+     ],
+     "confidence": 0.241,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000930.jpg",
+     "frame_index": 930,
+     "t": 31.083,
+     "detection_id": "51726170d8dc-000",
+     "bbox": [
+      502.25,
+      222.52,
+      721.32,
+      540.58
+     ],
+     "confidence": 0.3546,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000940.jpg",
+     "frame_index": 940,
+     "t": 31.417,
+     "detection_id": "cc567c0dd019-000",
+     "bbox": [
+      475.02,
+      164.96,
+      760.18,
+      540.53
+     ],
+     "confidence": 0.4688,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000955.jpg",
+     "frame_index": 955,
+     "t": 31.918,
+     "detection_id": "312b9be69936-000",
+     "bbox": [
+      542.65,
+      206.87,
+      815.89,
+      539.7
+     ],
+     "confidence": 0.3984,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000970.jpg",
+     "frame_index": 970,
+     "t": 32.42,
+     "detection_id": "2f00ad874f67-000",
+     "bbox": [
+      579.26,
+      183.79,
+      879.82,
+      540.75
+     ],
+     "confidence": 0.3618,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000980.jpg",
+     "frame_index": 980,
+     "t": 32.754,
+     "detection_id": "81d35b68b65a-000",
+     "bbox": [
+      566.58,
+      188.45,
+      888.03,
+      539.84
+     ],
+     "confidence": 0.4144,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000990.jpg",
+     "frame_index": 990,
+     "t": 33.088,
+     "detection_id": "b85d968c6e1e-000",
+     "bbox": [
+      576.16,
+      176.63,
+      911.13,
+      539.93
+     ],
+     "confidence": 0.3733,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001000.jpg",
+     "frame_index": 1000,
+     "t": 33.422,
+     "detection_id": "133616f04c0b-000",
+     "bbox": [
+      553.38,
+      191.74,
+      874.55,
+      540.0
+     ],
+     "confidence": 0.475,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001010.jpg",
+     "frame_index": 1010,
+     "t": 33.757,
+     "detection_id": "7f4f2b04170f-000",
+     "bbox": [
+      599.91,
+      175.71,
+      917.47,
+      538.67
+     ],
+     "confidence": 0.4762,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001025.jpg",
+     "frame_index": 1025,
+     "t": 34.258,
+     "detection_id": "00695e60f974-000",
+     "bbox": [
+      565.23,
+      183.63,
+      922.02,
+      540.97
+     ],
+     "confidence": 0.395,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_001035.jpg",
+     "frame_index": 1035,
+     "t": 34.592,
+     "detection_id": "3ccd3971420e-000",
+     "bbox": [
+      551.6,
+      239.9,
+      803.3,
+      540.83
+     ],
+     "confidence": 0.377,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_001045.jpg",
+     "frame_index": 1045,
+     "t": 34.926,
+     "detection_id": "6a574bbda8f4-000",
+     "bbox": [
+      525.24,
+      303.3,
+      714.26,
+      539.55
+     ],
+     "confidence": 0.3587,
+     "prompt": "handrail"
+    },
+    {
+     "frame": "frame_001055.jpg",
+     "frame_index": 1055,
+     "t": 35.261,
+     "detection_id": "6f167530f047-003",
+     "bbox": [
+      546.17,
+      358.95,
+      698.28,
+      541.04
+     ],
+     "confidence": 0.2738,
+     "prompt": "handrail"
+    }
+   ],
+   "first_t": 30.749,
+   "last_t": 35.261,
+   "n_observations": 13,
+   "max_confidence": 0.4762,
+   "mean_confidence": 0.3822,
+   "track_confidence": 0.3822,
+   "confirmed": true
+  },
+  {
+   "track_id": 37,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000920.jpg",
+     "frame_index": 920,
+     "t": 30.749,
+     "detection_id": "fa39ef14a487-001",
+     "bbox": [
+      2.32,
+      67.01,
+      628.67,
+      534.97
+     ],
+     "confidence": 0.1776,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000930.jpg",
+     "frame_index": 930,
+     "t": 31.083,
+     "detection_id": "51726170d8dc-001",
+     "bbox": [
+      0.66,
+      38.86,
+      371.47,
+      334.5
+     ],
+     "confidence": 0.2802,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000940.jpg",
+     "frame_index": 940,
+     "t": 31.417,
+     "detection_id": "cc567c0dd019-001",
+     "bbox": [
+      2.59,
+      24.08,
+      339.8,
+      295.49
+     ],
+     "confidence": 0.1759,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000980.jpg",
+     "frame_index": 980,
+     "t": 32.754,
+     "detection_id": "81d35b68b65a-002",
+     "bbox": [
+      0.0,
+      69.38,
+      383.81,
+      377.3
+     ],
+     "confidence": 0.2019,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000990.jpg",
+     "frame_index": 990,
+     "t": 33.088,
+     "detection_id": "b85d968c6e1e-001",
+     "bbox": [
+      1.23,
+      73.76,
+      387.91,
+      397.67
+     ],
+     "confidence": 0.2471,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001000.jpg",
+     "frame_index": 1000,
+     "t": 33.422,
+     "detection_id": "133616f04c0b-002",
+     "bbox": [
+      1.05,
+      88.84,
+      332.86,
+      422.98
+     ],
+     "confidence": 0.304,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001010.jpg",
+     "frame_index": 1010,
+     "t": 33.757,
+     "detection_id": "7f4f2b04170f-001",
+     "bbox": [
+      0.0,
+      49.11,
+      356.92,
+      426.81
+     ],
+     "confidence": 0.3481,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 30.749,
+   "last_t": 33.757,
+   "n_observations": 7,
+   "max_confidence": 0.3481,
+   "mean_confidence": 0.2478,
+   "track_confidence": 0.2478,
+   "confirmed": true
+  },
+  {
+   "track_id": 38,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000955.jpg",
+     "frame_index": 955,
+     "t": 31.918,
+     "detection_id": "312b9be69936-001",
+     "bbox": [
+      3.35,
+      42.88,
+      689.14,
+      358.87
+     ],
+     "confidence": 0.2012,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001000.jpg",
+     "frame_index": 1000,
+     "t": 33.422,
+     "detection_id": "133616f04c0b-001",
+     "bbox": [
+      0.59,
+      27.96,
+      812.67,
+      429.1
+     ],
+     "confidence": 0.3177,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001010.jpg",
+     "frame_index": 1010,
+     "t": 33.757,
+     "detection_id": "7f4f2b04170f-002",
+     "bbox": [
+      0.89,
+      32.67,
+      931.26,
+      533.72
+     ],
+     "confidence": 0.2638,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001025.jpg",
+     "frame_index": 1025,
+     "t": 34.258,
+     "detection_id": "00695e60f974-001",
+     "bbox": [
+      1.88,
+      154.2,
+      933.06,
+      533.05
+     ],
+     "confidence": 0.3011,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001035.jpg",
+     "frame_index": 1035,
+     "t": 34.592,
+     "detection_id": "3ccd3971420e-001",
+     "bbox": [
+      0.0,
+      225.09,
+      867.86,
+      538.95
+     ],
+     "confidence": 0.2872,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001055.jpg",
+     "frame_index": 1055,
+     "t": 35.261,
+     "detection_id": "6f167530f047-000",
+     "bbox": [
+      0.86,
+      248.15,
+      887.1,
+      525.2
+     ],
+     "confidence": 0.329,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001065.jpg",
+     "frame_index": 1065,
+     "t": 35.595,
+     "detection_id": "a3ccb833bd4d-000",
+     "bbox": [
+      0.6,
+      296.59,
+      844.76,
+      539.51
+     ],
+     "confidence": 0.3633,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001085.jpg",
+     "frame_index": 1085,
+     "t": 36.263,
+     "detection_id": "d59e6498aa45-002",
+     "bbox": [
+      2.68,
+      312.05,
+      758.89,
+      524.03
+     ],
+     "confidence": 0.2406,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001095.jpg",
+     "frame_index": 1095,
+     "t": 36.598,
+     "detection_id": "535269f88c1a-000",
+     "bbox": [
+      2.21,
+      314.78,
+      671.99,
+      538.05
+     ],
+     "confidence": 0.3288,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001130.jpg",
+     "frame_index": 1130,
+     "t": 37.767,
+     "detection_id": "210a71323892-002",
+     "bbox": [
+      0.0,
+      164.74,
+      322.51,
+      476.99
+     ],
+     "confidence": 0.238,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001135.jpg",
+     "frame_index": 1135,
+     "t": 37.934,
+     "detection_id": "9d12d39f7ce8-003",
+     "bbox": [
+      0.41,
+      173.28,
+      249.58,
+      501.62
+     ],
+     "confidence": 0.2566,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 31.918,
+   "last_t": 37.934,
+   "n_observations": 11,
+   "max_confidence": 0.3633,
+   "mean_confidence": 0.2843,
+   "track_confidence": 0.2843,
+   "confirmed": true
+  },
+  {
+   "track_id": 39,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000955.jpg",
+     "frame_index": 955,
+     "t": 31.918,
+     "detection_id": "312b9be69936-002",
+     "bbox": [
+      24.54,
+      204.94,
+      675.02,
+      354.98
+     ],
+     "confidence": 0.1965,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000970.jpg",
+     "frame_index": 970,
+     "t": 32.42,
+     "detection_id": "2f00ad874f67-001",
+     "bbox": [
+      0.9,
+      208.53,
+      768.46,
+      358.86
+     ],
+     "confidence": 0.1863,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000980.jpg",
+     "frame_index": 980,
+     "t": 32.754,
+     "detection_id": "81d35b68b65a-003",
+     "bbox": [
+      3.4,
+      200.12,
+      760.67,
+      372.84
+     ],
+     "confidence": 0.1906,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 31.918,
+   "last_t": 32.754,
+   "n_observations": 3,
+   "max_confidence": 0.1965,
+   "mean_confidence": 0.1911,
+   "track_confidence": 0.1529,
+   "confirmed": true
+  },
+  {
+   "track_id": 40,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_000970.jpg",
+     "frame_index": 970,
+     "t": 32.42,
+     "detection_id": "2f00ad874f67-002",
+     "bbox": [
+      5.74,
+      225.82,
+      748.16,
+      272.68
+     ],
+     "confidence": 0.1601,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000980.jpg",
+     "frame_index": 980,
+     "t": 32.754,
+     "detection_id": "81d35b68b65a-004",
+     "bbox": [
+      7.43,
+      220.58,
+      754.75,
+      275.39
+     ],
+     "confidence": 0.1872,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_000990.jpg",
+     "frame_index": 990,
+     "t": 33.088,
+     "detection_id": "b85d968c6e1e-002",
+     "bbox": [
+      0.0,
+      217.52,
+      839.62,
+      269.02
+     ],
+     "confidence": 0.1615,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001000.jpg",
+     "frame_index": 1000,
+     "t": 33.422,
+     "detection_id": "133616f04c0b-003",
+     "bbox": [
+      4.05,
+      207.85,
+      788.49,
+      284.98
+     ],
+     "confidence": 0.1971,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001025.jpg",
+     "frame_index": 1025,
+     "t": 34.258,
+     "detection_id": "00695e60f974-003",
+     "bbox": [
+      5.13,
+      208.06,
+      866.99,
+      264.21
+     ],
+     "confidence": 0.1982,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001045.jpg",
+     "frame_index": 1045,
+     "t": 34.926,
+     "detection_id": "6a574bbda8f4-003",
+     "bbox": [
+      4.32,
+      241.55,
+      722.49,
+      321.64
+     ],
+     "confidence": 0.2263,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001055.jpg",
+     "frame_index": 1055,
+     "t": 35.261,
+     "detection_id": "6f167530f047-001",
+     "bbox": [
+      0.0,
+      251.68,
+      857.12,
+      378.21
+     ],
+     "confidence": 0.3271,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001065.jpg",
+     "frame_index": 1065,
+     "t": 35.595,
+     "detection_id": "a3ccb833bd4d-002",
+     "bbox": [
+      3.71,
+      299.93,
+      731.59,
+      416.93
+     ],
+     "confidence": 0.2827,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001075.jpg",
+     "frame_index": 1075,
+     "t": 35.929,
+     "detection_id": "92626f46ff42-002",
+     "bbox": [
+      0.0,
+      321.69,
+      827.09,
+      442.91
+     ],
+     "confidence": 0.1642,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 32.42,
+   "last_t": 35.929,
+   "n_observations": 9,
+   "max_confidence": 0.3271,
+   "mean_confidence": 0.2116,
+   "track_confidence": 0.2116,
+   "confirmed": true
+  },
+  {
+   "track_id": 41,
+   "class_name": "signboard",
+   "observations": [
+    {
+     "frame": "frame_000980.jpg",
+     "frame_index": 980,
+     "t": 32.754,
+     "detection_id": "81d35b68b65a-001",
+     "bbox": [
+      682.83,
+      96.84,
+      738.79,
+      154.73
+     ],
+     "confidence": 0.2189,
+     "prompt": "directional sign"
+    }
+   ],
+   "first_t": 32.754,
+   "last_t": 32.754,
+   "n_observations": 1,
+   "max_confidence": 0.2189,
+   "mean_confidence": 0.2189,
+   "track_confidence": 0.1313,
+   "confirmed": false
+  },
+  {
+   "track_id": 42,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_001000.jpg",
+     "frame_index": 1000,
+     "t": 33.422,
+     "detection_id": "133616f04c0b-004",
+     "bbox": [
+      1.49,
+      88.45,
+      314.86,
+      227.35
+     ],
+     "confidence": 0.1815,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001010.jpg",
+     "frame_index": 1010,
+     "t": 33.757,
+     "detection_id": "7f4f2b04170f-003",
+     "bbox": [
+      0.14,
+      47.96,
+      329.92,
+      202.72
+     ],
+     "confidence": 0.2085,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001025.jpg",
+     "frame_index": 1025,
+     "t": 34.258,
+     "detection_id": "00695e60f974-004",
+     "bbox": [
+      0.56,
+      125.4,
+      229.6,
+      213.79
+     ],
+     "confidence": 0.1719,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 33.422,
+   "last_t": 34.258,
+   "n_observations": 3,
+   "max_confidence": 0.2085,
+   "mean_confidence": 0.1873,
+   "track_confidence": 0.1498,
+   "confirmed": true
+  },
+  {
+   "track_id": 43,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_001025.jpg",
+     "frame_index": 1025,
+     "t": 34.258,
+     "detection_id": "00695e60f974-002",
+     "bbox": [
+      0.0,
+      280.43,
+      690.24,
+      439.89
+     ],
+     "confidence": 0.2334,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001035.jpg",
+     "frame_index": 1035,
+     "t": 34.592,
+     "detection_id": "3ccd3971420e-002",
+     "bbox": [
+      0.0,
+      283.84,
+      745.63,
+      522.11
+     ],
+     "confidence": 0.2182,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001045.jpg",
+     "frame_index": 1045,
+     "t": 34.926,
+     "detection_id": "6a574bbda8f4-002",
+     "bbox": [
+      0.11,
+      295.19,
+      806.13,
+      538.63
+     ],
+     "confidence": 0.2273,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001055.jpg",
+     "frame_index": 1055,
+     "t": 35.261,
+     "detection_id": "6f167530f047-002",
+     "bbox": [
+      6.41,
+      286.63,
+      762.02,
+      540.39
+     ],
+     "confidence": 0.2946,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001065.jpg",
+     "frame_index": 1065,
+     "t": 35.595,
+     "detection_id": "a3ccb833bd4d-001",
+     "bbox": [
+      1.19,
+      335.66,
+      763.32,
+      539.91
+     ],
+     "confidence": 0.3533,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001075.jpg",
+     "frame_index": 1075,
+     "t": 35.929,
+     "detection_id": "92626f46ff42-000",
+     "bbox": [
+      0.0,
+      352.23,
+      764.57,
+      538.78
+     ],
+     "confidence": 0.4235,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001085.jpg",
+     "frame_index": 1085,
+     "t": 36.263,
+     "detection_id": "d59e6498aa45-000",
+     "bbox": [
+      6.11,
+      341.07,
+      673.66,
+      539.45
+     ],
+     "confidence": 0.4578,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001095.jpg",
+     "frame_index": 1095,
+     "t": 36.598,
+     "detection_id": "535269f88c1a-002",
+     "bbox": [
+      4.61,
+      330.01,
+      624.05,
+      537.22
+     ],
+     "confidence": 0.1839,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001100.jpg",
+     "frame_index": 1100,
+     "t": 36.765,
+     "detection_id": "9761e38075a8-001",
+     "bbox": [
+      2.72,
+      306.01,
+      551.74,
+      536.18
+     ],
+     "confidence": 0.1899,
+     "prompt": "walkway"
+    },
+    {
+     "frame": "frame_001110.jpg",
+     "frame_index": 1110,
+     "t": 37.099,
+     "detection_id": "f667919a1344-002",
+     "bbox": [
+      113.64,
+      298.66,
+      627.76,
+      540.66
+     ],
+     "confidence": 0.2485,
+     "prompt": "footpath"
+    },
+    {
+     "frame": "frame_001120.jpg",
+     "frame_index": 1120,
+     "t": 37.433,
+     "detection_id": "71bee914ff47-002",
+     "bbox": [
+      5.28,
+      219.45,
+      564.78,
+      541.19
+     ],
+     "confidence": 0.289,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001130.jpg",
+     "frame_index": 1130,
+     "t": 37.767,
+     "detection_id": "210a71323892-001",
+     "bbox": [
+      7.24,
+      227.49,
+      467.6,
+      541.58
+     ],
+     "confidence": 0.419,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001135.jpg",
+     "frame_index": 1135,
+     "t": 37.934,
+     "detection_id": "9d12d39f7ce8-001",
+     "bbox": [
+      4.7,
+      210.01,
+      524.78,
+      539.54
+     ],
+     "confidence": 0.3541,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001145.jpg",
+     "frame_index": 1145,
+     "t": 38.269,
+     "detection_id": "35b3482e53ca-000",
+     "bbox": [
+      82.08,
+      242.52,
+      495.41,
+      539.28
+     ],
+     "confidence": 0.2202,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001160.jpg",
+     "frame_index": 1160,
+     "t": 38.77,
+     "detection_id": "9371327dd5bd-001",
+     "bbox": [
+      0.79,
+      198.84,
+      254.8,
+      538.15
+     ],
+     "confidence": 0.1853,
+     "prompt": "walkway"
+    },
+    {
+     "frame": "frame_001175.jpg",
+     "frame_index": 1175,
+     "t": 39.271,
+     "detection_id": "1892414bb1ee-001",
+     "bbox": [
+      0.24,
+      220.04,
+      209.06,
+      513.09
+     ],
+     "confidence": 0.1834,
+     "prompt": "walkway"
+    },
+    {
+     "frame": "frame_001180.jpg",
+     "frame_index": 1180,
+     "t": 39.439,
+     "detection_id": "a2b41fcad9e7-001",
+     "bbox": [
+      0.9,
+      210.15,
+      223.96,
+      530.61
+     ],
+     "confidence": 0.2191,
+     "prompt": "walkway"
+    },
+    {
+     "frame": "frame_001195.jpg",
+     "frame_index": 1195,
+     "t": 39.94,
+     "detection_id": "9cf93ba394fb-001",
+     "bbox": [
+      0.0,
+      265.56,
+      650.21,
+      539.47
+     ],
+     "confidence": 0.2363,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001200.jpg",
+     "frame_index": 1200,
+     "t": 40.107,
+     "detection_id": "494e3b769a01-003",
+     "bbox": [
+      208.98,
+      288.65,
+      658.91,
+      540.18
+     ],
+     "confidence": 0.1985,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001215.jpg",
+     "frame_index": 1215,
+     "t": 40.608,
+     "detection_id": "e3734b0dddd9-001",
+     "bbox": [
+      178.13,
+      298.22,
+      637.54,
+      540.65
+     ],
+     "confidence": 0.2834,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001220.jpg",
+     "frame_index": 1220,
+     "t": 40.775,
+     "detection_id": "6c899f6f00f0-001",
+     "bbox": [
+      146.78,
+      278.25,
+      629.16,
+      540.2
+     ],
+     "confidence": 0.2567,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001230.jpg",
+     "frame_index": 1230,
+     "t": 41.11,
+     "detection_id": "0d601ff61dde-001",
+     "bbox": [
+      170.13,
+      256.91,
+      692.04,
+      541.21
+     ],
+     "confidence": 0.3049,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001240.jpg",
+     "frame_index": 1240,
+     "t": 41.444,
+     "detection_id": "fbc2f962924e-001",
+     "bbox": [
+      175.38,
+      293.94,
+      663.88,
+      540.06
+     ],
+     "confidence": 0.2491,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001250.jpg",
+     "frame_index": 1250,
+     "t": 41.778,
+     "detection_id": "59408dd6633b-001",
+     "bbox": [
+      247.69,
+      325.19,
+      625.32,
+      539.91
+     ],
+     "confidence": 0.2025,
+     "prompt": "paved path"
+    },
+    {
+     "frame": "frame_001265.jpg",
+     "frame_index": 1265,
+     "t": 42.279,
+     "detection_id": "5c92d2babb41-002",
+     "bbox": [
+      227.12,
+      340.3,
+      550.5,
+      538.77
+     ],
+     "confidence": 0.2285,
+     "prompt": "paved path"
+    }
+   ],
+   "first_t": 34.258,
+   "last_t": 42.279,
+   "n_observations": 25,
+   "max_confidence": 0.4578,
+   "mean_confidence": 0.2664,
+   "track_confidence": 0.2664,
+   "confirmed": true
+  },
+  {
+   "track_id": 44,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_001025.jpg",
+     "frame_index": 1025,
+     "t": 34.258,
+     "detection_id": "00695e60f974-005",
+     "bbox": [
+      713.57,
+      1.13,
+      809.36,
+      349.43
+     ],
+     "confidence": 0.1561,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 34.258,
+   "last_t": 34.258,
+   "n_observations": 1,
+   "max_confidence": 0.1561,
+   "mean_confidence": 0.1561,
+   "track_confidence": 0.0937,
+   "confirmed": false
+  },
+  {
+   "track_id": 45,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001045.jpg",
+     "frame_index": 1045,
+     "t": 34.926,
+     "detection_id": "6a574bbda8f4-001",
+     "bbox": [
+      3.13,
+      240.4,
+      912.24,
+      536.37
+     ],
+     "confidence": 0.3254,
+     "prompt": "barrier"
+    },
+    {
+     "frame": "frame_001075.jpg",
+     "frame_index": 1075,
+     "t": 35.929,
+     "detection_id": "92626f46ff42-001",
+     "bbox": [
+      5.39,
+      320.8,
+      833.52,
+      539.9
+     ],
+     "confidence": 0.3837,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 34.926,
+   "last_t": 35.929,
+   "n_observations": 2,
+   "max_confidence": 0.3837,
+   "mean_confidence": 0.3546,
+   "track_confidence": 0.2482,
+   "confirmed": true
+  },
+  {
+   "track_id": 46,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001055.jpg",
+     "frame_index": 1055,
+     "t": 35.261,
+     "detection_id": "6f167530f047-004",
+     "bbox": [
+      841.89,
+      252.17,
+      949.29,
+      304.65
+     ],
+     "confidence": 0.172,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 35.261,
+   "last_t": 35.261,
+   "n_observations": 1,
+   "max_confidence": 0.172,
+   "mean_confidence": 0.172,
+   "track_confidence": 0.1032,
+   "confirmed": false
+  },
+  {
+   "track_id": 47,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001065.jpg",
+     "frame_index": 1065,
+     "t": 35.595,
+     "detection_id": "a3ccb833bd4d-003",
+     "bbox": [
+      688.73,
+      302.34,
+      889.96,
+      367.41
+     ],
+     "confidence": 0.1571,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 35.595,
+   "last_t": 35.595,
+   "n_observations": 1,
+   "max_confidence": 0.1571,
+   "mean_confidence": 0.1571,
+   "track_confidence": 0.0943,
+   "confirmed": false
+  },
+  {
+   "track_id": 48,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001075.jpg",
+     "frame_index": 1075,
+     "t": 35.929,
+     "detection_id": "92626f46ff42-003",
+     "bbox": [
+      455.17,
+      325.78,
+      696.05,
+      495.91
+     ],
+     "confidence": 0.1639,
+     "prompt": "barrier"
+    },
+    {
+     "frame": "frame_001085.jpg",
+     "frame_index": 1085,
+     "t": 36.263,
+     "detection_id": "d59e6498aa45-001",
+     "bbox": [
+      376.93,
+      313.28,
+      741.49,
+      512.94
+     ],
+     "confidence": 0.2888,
+     "prompt": "barrier"
+    },
+    {
+     "frame": "frame_001095.jpg",
+     "frame_index": 1095,
+     "t": 36.598,
+     "detection_id": "535269f88c1a-001",
+     "bbox": [
+      345.13,
+      312.43,
+      694.83,
+      535.64
+     ],
+     "confidence": 0.2902,
+     "prompt": "barrier"
+    },
+    {
+     "frame": "frame_001100.jpg",
+     "frame_index": 1100,
+     "t": 36.765,
+     "detection_id": "9761e38075a8-000",
+     "bbox": [
+      303.29,
+      286.56,
+      657.22,
+      534.06
+     ],
+     "confidence": 0.4036,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 35.929,
+   "last_t": 36.765,
+   "n_observations": 4,
+   "max_confidence": 0.4036,
+   "mean_confidence": 0.2866,
+   "track_confidence": 0.258,
+   "confirmed": true
+  },
+  {
+   "track_id": 49,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001075.jpg",
+     "frame_index": 1075,
+     "t": 35.929,
+     "detection_id": "92626f46ff42-004",
+     "bbox": [
+      17.87,
+      337.92,
+      102.09,
+      538.24
+     ],
+     "confidence": 0.1624,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 35.929,
+   "last_t": 35.929,
+   "n_observations": 1,
+   "max_confidence": 0.1624,
+   "mean_confidence": 0.1624,
+   "track_confidence": 0.0974,
+   "confirmed": false
+  },
+  {
+   "track_id": 50,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001095.jpg",
+     "frame_index": 1095,
+     "t": 36.598,
+     "detection_id": "535269f88c1a-003",
+     "bbox": [
+      603.81,
+      317.43,
+      692.61,
+      414.42
+     ],
+     "confidence": 0.1596,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 36.598,
+   "last_t": 36.598,
+   "n_observations": 1,
+   "max_confidence": 0.1596,
+   "mean_confidence": 0.1596,
+   "track_confidence": 0.0958,
+   "confirmed": false
+  },
+  {
+   "track_id": 51,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_001100.jpg",
+     "frame_index": 1100,
+     "t": 36.765,
+     "detection_id": "9761e38075a8-002",
+     "bbox": [
+      375.89,
+      283.51,
+      656.24,
+      304.29
+     ],
+     "confidence": 0.1736,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 36.765,
+   "last_t": 36.765,
+   "n_observations": 1,
+   "max_confidence": 0.1736,
+   "mean_confidence": 0.1736,
+   "track_confidence": 0.1042,
+   "confirmed": false
+  },
+  {
+   "track_id": 52,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_001100.jpg",
+     "frame_index": 1100,
+     "t": 36.765,
+     "detection_id": "9761e38075a8-003",
+     "bbox": [
+      656.39,
+      284.63,
+      749.82,
+      334.86
+     ],
+     "confidence": 0.1554,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 36.765,
+   "last_t": 36.765,
+   "n_observations": 1,
+   "max_confidence": 0.1554,
+   "mean_confidence": 0.1554,
+   "track_confidence": 0.0932,
+   "confirmed": false
+  },
+  {
+   "track_id": 53,
+   "class_name": "signboard",
+   "observations": [
+    {
+     "frame": "frame_001110.jpg",
+     "frame_index": 1110,
+     "t": 37.099,
+     "detection_id": "f667919a1344-000",
+     "bbox": [
+      743.01,
+      125.11,
+      957.23,
+      337.79
+     ],
+     "confidence": 0.4506,
+     "prompt": "information sign"
+    }
+   ],
+   "first_t": 37.099,
+   "last_t": 37.099,
+   "n_observations": 1,
+   "max_confidence": 0.4506,
+   "mean_confidence": 0.4506,
+   "track_confidence": 0.2704,
+   "confirmed": false
+  },
+  {
+   "track_id": 54,
+   "class_name": "signboard",
+   "observations": [
+    {
+     "frame": "frame_001110.jpg",
+     "frame_index": 1110,
+     "t": 37.099,
+     "detection_id": "f667919a1344-001",
+     "bbox": [
+      741.63,
+      138.62,
+      792.52,
+      246.07
+     ],
+     "confidence": 0.2568,
+     "prompt": "directional sign"
+    }
+   ],
+   "first_t": 37.099,
+   "last_t": 37.099,
+   "n_observations": 1,
+   "max_confidence": 0.2568,
+   "mean_confidence": 0.2568,
+   "track_confidence": 0.1541,
+   "confirmed": false
+  },
+  {
+   "track_id": 55,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001120.jpg",
+     "frame_index": 1120,
+     "t": 37.433,
+     "detection_id": "71bee914ff47-000",
+     "bbox": [
+      277.99,
+      221.78,
+      319.68,
+      291.77
+     ],
+     "confidence": 0.3349,
+     "prompt": "trash can"
+    }
+   ],
+   "first_t": 37.433,
+   "last_t": 37.433,
+   "n_observations": 1,
+   "max_confidence": 0.3349,
+   "mean_confidence": 0.3349,
+   "track_confidence": 0.2009,
+   "confirmed": false
+  },
+  {
+   "track_id": 56,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001120.jpg",
+     "frame_index": 1120,
+     "t": 37.433,
+     "detection_id": "71bee914ff47-001",
+     "bbox": [
+      869.47,
+      145.91,
+      957.7,
+      299.49
+     ],
+     "confidence": 0.2933,
+     "prompt": "trash can"
+    }
+   ],
+   "first_t": 37.433,
+   "last_t": 37.433,
+   "n_observations": 1,
+   "max_confidence": 0.2933,
+   "mean_confidence": 0.2933,
+   "track_confidence": 0.176,
+   "confirmed": false
+  },
+  {
+   "track_id": 57,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001120.jpg",
+     "frame_index": 1120,
+     "t": 37.433,
+     "detection_id": "71bee914ff47-003",
+     "bbox": [
+      864.19,
+      145.96,
+      958.02,
+      536.74
+     ],
+     "confidence": 0.2267,
+     "prompt": "trash can"
+    }
+   ],
+   "first_t": 37.433,
+   "last_t": 37.433,
+   "n_observations": 1,
+   "max_confidence": 0.2267,
+   "mean_confidence": 0.2267,
+   "track_confidence": 0.136,
+   "confirmed": false
+  },
+  {
+   "track_id": 58,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001120.jpg",
+     "frame_index": 1120,
+     "t": 37.433,
+     "detection_id": "71bee914ff47-004",
+     "bbox": [
+      324.96,
+      192.16,
+      438.91,
+      247.71
+     ],
+     "confidence": 0.1903,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 37.433,
+   "last_t": 37.433,
+   "n_observations": 1,
+   "max_confidence": 0.1903,
+   "mean_confidence": 0.1903,
+   "track_confidence": 0.1142,
+   "confirmed": false
+  },
+  {
+   "track_id": 59,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001130.jpg",
+     "frame_index": 1130,
+     "t": 37.767,
+     "detection_id": "210a71323892-000",
+     "bbox": [
+      1.23,
+      169.69,
+      232.69,
+      472.02
+     ],
+     "confidence": 0.5992,
+     "prompt": "bench"
+    },
+    {
+     "frame": "frame_001135.jpg",
+     "frame_index": 1135,
+     "t": 37.934,
+     "detection_id": "9d12d39f7ce8-000",
+     "bbox": [
+      0.85,
+      171.61,
+      244.21,
+      503.14
+     ],
+     "confidence": 0.431,
+     "prompt": "bench"
+    },
+    {
+     "frame": "frame_001160.jpg",
+     "frame_index": 1160,
+     "t": 38.77,
+     "detection_id": "9371327dd5bd-002",
+     "bbox": [
+      108.27,
+      232.02,
+      272.7,
+      520.89
+     ],
+     "confidence": 0.1535,
+     "prompt": "barrier"
+    },
+    {
+     "frame": "frame_001200.jpg",
+     "frame_index": 1200,
+     "t": 40.107,
+     "detection_id": "494e3b769a01-002",
+     "bbox": [
+      129.91,
+      276.92,
+      268.63,
+      528.69
+     ],
+     "confidence": 0.2,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 37.767,
+   "last_t": 40.107,
+   "n_observations": 4,
+   "max_confidence": 0.5992,
+   "mean_confidence": 0.3459,
+   "track_confidence": 0.3113,
+   "confirmed": true
+  },
+  {
+   "track_id": 60,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_001130.jpg",
+     "frame_index": 1130,
+     "t": 37.767,
+     "detection_id": "210a71323892-003",
+     "bbox": [
+      177.22,
+      183.91,
+      330.47,
+      248.19
+     ],
+     "confidence": 0.2285,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001135.jpg",
+     "frame_index": 1135,
+     "t": 37.934,
+     "detection_id": "9d12d39f7ce8-005",
+     "bbox": [
+      222.58,
+      181.23,
+      348.54,
+      234.57
+     ],
+     "confidence": 0.1673,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001145.jpg",
+     "frame_index": 1145,
+     "t": 38.269,
+     "detection_id": "35b3482e53ca-001",
+     "bbox": [
+      249.28,
+      219.47,
+      356.35,
+      288.9
+     ],
+     "confidence": 0.1595,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001175.jpg",
+     "frame_index": 1175,
+     "t": 39.271,
+     "detection_id": "1892414bb1ee-000",
+     "bbox": [
+      176.65,
+      228.83,
+      345.53,
+      320.01
+     ],
+     "confidence": 0.2527,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001180.jpg",
+     "frame_index": 1180,
+     "t": 39.439,
+     "detection_id": "a2b41fcad9e7-000",
+     "bbox": [
+      201.52,
+      224.33,
+      363.75,
+      317.45
+     ],
+     "confidence": 0.3455,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001195.jpg",
+     "frame_index": 1195,
+     "t": 39.94,
+     "detection_id": "9cf93ba394fb-000",
+     "bbox": [
+      217.45,
+      278.56,
+      383.93,
+      381.57
+     ],
+     "confidence": 0.2677,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001200.jpg",
+     "frame_index": 1200,
+     "t": 40.107,
+     "detection_id": "494e3b769a01-000",
+     "bbox": [
+      250.77,
+      259.31,
+      417.08,
+      363.81
+     ],
+     "confidence": 0.3696,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001230.jpg",
+     "frame_index": 1230,
+     "t": 41.11,
+     "detection_id": "0d601ff61dde-000",
+     "bbox": [
+      222.53,
+      222.45,
+      428.17,
+      345.13
+     ],
+     "confidence": 0.366,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 37.767,
+   "last_t": 41.11,
+   "n_observations": 8,
+   "max_confidence": 0.3696,
+   "mean_confidence": 0.2696,
+   "track_confidence": 0.2696,
+   "confirmed": true
+  },
+  {
+   "track_id": 61,
+   "class_name": "ramp",
+   "observations": [
+    {
+     "frame": "frame_001130.jpg",
+     "frame_index": 1130,
+     "t": 37.767,
+     "detection_id": "210a71323892-004",
+     "bbox": [
+      0.05,
+      164.1,
+      210.74,
+      357.02
+     ],
+     "confidence": 0.1878,
+     "prompt": "accessibility ramp"
+    }
+   ],
+   "first_t": 37.767,
+   "last_t": 37.767,
+   "n_observations": 1,
+   "max_confidence": 0.1878,
+   "mean_confidence": 0.1878,
+   "track_confidence": 0.1127,
+   "confirmed": false
+  },
+  {
+   "track_id": 62,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_001135.jpg",
+     "frame_index": 1135,
+     "t": 37.934,
+     "detection_id": "9d12d39f7ce8-002",
+     "bbox": [
+      0.95,
+      170.88,
+      225.83,
+      225.19
+     ],
+     "confidence": 0.2581,
+     "prompt": "handrail"
+    }
+   ],
+   "first_t": 37.934,
+   "last_t": 37.934,
+   "n_observations": 1,
+   "max_confidence": 0.2581,
+   "mean_confidence": 0.2581,
+   "track_confidence": 0.1549,
+   "confirmed": false
+  },
+  {
+   "track_id": 63,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001135.jpg",
+     "frame_index": 1135,
+     "t": 37.934,
+     "detection_id": "9d12d39f7ce8-004",
+     "bbox": [
+      203.21,
+      192.45,
+      248.32,
+      298.65
+     ],
+     "confidence": 0.1882,
+     "prompt": "trash can"
+    }
+   ],
+   "first_t": 37.934,
+   "last_t": 37.934,
+   "n_observations": 1,
+   "max_confidence": 0.1882,
+   "mean_confidence": 0.1882,
+   "track_confidence": 0.1129,
+   "confirmed": false
+  },
+  {
+   "track_id": 64,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001160.jpg",
+     "frame_index": 1160,
+     "t": 38.77,
+     "detection_id": "9371327dd5bd-000",
+     "bbox": [
+      227.6,
+      200.2,
+      386.05,
+      274.75
+     ],
+     "confidence": 0.2312,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 38.77,
+   "last_t": 38.77,
+   "n_observations": 1,
+   "max_confidence": 0.2312,
+   "mean_confidence": 0.2312,
+   "track_confidence": 0.1387,
+   "confirmed": false
+  },
+  {
+   "track_id": 65,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_001170.jpg",
+     "frame_index": 1170,
+     "t": 39.104,
+     "detection_id": "8e91ef81ef64-000",
+     "bbox": [
+      115.18,
+      204.34,
+      281.85,
+      294.6
+     ],
+     "confidence": 0.2246,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 39.104,
+   "last_t": 39.104,
+   "n_observations": 1,
+   "max_confidence": 0.2246,
+   "mean_confidence": 0.2246,
+   "track_confidence": 0.1348,
+   "confirmed": false
+  },
+  {
+   "track_id": 66,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_001200.jpg",
+     "frame_index": 1200,
+     "t": 40.107,
+     "detection_id": "494e3b769a01-001",
+     "bbox": [
+      0.64,
+      234.89,
+      268.39,
+      537.29
+     ],
+     "confidence": 0.2354,
+     "prompt": "walkway"
+    }
+   ],
+   "first_t": 40.107,
+   "last_t": 40.107,
+   "n_observations": 1,
+   "max_confidence": 0.2354,
+   "mean_confidence": 0.2354,
+   "track_confidence": 0.1412,
+   "confirmed": false
+  },
+  {
+   "track_id": 67,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001215.jpg",
+     "frame_index": 1215,
+     "t": 40.608,
+     "detection_id": "e3734b0dddd9-000",
+     "bbox": [
+      275.5,
+      271.33,
+      447.21,
+      402.18
+     ],
+     "confidence": 0.3583,
+     "prompt": "barrier"
+    },
+    {
+     "frame": "frame_001220.jpg",
+     "frame_index": 1220,
+     "t": 40.775,
+     "detection_id": "6c899f6f00f0-000",
+     "bbox": [
+      261.84,
+      249.0,
+      447.42,
+      384.16
+     ],
+     "confidence": 0.3171,
+     "prompt": "barrier"
+    },
+    {
+     "frame": "frame_001240.jpg",
+     "frame_index": 1240,
+     "t": 41.444,
+     "detection_id": "fbc2f962924e-000",
+     "bbox": [
+      285.56,
+      258.95,
+      505.45,
+      428.37
+     ],
+     "confidence": 0.3648,
+     "prompt": "barrier"
+    },
+    {
+     "frame": "frame_001250.jpg",
+     "frame_index": 1250,
+     "t": 41.778,
+     "detection_id": "59408dd6633b-000",
+     "bbox": [
+      293.41,
+      286.61,
+      543.58,
+      480.82
+     ],
+     "confidence": 0.3337,
+     "prompt": "barrier"
+    },
+    {
+     "frame": "frame_001255.jpg",
+     "frame_index": 1255,
+     "t": 41.945,
+     "detection_id": "477ebc1c5e97-000",
+     "bbox": [
+      313.59,
+      290.82,
+      559.44,
+      497.16
+     ],
+     "confidence": 0.381,
+     "prompt": "barrier"
+    },
+    {
+     "frame": "frame_001265.jpg",
+     "frame_index": 1265,
+     "t": 42.279,
+     "detection_id": "5c92d2babb41-000",
+     "bbox": [
+      241.9,
+      302.24,
+      540.32,
+      530.65
+     ],
+     "confidence": 0.5106,
+     "prompt": "barrier"
+    },
+    {
+     "frame": "frame_001280.jpg",
+     "frame_index": 1280,
+     "t": 42.781,
+     "detection_id": "867851852a1a-000",
+     "bbox": [
+      320.99,
+      311.68,
+      672.95,
+      537.54
+     ],
+     "confidence": 0.4325,
+     "prompt": "barrier"
+    },
+    {
+     "frame": "frame_001285.jpg",
+     "frame_index": 1285,
+     "t": 42.948,
+     "detection_id": "81169e22f512-000",
+     "bbox": [
+      310.72,
+      310.38,
+      697.49,
+      538.53
+     ],
+     "confidence": 0.5453,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 40.608,
+   "last_t": 42.948,
+   "n_observations": 8,
+   "max_confidence": 0.5453,
+   "mean_confidence": 0.4054,
+   "track_confidence": 0.4054,
+   "confirmed": true
+  },
+  {
+   "track_id": 68,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_001255.jpg",
+     "frame_index": 1255,
+     "t": 41.945,
+     "detection_id": "477ebc1c5e97-001",
+     "bbox": [
+      1.69,
+      256.85,
+      284.63,
+      539.87
+     ],
+     "confidence": 0.2194,
+     "prompt": "walkway"
+    },
+    {
+     "frame": "frame_001265.jpg",
+     "frame_index": 1265,
+     "t": 42.279,
+     "detection_id": "5c92d2babb41-001",
+     "bbox": [
+      0.0,
+      305.63,
+      218.81,
+      540.45
+     ],
+     "confidence": 0.2578,
+     "prompt": "walkway"
+    }
+   ],
+   "first_t": 41.945,
+   "last_t": 42.279,
+   "n_observations": 2,
+   "max_confidence": 0.2578,
+   "mean_confidence": 0.2386,
+   "track_confidence": 0.167,
+   "confirmed": true
+  },
+  {
+   "track_id": 69,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001255.jpg",
+     "frame_index": 1255,
+     "t": 41.945,
+     "detection_id": "477ebc1c5e97-002",
+     "bbox": [
+      168.18,
+      312.87,
+      318.01,
+      536.2
+     ],
+     "confidence": 0.1547,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 41.945,
+   "last_t": 41.945,
+   "n_observations": 1,
+   "max_confidence": 0.1547,
+   "mean_confidence": 0.1547,
+   "track_confidence": 0.0928,
+   "confirmed": false
+  },
+  {
+   "track_id": 70,
+   "class_name": "handrail",
+   "observations": [
+    {
+     "frame": "frame_001295.jpg",
+     "frame_index": 1295,
+     "t": 43.282,
+     "detection_id": "d752fb4f95a6-000",
+     "bbox": [
+      358.45,
+      318.29,
+      782.91,
+      539.03
+     ],
+     "confidence": 0.5001,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001305.jpg",
+     "frame_index": 1305,
+     "t": 43.616,
+     "detection_id": "ca62d4a84edb-000",
+     "bbox": [
+      194.55,
+      288.86,
+      745.51,
+      537.11
+     ],
+     "confidence": 0.5619,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001310.jpg",
+     "frame_index": 1310,
+     "t": 43.783,
+     "detection_id": "0720ccad391e-000",
+     "bbox": [
+      302.79,
+      305.76,
+      957.86,
+      540.12
+     ],
+     "confidence": 0.427,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001315.jpg",
+     "frame_index": 1315,
+     "t": 43.951,
+     "detection_id": "0484c3c9dc28-000",
+     "bbox": [
+      354.04,
+      285.51,
+      953.72,
+      540.03
+     ],
+     "confidence": 0.425,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001325.jpg",
+     "frame_index": 1325,
+     "t": 44.285,
+     "detection_id": "27e852cd5cdd-000",
+     "bbox": [
+      349.36,
+      297.3,
+      951.92,
+      539.53
+     ],
+     "confidence": 0.3655,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001335.jpg",
+     "frame_index": 1335,
+     "t": 44.619,
+     "detection_id": "8ca22408a7cb-000",
+     "bbox": [
+      419.09,
+      323.52,
+      954.82,
+      538.71
+     ],
+     "confidence": 0.375,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001345.jpg",
+     "frame_index": 1345,
+     "t": 44.953,
+     "detection_id": "0e5433657432-000",
+     "bbox": [
+      419.21,
+      255.23,
+      955.71,
+      539.54
+     ],
+     "confidence": 0.3496,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001355.jpg",
+     "frame_index": 1355,
+     "t": 45.287,
+     "detection_id": "90425fec321e-000",
+     "bbox": [
+      422.49,
+      240.79,
+      957.57,
+      536.73
+     ],
+     "confidence": 0.3487,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001370.jpg",
+     "frame_index": 1370,
+     "t": 45.789,
+     "detection_id": "883a4d6b37a9-000",
+     "bbox": [
+      438.92,
+      278.66,
+      959.57,
+      540.44
+     ],
+     "confidence": 0.4138,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001385.jpg",
+     "frame_index": 1385,
+     "t": 46.29,
+     "detection_id": "23f8d40bc1b0-000",
+     "bbox": [
+      408.26,
+      269.9,
+      957.01,
+      539.89
+     ],
+     "confidence": 0.4899,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001395.jpg",
+     "frame_index": 1395,
+     "t": 46.624,
+     "detection_id": "b876af6baf43-000",
+     "bbox": [
+      425.78,
+      265.11,
+      957.76,
+      540.7
+     ],
+     "confidence": 0.4122,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001405.jpg",
+     "frame_index": 1405,
+     "t": 46.959,
+     "detection_id": "f3057cc5b978-000",
+     "bbox": [
+      535.06,
+      283.42,
+      955.64,
+      539.8
+     ],
+     "confidence": 0.3834,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001420.jpg",
+     "frame_index": 1420,
+     "t": 47.46,
+     "detection_id": "8d9e306c6e6f-001",
+     "bbox": [
+      504.1,
+      300.19,
+      958.16,
+      539.32
+     ],
+     "confidence": 0.4077,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001425.jpg",
+     "frame_index": 1425,
+     "t": 47.627,
+     "detection_id": "f52d5866a699-000",
+     "bbox": [
+      566.16,
+      336.52,
+      949.25,
+      539.51
+     ],
+     "confidence": 0.2696,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001430.jpg",
+     "frame_index": 1430,
+     "t": 47.794,
+     "detection_id": "c91910d35b58-000",
+     "bbox": [
+      584.82,
+      347.59,
+      939.6,
+      539.72
+     ],
+     "confidence": 0.4082,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001445.jpg",
+     "frame_index": 1445,
+     "t": 48.295,
+     "detection_id": "9ba7e39b1033-000",
+     "bbox": [
+      594.55,
+      346.06,
+      904.8,
+      540.45
+     ],
+     "confidence": 0.2574,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001450.jpg",
+     "frame_index": 1450,
+     "t": 48.463,
+     "detection_id": "90b3eef7d1a7-000",
+     "bbox": [
+      593.32,
+      341.07,
+      899.32,
+      540.81
+     ],
+     "confidence": 0.2527,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001460.jpg",
+     "frame_index": 1460,
+     "t": 48.797,
+     "detection_id": "259b14726533-001",
+     "bbox": [
+      558.5,
+      310.25,
+      897.39,
+      539.2
+     ],
+     "confidence": 0.4511,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001465.jpg",
+     "frame_index": 1465,
+     "t": 48.964,
+     "detection_id": "c3b30d7d4958-000",
+     "bbox": [
+      654.83,
+      344.77,
+      933.46,
+      541.01
+     ],
+     "confidence": 0.2516,
+     "prompt": "railing"
+    },
+    {
+     "frame": "frame_001470.jpg",
+     "frame_index": 1470,
+     "t": 49.131,
+     "detection_id": "869c7f60cf41-001",
+     "bbox": [
+      655.94,
+      337.28,
+      959.55,
+      540.81
+     ],
+     "confidence": 0.2189,
+     "prompt": "railing"
+    }
+   ],
+   "first_t": 43.282,
+   "last_t": 49.131,
+   "n_observations": 20,
+   "max_confidence": 0.5619,
+   "mean_confidence": 0.3785,
+   "track_confidence": 0.3785,
+   "confirmed": true
+  },
+  {
+   "track_id": 71,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001375.jpg",
+     "frame_index": 1375,
+     "t": 45.956,
+     "detection_id": "1db12323bb01-000",
+     "bbox": [
+      396.8,
+      308.58,
+      956.51,
+      539.03
+     ],
+     "confidence": 0.406,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 45.956,
+   "last_t": 45.956,
+   "n_observations": 1,
+   "max_confidence": 0.406,
+   "mean_confidence": 0.406,
+   "track_confidence": 0.2436,
+   "confirmed": false
+  },
+  {
+   "track_id": 72,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_001375.jpg",
+     "frame_index": 1375,
+     "t": 45.956,
+     "detection_id": "1db12323bb01-001",
+     "bbox": [
+      199.18,
+      323.62,
+      559.55,
+      539.36
+     ],
+     "confidence": 0.2185,
+     "prompt": "paved path"
+    }
+   ],
+   "first_t": 45.956,
+   "last_t": 45.956,
+   "n_observations": 1,
+   "max_confidence": 0.2185,
+   "mean_confidence": 0.2185,
+   "track_confidence": 0.1311,
+   "confirmed": false
+  },
+  {
+   "track_id": 73,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001420.jpg",
+     "frame_index": 1420,
+     "t": 47.46,
+     "detection_id": "8d9e306c6e6f-000",
+     "bbox": [
+      1.15,
+      270.3,
+      351.87,
+      531.59
+     ],
+     "confidence": 0.4691,
+     "prompt": "car"
+    },
+    {
+     "frame": "frame_001430.jpg",
+     "frame_index": 1430,
+     "t": 47.794,
+     "detection_id": "c91910d35b58-001",
+     "bbox": [
+      1.29,
+      298.82,
+      423.64,
+      531.54
+     ],
+     "confidence": 0.3823,
+     "prompt": "car"
+    },
+    {
+     "frame": "frame_001460.jpg",
+     "frame_index": 1460,
+     "t": 48.797,
+     "detection_id": "259b14726533-000",
+     "bbox": [
+      0.98,
+      241.66,
+      347.63,
+      531.73
+     ],
+     "confidence": 0.4598,
+     "prompt": "car"
+    },
+    {
+     "frame": "frame_001470.jpg",
+     "frame_index": 1470,
+     "t": 49.131,
+     "detection_id": "869c7f60cf41-000",
+     "bbox": [
+      1.42,
+      261.56,
+      429.77,
+      531.5
+     ],
+     "confidence": 0.4258,
+     "prompt": "car"
+    }
+   ],
+   "first_t": 47.46,
+   "last_t": 49.131,
+   "n_observations": 4,
+   "max_confidence": 0.4691,
+   "mean_confidence": 0.4342,
+   "track_confidence": 0.3908,
+   "confirmed": true
+  },
+  {
+   "track_id": 74,
+   "class_name": "walkway",
+   "observations": [
+    {
+     "frame": "frame_001430.jpg",
+     "frame_index": 1430,
+     "t": 47.794,
+     "detection_id": "c91910d35b58-002",
+     "bbox": [
+      394.62,
+      343.64,
+      643.24,
+      542.0
+     ],
+     "confidence": 0.19,
+     "prompt": "paved path"
+    }
+   ],
+   "first_t": 47.794,
+   "last_t": 47.794,
+   "n_observations": 1,
+   "max_confidence": 0.19,
+   "mean_confidence": 0.19,
+   "track_confidence": 0.114,
+   "confirmed": false
+  },
+  {
+   "track_id": 75,
+   "class_name": "obstacle",
+   "observations": [
+    {
+     "frame": "frame_001430.jpg",
+     "frame_index": 1430,
+     "t": 47.794,
+     "detection_id": "c91910d35b58-003",
+     "bbox": [
+      313.65,
+      308.83,
+      425.79,
+      538.79
+     ],
+     "confidence": 0.1686,
+     "prompt": "barrier"
+    }
+   ],
+   "first_t": 47.794,
+   "last_t": 47.794,
+   "n_observations": 1,
+   "max_confidence": 0.1686,
+   "mean_confidence": 0.1686,
+   "track_confidence": 0.1012,
+   "confirmed": false
+  },
+  {
+   "track_id": 76,
+   "class_name": "ramp",
+   "observations": [
+    {
+     "frame": "frame_001460.jpg",
+     "frame_index": 1460,
+     "t": 48.797,
+     "detection_id": "259b14726533-002",
+     "bbox": [
+      0.24,
+      243.87,
+      331.1,
+      540.26
+     ],
+     "confidence": 0.2209,
+     "prompt": "sloped ramp"
+    },
+    {
+     "frame": "frame_001465.jpg",
+     "frame_index": 1465,
+     "t": 48.964,
+     "detection_id": "c3b30d7d4958-001",
+     "bbox": [
+      0.0,
+      263.07,
+      431.18,
+      542.0
+     ],
+     "confidence": 0.1753,
+     "prompt": "sloped ramp"
+    },
+    {
+     "frame": "frame_001475.jpg",
+     "frame_index": 1475,
+     "t": 49.298,
+     "detection_id": "c177c70e6a84-000",
+     "bbox": [
+      0.0,
+      286.5,
+      384.43,
+      542.0
+     ],
+     "confidence": 0.2553,
+     "prompt": "sloped ramp"
+    }
+   ],
+   "first_t": 48.797,
+   "last_t": 49.298,
+   "n_observations": 3,
+   "max_confidence": 0.2553,
+   "mean_confidence": 0.2172,
+   "track_confidence": 0.1737,
+   "confirmed": true
+  },
+  {
+   "track_id": 77,
+   "class_name": "ramp",
+   "observations": [
+    {
+     "frame": "frame_001475.jpg",
+     "frame_index": 1475,
+     "t": 49.298,
+     "detection_id": "c177c70e6a84-001",
+     "bbox": [
+      643.47,
+      362.23,
+      946.16,
+      540.38
+     ],
+     "confidence": 0.2129,
+     "prompt": "sloped ramp"
+    }
+   ],
+   "first_t": 49.298,
+   "last_t": 49.298,
+   "n_observations": 1,
+   "max_confidence": 0.2129,
+   "mean_confidence": 0.2129,
+   "track_confidence": 0.1277,
+   "confirmed": false
+  }
+ ],
+ "confirmed_tracks": 36,
+ "per_class_confirmed": {
+  "handrail": 17,
+  "obstacle": 5,
+  "staircase": 4,
+  "walkway": 4,
+  "signboard": 3,
+  "ramp": 3
+ },
+ "comparison": {
+  "bytetrack": {
+   "confirmed_tracks": 11,
+   "per_class_confirmed": {
+    "handrail": 7,
+    "staircase": 2,
+    "walkway": 1,
+    "obstacle": 1
+   }
+  }
+ }
+}

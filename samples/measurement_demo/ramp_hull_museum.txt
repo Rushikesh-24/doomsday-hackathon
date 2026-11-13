@@ -1,0 +1,44 @@
+ramp_hull_museum.jpg  1280x853  detections=computed (ee1088609dcb)
+camera: prior hfov=69.4 deg | depth: da2_metric_outdoor_small | gravity: ground_plane | scale: uncalibrated_monocular x1.000 (+-45.0%)
+  note: no reference available: absolute lengths are withheld (REQUIRES_CALIBRATION)
+
+[staircase ee1088609dcb-001] conf=0.45 mask=sam + ade20k_stairs truncated=- depth~19.639
+  step_count                     4 +-1.483 steps  [ESTIMATED, conf 0.60]
+  pitch_deg                      16.978 +-3.000 deg  [ESTIMATED, conf 0.69]
+  riser_to_tread_ratio           0.305 +-0.046   [ESTIMATED, conf 0.62]
+  riser_height                   -- REQUIRES_CALIBRATION (provisional 0.173 m, not a measurement)
+  tread_depth                    -- REQUIRES_CALIBRATION (provisional 0.567 m, not a measurement)
+  stair_width                    -- REQUIRES_CALIBRATION (provisional 11.942 m, not a measurement)
+  handrail_present               True   [ESTIMATED, conf 0.65]
+  handrail_both_sides            False   [ESTIMATED, conf 0.45]
+  tactile_warning_surface        True   [ESTIMATED, conf 0.55]
+  nosing_contrast_and_profile    -- REQUIRES_MANUAL_MEASUREMENT: nosing projection/contrast needs close inspection
+
+[walkway ee1088609dcb-003] conf=0.36 mask=None truncated=- depth~None
+  clear_width                    -- REQUIRES_CALIBRATION (provisional 5.435 m, not a measurement)
+  min_available_clearance        -- REQUIRES_CALIBRATION (provisional 8.814 m, not a measurement)
+  permanent_obstruction_present  True   [ESTIMATED, conf 0.55]
+
+[ramp ee1088609dcb-009] conf=0.21 mask=sam truncated=- depth~19.282
+  running_slope_deg              6.147 +-7.174 deg  [ESTIMATED, conf 0.04]
+  running_slope_percent          10.770 +-12.667 %  [ESTIMATED, conf 0.04]
+  running_slope_ratio            1:9.3   [ESTIMATED, conf 0.04]
+  ramp_length                    -- REQUIRES_CALIBRATION (provisional 4.374 m, not a measurement)
+  horizontal_run                 -- REQUIRES_CALIBRATION (provisional 4.349 m, not a measurement)
+  rise                           -- REQUIRES_CALIBRATION (provisional 0.468 m, not a measurement)
+  clear_width                    -- REQUIRES_CALIBRATION (provisional 5.325 m, not a measurement)
+  handrail_present               False   [ESTIMATED, conf 0.40]
+  handrail_coverage_left         0.000 +-0.150 fraction  [ESTIMATED, conf 0.50]
+  handrail_coverage_right        0.000 +-0.150 fraction  [ESTIMATED, conf 0.50]
+  handrail_continuous            False   [ESTIMATED, conf 0.45]
+  surface_irregularity_ratio     0.006 rms/length  [ESTIMATED, conf 0.35]
+  surface_condition              regular   [ESTIMATED, conf 0.30]
+  slip_resistance                -- REQUIRES_MANUAL_MEASUREMENT: slip resistance needs a pendulum/tribometer test
+
+assessment (ada_2010): {'CANNOT_ASSESS': 6, 'NO_ISSUE_INDICATED': 2, 'POSSIBLE_ISSUE': 3}
+  POSSIBLE_ISSUE   route_obstruction        permanent_obstruction_present = True in image evidence - may be missed by the detector; verify
+  POSSIBLE_ISSUE   ramp_running_slope       running_slope_percent 10.770 % +- 24.827 % (95%) vs max 8.330 %: estimate exceeds the maximum (within uncertainty)
+  POSSIBLE_ISSUE   ramp_handrails           handrail_present = False in image evidence - may be missed by the detector; verify. Required only when rise > 150 mm; rise is checked when measured
+Screening only. No compliance determination is made; flagged items and all unverified measurements require on-site verification by a qualified assessor.
+annotated: samples/measurement_demo/ramp_hull_museum/ramp_hull_museum_measured.jpg 
+json: samples/measurement_demo/ramp_hull_museum/report.json

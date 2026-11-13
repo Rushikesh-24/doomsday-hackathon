@@ -1,0 +1,2470 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "1f5d8959742f",
+  "image": {
+    "name": "ramp_hull_museum.jpg",
+    "width": 1280,
+    "height": 853,
+    "format": "JPEG",
+    "channels": 3,
+    "exif_transposed": false
+  },
+  "vision_request_id": "ee1088609dcb",
+  "detections_source": "computed",
+  "camera": {
+    "fx": 924.3333483591775,
+    "fy": 924.3333483591775,
+    "cx": 640.0,
+    "cy": 426.5,
+    "width": 1280,
+    "height": 853,
+    "hfov_deg": 69.4,
+    "source": "prior",
+    "focal_rel_sigma": 0.15,
+    "distortion_corrected": false
+  },
+  "scale": {
+    "status": "uncalibrated_monocular",
+    "scale_factor": 1.0,
+    "rel_sigma": 0.45,
+    "reference_depth_m": null,
+    "references": [],
+    "notes": [
+      "no reference available: absolute lengths are withheld (REQUIRES_CALIBRATION)"
+    ]
+  },
+  "models": [
+    {
+      "role": "detection",
+      "key": "campus_ensemble",
+      "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "version": "ensemble(owlv2_base + yolo11_coco)",
+      "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+      "device": "mps",
+      "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+    },
+    {
+      "role": "depth",
+      "key": "da2_metric_outdoor_small",
+      "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+      "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+      "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+      "device": "mps",
+      "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+    },
+    {
+      "role": "semantic_segmentation",
+      "key": "upernet_ade20k",
+      "name": "openmmlab/upernet-convnext-tiny",
+      "version": "UperNet ConvNeXt-T ADE20K-150",
+      "license": "MIT",
+      "device": "cpu",
+      "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+    },
+    {
+      "role": "box_segmenter",
+      "key": "slimsam",
+      "name": "Zigeng/SlimSAM-uniform-50",
+      "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+      "license": "Apache-2.0",
+      "device": "mps",
+      "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+    }
+  ],
+  "scene": {
+    "indoor_outdoor": "outdoor",
+    "sky_fraction": 0.109,
+    "depth_model": "da2_metric_outdoor_small",
+    "analysis_size": [
+      1280,
+      853
+    ],
+    "gravity_source": "ground_plane",
+    "gravity_sigma_deg": 0.55,
+    "gravity_ground_vs_vp_deg": 2.88,
+    "vertical_lines": 79,
+    "ground_plane_inlier_ratio": 0.885,
+    "camera_height_m": null,
+    "measured_detections": 3,
+    "detections_total": 16
+  },
+  "facilities": [
+    {
+      "detection_id": "ee1088609dcb-001",
+      "class_name": "staircase",
+      "detection_confidence": 0.4482,
+      "bbox": [
+        317.73,
+        456.54,
+        580.69,
+        571.71
+      ],
+      "mask_area_px": 26303,
+      "mask_source": "sam + ade20k_stairs",
+      "truncated_sides": [],
+      "mean_depth_m": 19.639,
+      "measurements": [
+        {
+          "id": "1f5d8959742f-m001",
+          "detection_id": "ee1088609dcb-001",
+          "facility_class": "staircase",
+          "name": "step_count",
+          "value": 4,
+          "unit": "steps",
+          "uncertainty": 1.483,
+          "interval_95": [
+            1.094,
+            6.906
+          ],
+          "lower_bound": false,
+          "confidence": 0.6,
+          "status": "ESTIMATED",
+          "method": "horizontal step edges per image strip, mapped through a smooth per-strip 3D depth curve (perspective-corrected), longest regular run, median over strips",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [
+            "median over 4 image strips (75% within +-1); 1 detected edge(s) per step",
+            "2D edge-periodicity estimate: None (disagrees)"
+          ],
+          "ground_truth": null,
+          "overlay": {
+            "lines": [],
+            "points": [
+              [
+                368.0,
+                546.0
+              ],
+              [
+                368.0,
+                552.0
+              ],
+              [
+                368.0,
+                559.0
+              ],
+              [
+                368.0,
+                569.0
+              ],
+              [
+                400.7,
+                510.0
+              ],
+              [
+                400.7,
+                515.0
+              ],
+              [
+                400.7,
+                530.0
+              ],
+              [
+                400.7,
+                535.0
+              ],
+              [
+                400.7,
+                550.0
+              ],
+              [
+                400.7,
+                555.0
+              ],
+              [
+                400.7,
+                562.0
+              ],
+              [
+                400.7,
+                571.0
+              ],
+              [
+                433.3,
+                496.0
+              ],
+              [
+                433.3,
+                513.0
+              ],
+              [
+                433.3,
+                519.0
+              ],
+              [
+                433.3,
+                532.0
+              ],
+              [
+                433.3,
+                538.0
+              ],
+              [
+                433.3,
+                551.0
+              ],
+              [
+                433.3,
+                557.0
+              ],
+              [
+                433.3,
+                564.0
+              ],
+              [
+                433.3,
+                571.0
+              ],
+              [
+                466.0,
+                480.0
+              ],
+              [
+                466.0,
+                485.0
+              ],
+              [
+                466.0,
+                497.0
+              ],
+              [
+                466.0,
+                502.0
+              ],
+              [
+                466.0,
+                514.0
+              ],
+              [
+                466.0,
+                520.0
+              ],
+              [
+                466.0,
+                533.0
+              ],
+              [
+                466.0,
+                538.0
+              ],
+              [
+                466.0,
+                552.0
+              ],
+              [
+                466.0,
+                558.0
+              ],
+              [
+                466.0,
+                569.0
+              ],
+              [
+                498.7,
+                480.0
+              ],
+              [
+                498.7,
+                485.0
+              ],
+              [
+                498.7,
+                497.0
+              ],
+              [
+                498.7,
+                502.0
+              ],
+              [
+                498.7,
+                514.0
+              ],
+              [
+                498.7,
+                519.0
+              ],
+              [
+                498.7,
+                532.0
+              ],
+              [
+                498.7,
+                538.0
+              ],
+              [
+                498.7,
+                551.0
+              ],
+              [
+                498.7,
+                557.0
+              ],
+              [
+                498.7,
+                568.0
+              ],
+              [
+                531.3,
+                479.0
+              ],
+              [
+                531.3,
+                484.0
+              ],
+              [
+                531.3,
+                496.0
+              ],
+              [
+                531.3,
+                513.0
+              ],
+              [
+                531.3,
+                518.0
+              ],
+              [
+                531.3,
+                531.0
+              ],
+              [
+                531.3,
+                536.0
+              ],
+              [
+                531.3,
+                550.0
+              ],
+              [
+                531.3,
+                556.0
+              ],
+              [
+                531.3,
+                563.0
+              ],
+              [
+                564.0,
+                465.0
+              ],
+              [
+                564.0,
+                479.0
+              ],
+              [
+                564.0,
+                495.0
+              ],
+              [
+                564.0,
+                500.0
+              ],
+              [
+                564.0,
+                512.0
+              ],
+              [
+                564.0,
+                517.0
+              ],
+              [
+                564.0,
+                530.0
+              ],
+              [
+                564.0,
+                535.0
+              ],
+              [
+                564.0,
+                549.0
+              ],
+              [
+                564.0,
+                555.0
+              ],
+              [
+                564.0,
+                566.0
+              ]
+            ],
+            "polygon": null,
+            "label_at": null
+          },
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m002",
+          "detection_id": "ee1088609dcb-001",
+          "facility_class": "staircase",
+          "name": "pitch_deg",
+          "value": 16.978,
+          "unit": "deg",
+          "uncertainty": 3.0,
+          "interval_95": [
+            11.098,
+            22.858
+          ],
+          "lower_bound": false,
+          "confidence": 0.688,
+          "status": "ESTIMATED",
+          "method": "slope of the 3D nosing line relative to gravity",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [
+            "86% of lifted edges on the nosing line; gravity from ground_plane"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m003",
+          "detection_id": "ee1088609dcb-001",
+          "facility_class": "staircase",
+          "name": "riser_to_tread_ratio",
+          "value": 0.305,
+          "unit": null,
+          "uncertainty": 0.046,
+          "interval_95": [
+            0.216,
+            0.395
+          ],
+          "lower_bound": false,
+          "confidence": 0.619,
+          "status": "ESTIMATED",
+          "method": "tan(pitch); scale-independent",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m004",
+          "detection_id": "ee1088609dcb-001",
+          "facility_class": "staircase",
+          "name": "riser_height",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "REQUIRES_CALIBRATION",
+          "method": "mean nosing spacing * sin(pitch)",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "no metric calibration: provide a reference measurement, marker or known object",
+          "provisional_value": 0.173,
+          "refusal_reason": null,
+          "notes": [
+            "mean nosing spacing over the run; monocular depth compresses distant steps, so individual steps may differ",
+            "provisional value from uncalibrated monocular depth (typical scale error +-45%); not a measurement"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m005",
+          "detection_id": "ee1088609dcb-001",
+          "facility_class": "staircase",
+          "name": "tread_depth",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "REQUIRES_CALIBRATION",
+          "method": "mean nosing spacing * cos(pitch)",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "no metric calibration: provide a reference measurement, marker or known object",
+          "provisional_value": 0.567,
+          "refusal_reason": null,
+          "notes": [
+            "mean nosing spacing over the run; monocular depth compresses distant steps, so individual steps may differ",
+            "length runs along the viewing direction, where monocular depth error is largest (validated median error ~60%)",
+            "provisional value from uncalibrated monocular depth (typical scale error +-45%); not a measurement"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m006",
+          "detection_id": "ee1088609dcb-001",
+          "facility_class": "staircase",
+          "name": "stair_width",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "REQUIRES_CALIBRATION",
+          "method": "lateral extent (p2-p98) of stair-mask depth points lying on the nosing plane",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "no metric calibration: provide a reference measurement, marker or known object",
+          "provisional_value": 11.942,
+          "refusal_reason": null,
+          "notes": [
+            "includes balustrade/wall-to-wall extent visible in the mask",
+            "provisional value from uncalibrated monocular depth (typical scale error +-45%); not a measurement"
+          ],
+          "ground_truth": null,
+          "overlay": {
+            "lines": [
+              [
+                345.7,
+                501.6,
+                566.1,
+                532.8
+              ]
+            ],
+            "points": [],
+            "polygon": null,
+            "label_at": null
+          },
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m007",
+          "detection_id": "ee1088609dcb-001",
+          "facility_class": "staircase",
+          "name": "handrail_present",
+          "value": true,
+          "unit": null,
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.65,
+          "status": "ESTIMATED",
+          "method": "handrail detections (vision engine) + ADE20K railing/bannister pixels",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [
+            "sides with railing evidence: ['left']"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m008",
+          "detection_id": "ee1088609dcb-001",
+          "facility_class": "staircase",
+          "name": "handrail_both_sides",
+          "value": false,
+          "unit": null,
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.45,
+          "status": "ESTIMATED",
+          "method": "railing evidence on both lateral sides of the stair",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m009",
+          "detection_id": "ee1088609dcb-001",
+          "facility_class": "staircase",
+          "name": "tactile_warning_surface",
+          "value": true,
+          "unit": null,
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.55,
+          "status": "ESTIMATED",
+          "method": "tactile-paving detection adjacent to the stair (vision engine)",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m010",
+          "detection_id": "ee1088609dcb-001",
+          "facility_class": "staircase",
+          "name": "nosing_contrast_and_profile",
+          "value": null,
+          "unit": null,
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "REQUIRES_MANUAL_MEASUREMENT",
+          "method": "not observable from imagery",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "nosing projection/contrast needs close inspection",
+          "provisional_value": null,
+          "refusal_reason": "nosing projection/contrast needs close inspection",
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "detection_id": "ee1088609dcb-003",
+      "class_name": "walkway",
+      "detection_confidence": 0.3556,
+      "bbox": [
+        7.54,
+        458.29,
+        1269.19,
+        851.45
+      ],
+      "mask_area_px": null,
+      "mask_source": null,
+      "truncated_sides": [],
+      "mean_depth_m": null,
+      "measurements": [
+        {
+          "id": "1f5d8959742f-m011",
+          "detection_id": "ee1088609dcb-003",
+          "facility_class": "walkway",
+          "name": "clear_width",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "REQUIRES_CALIBRATION",
+          "method": "minimum floor width over 10 cross-sections along the corridor axis (ray-plane intersection with fitted floor plane)",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "no metric calibration: provide a reference measurement, marker or known object",
+          "provisional_value": 5.435,
+          "refusal_reason": null,
+          "notes": [
+            "floor = ADE20K floor/road/sidewalk/path/... pixels inside the detection, minus objects",
+            "width is between the visible floor boundaries; skirting, mats or mis-segmentation shift it",
+            "10/10 cross-sections with both floor edges visible (others truncated or occluded by objects/people)",
+            "provisional value from uncalibrated monocular depth (typical scale error +-45%); not a measurement"
+          ],
+          "ground_truth": null,
+          "overlay": {
+            "lines": [
+              [
+                1167.0,
+                668.2,
+                812.3,
+                891.2
+              ],
+              [
+                1017.4,
+                613.4,
+                349.5,
+                884.9
+              ],
+              [
+                927.3,
+                576.1,
+                33.2,
+                852.5
+              ],
+              [
+                864.5,
+                550.5,
+                7.0,
+                768.8
+              ],
+              [
+                826.9,
+                530.0,
+                12.0,
+                709.0
+              ],
+              [
+                797.7,
+                514.8,
+                10.1,
+                668.6
+              ],
+              [
+                770.8,
+                503.7,
+                7.4,
+                639.1
+              ],
+              [
+                753.3,
+                494.0,
+                9.3,
+                615.8
+              ],
+              [
+                741.5,
+                485.7,
+                9.9,
+                597.5
+              ],
+              [
+                717.8,
+                480.8,
+                10.5,
+                582.7
+              ]
+            ],
+            "points": [],
+            "polygon": null,
+            "label_at": null
+          },
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m012",
+          "detection_id": "ee1088609dcb-003",
+          "facility_class": "walkway",
+          "name": "min_available_clearance",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "REQUIRES_CALIBRATION",
+          "method": "largest free lateral gap beside the obstacle footprint (box bottom edge on floor plane) in the nearest cross-section",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "no metric calibration: provide a reference measurement, marker or known object",
+          "provisional_value": 8.814,
+          "refusal_reason": null,
+          "notes": [
+            "limiting object: barrier (ee1088609dcb-013)",
+            "footprint from the 2D box bottom edge: wide-based objects may be underestimated",
+            "provisional value from uncalibrated monocular depth (typical scale error +-45%); not a measurement"
+          ],
+          "ground_truth": null,
+          "overlay": {
+            "lines": [
+              [
+                4.4,
+                520.8,
+                609.8,
+                520.8
+              ]
+            ],
+            "points": [],
+            "polygon": null,
+            "label_at": null
+          },
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m013",
+          "detection_id": "ee1088609dcb-003",
+          "facility_class": "walkway",
+          "name": "permanent_obstruction_present",
+          "value": true,
+          "unit": null,
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.55,
+          "status": "ESTIMATED",
+          "method": "non-person obstacle detections standing on the floor region",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [
+            "1 objects on this path (0 people)"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "detection_id": "ee1088609dcb-009",
+      "class_name": "ramp",
+      "detection_confidence": 0.2051,
+      "bbox": [
+        628.8,
+        466.59,
+        770.51,
+        505.77
+      ],
+      "mask_area_px": 4199,
+      "mask_source": "sam",
+      "truncated_sides": [],
+      "mean_depth_m": 19.282,
+      "measurements": [
+        {
+          "id": "1f5d8959742f-m014",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "running_slope_deg",
+          "value": 6.147,
+          "unit": "deg",
+          "uncertainty": 7.174,
+          "interval_95": [
+            -7.915,
+            20.208
+          ],
+          "lower_bound": false,
+          "confidence": 0.045,
+          "status": "ESTIMATED",
+          "method": "angle between RANSAC ramp-surface normal and gravity",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [
+            "mask: sam",
+            "ramp plane inliers 1.00, rms 0.028",
+            "gravity from ground_plane (sigma 0.6 deg)",
+            "focal-length sensitivity 0.29 deg (camera: prior)"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m015",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "running_slope_percent",
+          "value": 10.77,
+          "unit": "%",
+          "uncertainty": 12.667,
+          "interval_95": [
+            -14.057,
+            35.596
+          ],
+          "lower_bound": false,
+          "confidence": 0.045,
+          "status": "ESTIMATED",
+          "method": "100 * tan(running slope); scale-independent",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [
+            "mask: sam",
+            "ramp plane inliers 1.00, rms 0.028",
+            "gravity from ground_plane (sigma 0.6 deg)",
+            "focal-length sensitivity 0.29 deg (camera: prior)"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m016",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "running_slope_ratio",
+          "value": "1:9.3",
+          "unit": null,
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.045,
+          "status": "ESTIMATED",
+          "method": "rise:run from slope angle",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m017",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "ramp_length",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "REQUIRES_CALIBRATION",
+          "method": "extent along the in-plane uphill axis (ray-plane intersection)",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "no metric calibration: provide a reference measurement, marker or known object",
+          "provisional_value": 4.374,
+          "refusal_reason": null,
+          "notes": [
+            "visible extent only - the ramp may continue outside the frame or behind occluders",
+            "length runs along the viewing direction, where monocular depth error is largest (validated median error ~60%)",
+            "provisional value from uncalibrated monocular depth (typical scale error +-45%); not a measurement"
+          ],
+          "ground_truth": null,
+          "overlay": {
+            "lines": [
+              [
+                777.3,
+                496.4,
+                605.0,
+                474.1
+              ]
+            ],
+            "points": [],
+            "polygon": null,
+            "label_at": null
+          },
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m018",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "horizontal_run",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "REQUIRES_CALIBRATION",
+          "method": "ramp_length * cos(slope)",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "no metric calibration: provide a reference measurement, marker or known object",
+          "provisional_value": 4.349,
+          "refusal_reason": null,
+          "notes": [
+            "visible extent only - the ramp may continue outside the frame or behind occluders",
+            "length runs along the viewing direction, where monocular depth error is largest (validated median error ~60%)",
+            "provisional value from uncalibrated monocular depth (typical scale error +-45%); not a measurement"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m019",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "rise",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "REQUIRES_CALIBRATION",
+          "method": "ramp_length * sin(slope) (sensitive to slope error)",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "no metric calibration: provide a reference measurement, marker or known object",
+          "provisional_value": 0.468,
+          "refusal_reason": null,
+          "notes": [
+            "visible extent only - the ramp may continue outside the frame or behind occluders",
+            "length runs along the viewing direction, where monocular depth error is largest (validated median error ~60%)",
+            "provisional value from uncalibrated monocular depth (typical scale error +-45%); not a measurement"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m020",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "clear_width",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "REQUIRES_CALIBRATION",
+          "method": "ramp-surface extent across the uphill axis; clear width between handrails may be smaller",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "no metric calibration: provide a reference measurement, marker or known object",
+          "provisional_value": 5.325,
+          "refusal_reason": null,
+          "notes": [
+            "mask: sam",
+            "provisional value from uncalibrated monocular depth (typical scale error +-45%); not a measurement"
+          ],
+          "ground_truth": null,
+          "overlay": {
+            "lines": [
+              [
+                609.8,
+                499.1,
+                746.5,
+                472.9
+              ]
+            ],
+            "points": [],
+            "polygon": null,
+            "label_at": null
+          },
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m021",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "handrail_present",
+          "value": false,
+          "unit": null,
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.4,
+          "status": "ESTIMATED",
+          "method": "ADE20K railing/bannister pixels + handrail detections along the ramp",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [
+            "0 railing points near ramp",
+            "no railing found: absence of evidence is not evidence of absence"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m022",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "handrail_coverage_left",
+          "value": 0.0,
+          "unit": "fraction",
+          "uncertainty": 0.15,
+          "interval_95": [
+            -0.294,
+            0.294
+          ],
+          "lower_bound": false,
+          "confidence": 0.5,
+          "status": "ESTIMATED",
+          "method": "fraction of the ramp length with railing evidence on that side (camera-relative side)",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m023",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "handrail_coverage_right",
+          "value": 0.0,
+          "unit": "fraction",
+          "uncertainty": 0.15,
+          "interval_95": [
+            -0.294,
+            0.294
+          ],
+          "lower_bound": false,
+          "confidence": 0.5,
+          "status": "ESTIMATED",
+          "method": "fraction of the ramp length with railing evidence on that side (camera-relative side)",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m024",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "handrail_continuous",
+          "value": false,
+          "unit": null,
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.45,
+          "status": "ESTIMATED",
+          "method": "coverage >= 85% of visible ramp length on a side",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m025",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "surface_irregularity_ratio",
+          "value": 0.006,
+          "unit": "rms/length",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.35,
+          "status": "ESTIMATED",
+          "method": "RANSAC plane residual RMS / ramp length",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m026",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "surface_condition",
+          "value": "regular",
+          "unit": null,
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.3,
+          "status": "ESTIMATED",
+          "method": "plane residual + Laplacian texture energy + specular fraction",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "surface condition indicators are weak; inspect on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [
+            "no indicator triggered",
+            "texture=0.74 specular=0.000"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        },
+        {
+          "id": "1f5d8959742f-m027",
+          "detection_id": "ee1088609dcb-009",
+          "facility_class": "ramp",
+          "name": "slip_resistance",
+          "value": null,
+          "unit": null,
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "REQUIRES_MANUAL_MEASUREMENT",
+          "method": "not observable from imagery",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "mps",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_outdoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Outdoor-Small (Virtual KITTI 2 fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "mps",
+              "revision": "fd2c22027eaf20374204f14099b8341e1925ad39"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cpu",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "mps",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "slip resistance needs a pendulum/tribometer test",
+          "provisional_value": null,
+          "refusal_reason": "slip resistance needs a pendulum/tribometer test",
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T12:40:21.041+00:00"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "assessment": [
+    {
+      "rule_id": "stair_riser_max",
+      "profile": "ada_2010",
+      "clause": "504.2",
+      "detection_id": "ee1088609dcb-001",
+      "facility_class": "staircase",
+      "measurement_id": "1f5d8959742f-m004",
+      "measurement_name": "riser_height",
+      "outcome": "CANNOT_ASSESS",
+      "severity": "standard",
+      "threshold": 0.178,
+      "measured_value": null,
+      "uncertainty": null,
+      "message": "needs metric calibration. Provisional (uncalibrated) value 0.17 would satisfy 0.178 - calibrate to assess."
+    },
+    {
+      "rule_id": "stair_riser_min",
+      "profile": "ada_2010",
+      "clause": "504.2",
+      "detection_id": "ee1088609dcb-001",
+      "facility_class": "staircase",
+      "measurement_id": "1f5d8959742f-m004",
+      "measurement_name": "riser_height",
+      "outcome": "CANNOT_ASSESS",
+      "severity": "standard",
+      "threshold": 0.102,
+      "measured_value": null,
+      "uncertainty": null,
+      "message": "needs metric calibration. Provisional (uncalibrated) value 0.17 would satisfy 0.102 - calibrate to assess."
+    },
+    {
+      "rule_id": "stair_tread_min",
+      "profile": "ada_2010",
+      "clause": "504.2",
+      "detection_id": "ee1088609dcb-001",
+      "facility_class": "staircase",
+      "measurement_id": "1f5d8959742f-m005",
+      "measurement_name": "tread_depth",
+      "outcome": "CANNOT_ASSESS",
+      "severity": "standard",
+      "threshold": 0.279,
+      "measured_value": null,
+      "uncertainty": null,
+      "message": "needs metric calibration. Provisional (uncalibrated) value 0.57 would satisfy 0.279 - calibrate to assess."
+    },
+    {
+      "rule_id": "stair_handrails",
+      "profile": "ada_2010",
+      "clause": "504.6",
+      "detection_id": "ee1088609dcb-001",
+      "facility_class": "staircase",
+      "measurement_id": "1f5d8959742f-m007",
+      "measurement_name": "handrail_present",
+      "outcome": "NO_ISSUE_INDICATED",
+      "severity": "standard",
+      "threshold": null,
+      "measured_value": true,
+      "uncertainty": null,
+      "message": "handrail_present = True (image evidence, unverified)"
+    },
+    {
+      "rule_id": "stair_tactile",
+      "profile": "ada_2010",
+      "clause": "not an ADA 2010 stair requirement - local/ISO 21542 practice",
+      "detection_id": "ee1088609dcb-001",
+      "facility_class": "staircase",
+      "measurement_id": "1f5d8959742f-m009",
+      "measurement_name": "tactile_warning_surface",
+      "outcome": "NO_ISSUE_INDICATED",
+      "severity": "advisory",
+      "threshold": null,
+      "measured_value": true,
+      "uncertainty": null,
+      "message": "tactile_warning_surface = True (image evidence, unverified)"
+    },
+    {
+      "rule_id": "route_clear_width",
+      "profile": "ada_2010",
+      "clause": "403.5.1",
+      "detection_id": "ee1088609dcb-003",
+      "facility_class": "walkway",
+      "measurement_id": "1f5d8959742f-m011",
+      "measurement_name": "clear_width",
+      "outcome": "CANNOT_ASSESS",
+      "severity": "standard",
+      "threshold": 0.915,
+      "measured_value": null,
+      "uncertainty": null,
+      "message": "needs metric calibration. Provisional (uncalibrated) value 5.43 would satisfy 0.915 - calibrate to assess."
+    },
+    {
+      "rule_id": "route_available_clearance",
+      "profile": "ada_2010",
+      "clause": "403.5.1 exception",
+      "detection_id": "ee1088609dcb-003",
+      "facility_class": "walkway",
+      "measurement_id": "1f5d8959742f-m012",
+      "measurement_name": "min_available_clearance",
+      "outcome": "CANNOT_ASSESS",
+      "severity": "standard",
+      "threshold": 0.815,
+      "measured_value": null,
+      "uncertainty": null,
+      "message": "needs metric calibration. Provisional (uncalibrated) value 8.81 would satisfy 0.815 - calibrate to assess."
+    },
+    {
+      "rule_id": "route_obstruction",
+      "profile": "ada_2010",
+      "clause": "403.5 (clear width)",
+      "detection_id": "ee1088609dcb-003",
+      "facility_class": "walkway",
+      "measurement_id": "1f5d8959742f-m013",
+      "measurement_name": "permanent_obstruction_present",
+      "outcome": "POSSIBLE_ISSUE",
+      "severity": "advisory",
+      "threshold": null,
+      "measured_value": true,
+      "uncertainty": null,
+      "message": "permanent_obstruction_present = True in image evidence - may be missed by the detector; verify"
+    },
+    {
+      "rule_id": "ramp_running_slope",
+      "profile": "ada_2010",
+      "clause": "405.2",
+      "detection_id": "ee1088609dcb-009",
+      "facility_class": "ramp",
+      "measurement_id": "1f5d8959742f-m015",
+      "measurement_name": "running_slope_percent",
+      "outcome": "POSSIBLE_ISSUE",
+      "severity": "standard",
+      "threshold": 8.33,
+      "measured_value": 10.77,
+      "uncertainty": 12.667,
+      "message": "running_slope_percent 10.770 % +- 24.827 % (95%) vs max 8.330 %: estimate exceeds the maximum (within uncertainty)"
+    },
+    {
+      "rule_id": "ramp_clear_width",
+      "profile": "ada_2010",
+      "clause": "405.5",
+      "detection_id": "ee1088609dcb-009",
+      "facility_class": "ramp",
+      "measurement_id": "1f5d8959742f-m020",
+      "measurement_name": "clear_width",
+      "outcome": "CANNOT_ASSESS",
+      "severity": "standard",
+      "threshold": 0.915,
+      "measured_value": null,
+      "uncertainty": null,
+      "message": "needs metric calibration. Provisional (uncalibrated) value 5.33 would satisfy 0.915 - calibrate to assess."
+    },
+    {
+      "rule_id": "ramp_handrails",
+      "profile": "ada_2010",
+      "clause": "405.8 (ramps with rise > 6 in)",
+      "detection_id": "ee1088609dcb-009",
+      "facility_class": "ramp",
+      "measurement_id": "1f5d8959742f-m021",
+      "measurement_name": "handrail_present",
+      "outcome": "POSSIBLE_ISSUE",
+      "severity": "standard",
+      "threshold": null,
+      "measured_value": false,
+      "uncertainty": null,
+      "message": "handrail_present = False in image evidence - may be missed by the detector; verify. Required only when rise > 150 mm; rise is checked when measured"
+    }
+  ],
+  "assessment_summary": {
+    "profile": "ada_2010",
+    "profile_title": "2010 ADA Standards for Accessible Design (US)",
+    "counts": {
+      "CANNOT_ASSESS": 6,
+      "NO_ISSUE_INDICATED": 2,
+      "POSSIBLE_ISSUE": 3
+    },
+    "statement": "Screening only. No compliance determination is made; flagged items and all unverified measurements require on-site verification by a qualified assessor."
+  },
+  "timing_ms": {
+    "decode": 7.2,
+    "detections": 3391.0,
+    "segmentation": 2605.2,
+    "depth": 647.7,
+    "masks": 1860.0,
+    "scale": 189.6,
+    "analysis": 155.1,
+    "total": 8951.8
+  },
+  "processed_at": "2026-11-13T12:40:23.340+00:00",
+  "annotated_image": "samples/measurement_demo/ramp_hull_museum/ramp_hull_museum_measured.jpg",
+  "json_path": "samples/measurement_demo/ramp_hull_museum/report.json",
+  "warnings": [
+    "no calibration/EXIF: assumed 26 mm-equivalent focal (+-15%)"
+  ]
+}

@@ -1,0 +1,31 @@
+ramp_arts.jpg  1280x960  detections=computed (5ace5314fc97)
+camera: prior hfov=67.3 deg | depth: da2_metric_indoor_small | gravity: ground_plane | scale: uncalibrated_monocular x1.000 (+-45.0%)
+  note: no reference available: absolute lengths are withheld (REQUIRES_CALIBRATION)
+
+[staircase 5ace5314fc97-001] conf=0.35 mask=sam + ade20k_stairs truncated=['left'] depth~5.464
+  step_count                     6 +-2.224 steps  [ESTIMATED, conf 0.35]
+  pitch_deg                      25.177 +-3.000 deg  [ESTIMATED, conf 0.19]
+  riser_to_tread_ratio           0.470 +-0.071   [ESTIMATED, conf 0.17]
+  riser_height                   -- REQUIRES_CALIBRATION (provisional 0.166 m, not a measurement)
+  tread_depth                    -- REQUIRES_CALIBRATION (provisional 0.353 m, not a measurement)
+  stair_width                    -- REQUIRES_CALIBRATION (provisional 7.729 m, not a measurement)
+  handrail_present               True   [ESTIMATED, conf 0.65]
+  handrail_both_sides            True   [ESTIMATED, conf 0.45]
+  tactile_warning_surface        False   [ESTIMATED, conf 0.35]
+  nosing_contrast_and_profile    -- REQUIRES_MANUAL_MEASUREMENT: nosing projection/contrast needs close inspection
+
+[walkway 5ace5314fc97-007] conf=0.28 mask=None truncated=- depth~None
+  clear_width                    -- REQUIRES_CALIBRATION (provisional 1.018 m, not a measurement)
+  permanent_obstruction_present  False   [ESTIMATED, conf 0.55]
+
+[corridor 5ace5314fc97-019] conf=0.18 mask=None truncated=- depth~None
+  clear_width                    -- REQUIRES_CALIBRATION (provisional 3.195 m, not a measurement)
+  min_available_clearance        -- REQUIRES_CALIBRATION (provisional 2.41 m, not a measurement)
+  permanent_obstruction_present  True   [ESTIMATED, conf 0.55]
+
+assessment (ada_2010): {'CANNOT_ASSESS': 6, 'NO_ISSUE_INDICATED': 2, 'POSSIBLE_ISSUE': 2}
+  POSSIBLE_ISSUE   stair_tactile            tactile_warning_surface = False in image evidence - may be missed by the detector; verify
+  POSSIBLE_ISSUE   route_obstruction        permanent_obstruction_present = True in image evidence - may be missed by the detector; verify
+Screening only. No compliance determination is made; flagged items and all unverified measurements require on-site verification by a qualified assessor.
+annotated: samples/measurement_demo/ramp_arts/ramp_arts_measured.jpg 
+json: samples/measurement_demo/ramp_arts/report.json

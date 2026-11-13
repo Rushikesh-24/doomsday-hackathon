@@ -1,0 +1,369 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "7a588f422158",
+  "image": {
+    "name": "stairs_oau_campus.jpg",
+    "width": 720,
+    "height": 1280,
+    "format": "JPEG",
+    "channels": 3,
+    "exif_transposed": true
+  },
+  "model": {
+    "key": "campus_ensemble",
+    "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+    "version": "ensemble(owlv2_base + yolo11_coco)",
+    "source": "composed",
+    "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+    "device": "mps",
+    "weights_sha256": null,
+    "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+  },
+  "thresholds": {
+    "staircase": 0.15,
+    "ramp": 0.15,
+    "elevator": 0.15,
+    "door": 0.195,
+    "entrance_exit": 0.15,
+    "handrail": 0.15,
+    "tactile_paving": 0.15,
+    "corridor": 0.18,
+    "walkway": 0.18,
+    "accessibility_symbol": 0.3,
+    "signboard": 0.195,
+    "obstacle": 0.35,
+    "person": 0.35,
+    "wheelchair_user": 0.15,
+    "elevator_panel": 0.15
+  },
+  "detections": [
+    {
+      "id": "7a588f422158-000",
+      "class_name": "staircase",
+      "category": "facility",
+      "confidence": 0.5681,
+      "bbox": {
+        "x1": 162.87,
+        "y1": 648.24,
+        "x2": 600.39,
+        "y2": 1112.71,
+        "x1n": 0.22621,
+        "y1n": 0.50644,
+        "x2n": 0.83387,
+        "y2n": 0.86931,
+        "width": 437.52,
+        "height": 464.48
+      },
+      "source": {
+        "name": "stairs_oau_campus.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "stairs",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "handrail_present": {
+          "value": true,
+          "status": "detected",
+          "method": "handrail detection overlaps expanded stair box",
+          "note": null,
+          "confidence": 0.167
+        },
+        "handrail_ids": {
+          "value": [
+            "7a588f422158-003"
+          ],
+          "status": "detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "tactile_warning_surface": {
+          "value": false,
+          "status": "not_detected",
+          "method": "no tactile paving detection near stairs",
+          "note": "absence of a detection is not proof of absence",
+          "confidence": null
+        },
+        "visible_step_count": {
+          "value": 15,
+          "status": "estimated",
+          "method": "row profile of horizontal-edge energy, peaks counted after deskew",
+          "note": "counts visible step edges; occlusion/viewpoint can bias it",
+          "confidence": 0.599
+        },
+        "riser_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Riser height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "tread_depth": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Tread depth cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "direction_up_or_down": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "ascending vs descending is ambiguous in 2D",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:23.564+00:00"
+    },
+    {
+      "id": "7a588f422158-001",
+      "class_name": "signboard",
+      "category": "signage",
+      "confidence": 0.2327,
+      "bbox": {
+        "x1": 30.52,
+        "y1": 834.16,
+        "x2": 90.18,
+        "y2": 910.79,
+        "x1n": 0.04238,
+        "y1n": 0.65169,
+        "x2n": 0.12524,
+        "y2n": 0.71156,
+        "width": 59.66,
+        "height": 76.63
+      },
+      "source": {
+        "name": "stairs_oau_campus.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "signboard",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "contains_accessibility_symbol": {
+          "value": false,
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "sign_kind": {
+          "value": "signboard",
+          "status": "detected",
+          "method": "matched text prompt",
+          "note": null,
+          "confidence": 0.233
+        },
+        "text_content": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "OCR not yet integrated (see DEVELOPMENT_STATUS.md)",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:23.564+00:00"
+    },
+    {
+      "id": "7a588f422158-002",
+      "class_name": "entrance_exit",
+      "category": "navigation",
+      "confidence": 0.1949,
+      "bbox": {
+        "x1": 0.22,
+        "y1": 786.34,
+        "x2": 127.81,
+        "y2": 929.58,
+        "x1n": 0.00031,
+        "y1n": 0.61433,
+        "x2n": 0.17751,
+        "y2n": 0.72623,
+        "width": 127.58,
+        "height": 143.24
+      },
+      "source": {
+        "name": "stairs_oau_campus.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "building entrance",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "step_free_access_visible": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "door_ids": {
+          "value": [],
+          "status": "not_detected",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "entrance_or_exit": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "needs signage text (OCR) or map context",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:23.564+00:00"
+    },
+    {
+      "id": "7a588f422158-003",
+      "class_name": "handrail",
+      "category": "facility",
+      "confidence": 0.1673,
+      "bbox": {
+        "x1": 387.23,
+        "y1": 571.54,
+        "x2": 440.03,
+        "y2": 637.33,
+        "x1n": 0.53783,
+        "y1n": 0.44651,
+        "x2n": 0.61115,
+        "y2n": 0.49792,
+        "width": 52.79,
+        "height": 65.8
+      },
+      "source": {
+        "name": "stairs_oau_campus.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "railing",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "associated_with": {
+          "value": [
+            {
+              "id": "7a588f422158-000",
+              "class": "staircase"
+            }
+          ],
+          "status": "detected",
+          "method": "box overlap with stairs/ramp",
+          "note": null,
+          "confidence": null
+        },
+        "grip_height": {
+          "value": null,
+          "status": "requires_measurement",
+          "method": null,
+          "note": "Handrail height cannot be measured from a single uncalibrated 2D image; needs on-site measurement or depth/stereo + camera calibration",
+          "confidence": null
+        },
+        "continuity": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:23.564+00:00"
+    },
+    {
+      "id": "7a588f422158-004",
+      "class_name": "obstacle",
+      "category": "obstacle",
+      "confidence": 0.1573,
+      "bbox": {
+        "x1": 13.42,
+        "y1": 891.56,
+        "x2": 28.48,
+        "y2": 914.93,
+        "x1n": 0.01863,
+        "y1n": 0.69653,
+        "x2n": 0.03956,
+        "y2n": 0.71479,
+        "width": 15.06,
+        "height": 23.38
+      },
+      "source": {
+        "name": "stairs_oau_campus.jpg",
+        "kind": "image",
+        "frame_index": null,
+        "timestamp_s": null
+      },
+      "prompt": "trash can",
+      "detector": "owlv2_base",
+      "track_id": null,
+      "attributes": {
+        "obstacle_type": {
+          "value": "trash can",
+          "status": "detected",
+          "method": "label from owlv2_base",
+          "note": null,
+          "confidence": 0.157
+        },
+        "relative_to_walkway": {
+          "value": "no walkway/corridor detected",
+          "status": "not_determinable",
+          "method": null,
+          "note": null,
+          "confidence": null
+        },
+        "potential_obstruction": {
+          "value": null,
+          "status": "not_determinable",
+          "method": null,
+          "note": "no path detected to compare against",
+          "confidence": null
+        }
+      },
+      "model_name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "model_version": "ensemble(owlv2_base + yolo11_coco)",
+      "timestamp": "2026-11-13T11:12:23.564+00:00"
+    }
+  ],
+  "counts_by_class": {
+    "staircase": 1,
+    "signboard": 1,
+    "entrance_exit": 1,
+    "handrail": 1,
+    "obstacle": 1
+  },
+  "findings": [
+    {
+      "code": "NO_STEP_FREE_ALTERNATIVE_IN_VIEW",
+      "message": "Stairs visible but no ramp or lift detected in this view.",
+      "severity": "warning",
+      "detection_ids": [
+        "7a588f422158-000"
+      ]
+    }
+  ],
+  "timing": {
+    "preprocess_ms": 0.0,
+    "inference_ms": 962.5,
+    "postprocess_ms": 0.5,
+    "attributes_ms": 0.9,
+    "total_ms": 963.9
+  },
+  "processed_at": "2026-11-13T11:12:23.564+00:00",
+  "annotated_image": "samples/demo_outputs/stairs_oau_campus_annotated.jpg",
+  "json_path": "samples/demo_outputs/stairs_oau_campus.json",
+  "warnings": []
+}

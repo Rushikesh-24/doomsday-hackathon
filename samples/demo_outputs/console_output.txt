@@ -1,0 +1,185 @@
+Fetching 8 files:   0%|          | 0/8 [00:00<?, ?it/s]Fetching 8 files: 100%|██████████| 8/8 [00:00<00:00, 1929.41it/s]
+W1113 16:42:13.778000 87835 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/418 [00:00<?, ?it/s]Loading weights: 100%|██████████| 418/418 [00:00<00:00, 8727.95it/s]
+
+== accessible_toilet_signs.jpg  (1280x640)  model=campus_ensemble  inference=1709ms
+  signboard            0.54  [815,138,1149,478]  {"sign_kind": "information sign"}
+  accessibility_symbol 0.53  [91,130,442,480]  {}
+  accessibility_symbol 0.49  [454,130,799,474]  {}
+  accessibility_symbol 0.47  [186,177,358,365]  {}
+  accessibility_symbol 0.37  [560,166,700,331]  {}
+  signboard            0.27  [107,130,1151,487]  {"contains_accessibility_symbol": true, "sign_kind": "signboard"}
+  annotated: samples/demo_outputs/accessible_toilet_signs_annotated.jpg
+  json:      samples/demo_outputs/accessible_toilet_signs.json
+
+== campus_entrance_rmcad.jpg  (1280x960)  model=campus_ensemble  inference=962ms
+  obstacle             0.91  [1131,704,1279,825]  {"obstacle_type": "bench", "relative_to_walkway": {"path_id": "a1520f998988-009", "path_class": "walkway", "lateral_position": "right side"}, "image_width_fract
+  obstacle             0.86  [1013,706,1139,818]  {"obstacle_type": "potted plant", "relative_to_walkway": {"path_id": "a1520f998988-009", "path_class": "walkway", "lateral_position": "right side"}, "image_widt
+  obstacle             0.86  [162,686,278,793]  {"obstacle_type": "potted plant", "relative_to_walkway": {"path_id": "a1520f998988-009", "path_class": "walkway", "lateral_position": "left side"}, "image_width
+  entrance_exit        0.39  [505,274,746,746]  {"step_free_access_visible": true, "door_ids": ["a1520f998988-004", "a1520f998988-008"]}
+  door                 0.38  [517,450,623,718]  {"bbox_aspect_ratio_h_over_w": 2.54, "viewing_orientation": "frontal"}
+  staircase            0.38  [677,765,1015,829]  {}
+  signboard            0.35  [577,180,723,232]  {"sign_kind": "signboard"}
+  signboard            0.32  [51,698,123,777]  {"sign_kind": "information sign"}
+  door                 0.30  [643,460,717,729]  {"bbox_aspect_ratio_h_over_w": 3.61, "viewing_orientation": "oblique / side view", "accessibility_indicators": [{"id": "a1520f998988-010", "class": "signboard"}
+  walkway              0.27  [0,758,1269,913]  {"objects_on_path": [{"id": "a1520f998988-000", "class": "obstacle", "type": "bench"}, {"id": "a1520f998988-001", "class": "obstacle", "type": "potted plant"}, 
+  signboard            0.23  [672,569,688,597]  {"sign_kind": "exit sign"}
+  handrail             0.18  [782,436,816,696]  {}
+  ramp                 0.16  [0,773,583,897]  {}
+  handrail             0.16  [466,435,505,703]  {}
+  staircase            0.15  [341,759,556,796]  {}
+  ! STAIRS_WITHOUT_VISIBLE_HANDRAIL: Staircase(s) detected with no handrail detection nearby (verify on site).
+  ! STEP_FREE_FACILITY_VISIBLE: Ramp or lift detected in view.
+  annotated: samples/demo_outputs/campus_entrance_rmcad_annotated.jpg
+  json:      samples/demo_outputs/campus_entrance_rmcad.json
+
+== corridor_stirling_students.jpg  (1280x786)  model=campus_ensemble  inference=956ms
+  person               0.89  [652,239,756,651]  {"dynamic": true, "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "centre"}, "image_width_fraction_of_path"
+  person               0.88  [915,180,1072,673]  {"dynamic": true, "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "right side"}, "image_width_fraction_of_p
+  person               0.87  [536,197,674,680]  {"dynamic": true, "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "centre"}, "image_width_fraction_of_path"
+  person               0.86  [472,244,545,496]  {"dynamic": true, "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "centre"}, "image_width_fraction_of_path"
+  obstacle             0.85  [1029,443,1268,660]  {"obstacle_type": "chair", "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "right side"}, "image_width_frac
+  obstacle             0.82  [19,548,307,738]  {"obstacle_type": "chair", "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "left side"}, "image_width_fract
+  person               0.81  [425,237,497,474]  {"dynamic": true, "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "centre"}, "image_width_fraction_of_path"
+  person               0.79  [358,244,428,488]  {"dynamic": true, "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "left side"}, "image_width_fraction_of_pa
+  person               0.79  [762,219,901,624]  {"dynamic": true, "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "centre"}, "image_width_fraction_of_path"
+  person               0.74  [180,415,403,784]  {"dynamic": true, "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "left side"}, "image_width_fraction_of_pa
+  obstacle             0.73  [0,608,336,782]  {"obstacle_type": "chair", "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "left side"}, "image_width_fract
+  person               0.63  [281,264,305,347]  {"dynamic": true, "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "left side"}, "image_width_fraction_of_pa
+  obstacle             0.44  [759,401,941,549]  {"obstacle_type": "chair", "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "centre"}, "image_width_fraction
+  person               0.42  [541,209,596,300]  {"dynamic": true, "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "centre"}, "image_width_fraction_of_path"
+  person               0.38  [1,434,204,685]  {"dynamic": true, "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "left side"}, "image_width_fraction_of_pa
+  obstacle             0.28  [231,270,291,337]  {"obstacle_type": "cardboard box", "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "left side"}, "image_wid
+  obstacle             0.28  [233,302,269,330]  {"obstacle_type": "cardboard box", "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "left side"}, "image_wid
+  obstacle             0.25  [253,265,284,285]  {"obstacle_type": "cardboard box", "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "left side"}, "image_wid
+  corridor             0.23  [0,4,1280,786]  {"objects_on_path": [{"id": "165387d899e6-000", "class": "person", "type": "person"}, {"id": "165387d899e6-001", "class": "person", "type": "person"}, {"id": "1
+  handrail             0.23  [360,564,427,643]  {}
+  obstacle             0.23  [235,316,265,336]  {"obstacle_type": "cardboard box", "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "left side"}, "image_wid
+  obstacle             0.22  [263,285,285,303]  {"obstacle_type": "cardboard box", "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "left side"}, "image_wid
+  entrance_exit        0.17  [313,221,328,338]  {}
+  entrance_exit        0.17  [334,215,354,336]  {}
+  obstacle             0.15  [203,323,218,337]  {"obstacle_type": "cardboard box", "relative_to_walkway": {"path_id": "165387d899e6-018", "path_class": "corridor", "lateral_position": "left side"}, "image_wid
+  ! POTENTIAL_PATH_OBSTRUCTION: Object(s) located on a detected walkway/corridor may obstruct the route.
+  annotated: samples/demo_outputs/corridor_stirling_students_annotated.jpg
+  json:      samples/demo_outputs/corridor_stirling_students.json
+
+== elevator_lobby_hotel.jpg  (1280x1375)  model=campus_ensemble  inference=986ms
+  elevator             0.61  [286,238,925,1352]  {"lift_entrance_detected": true, "status_indicators": [{"id": "987db9b8ccf0-000", "prompt": "elevator floor indicator display"}, {"id": "987db9b8ccf0-002", "pro
+  corridor             0.36  [3,9,1216,1372]  {}
+  door                 0.27  [295,256,640,1323]  {"bbox_aspect_ratio_h_over_w": 3.09, "viewing_orientation": "oblique / side view", "door_type": "glass door", "part_of_elevator": "987db9b8ccf0-001"}
+  entrance_exit        0.24  [170,30,1104,1362]  {"step_free_access_visible": true, "door_ids": ["987db9b8ccf0-004", "987db9b8ccf0-007"]}
+  door                 0.23  [591,256,919,1330]  {"bbox_aspect_ratio_h_over_w": 3.28, "viewing_orientation": "oblique / side view", "door_type": "glass door", "part_of_elevator": "987db9b8ccf0-001"}
+  ! STEP_FREE_FACILITY_VISIBLE: Ramp or lift detected in view.
+  annotated: samples/demo_outputs/elevator_lobby_hotel_annotated.jpg
+  json:      samples/demo_outputs/elevator_lobby_hotel.json
+
+== ramp_arts.jpg  (1280x960)  model=campus_ensemble  inference=839ms
+  entrance_exit        0.40  [1096,323,1162,458]  {}
+  staircase            0.35  [8,114,963,916]  {"handrail_present": true, "handrail_ids": ["5fbf4ed77163-004", "5fbf4ed77163-005", "5fbf4ed77163-010", "5fbf4ed77163-011", "5fbf4ed77163-012", "5fbf4ed77163-01
+  signboard            0.35  [1012,245,1124,314]  {"sign_kind": "information sign"}
+  signboard            0.31  [935,132,962,161]  {"sign_kind": "exit sign"}
+  handrail             0.30  [701,462,971,651]  {"associated_with": [{"id": "5fbf4ed77163-001", "class": "staircase"}]}
+  handrail             0.29  [114,236,711,627]  {"associated_with": [{"id": "5fbf4ed77163-001", "class": "staircase"}]}
+  signboard            0.28  [1036,348,1074,388]  {"sign_kind": "information sign"}
+  walkway              0.28  [243,502,1280,936]  {}
+  signboard            0.28  [995,348,1032,388]  {"sign_kind": "information sign"}
+  obstacle             0.26  [1020,396,1068,453]  {"obstacle_type": "trash can", "relative_to_walkway": {"path_id": "5fbf4ed77163-019", "path_class": "corridor", "lateral_position": "right side"}, "image_width_
+  handrail             0.25  [668,143,968,386]  {"associated_with": [{"id": "5fbf4ed77163-001", "class": "staircase"}]}
+  handrail             0.25  [119,0,603,123]  {"associated_with": [{"id": "5fbf4ed77163-001", "class": "staircase"}]}
+  handrail             0.25  [0,0,605,219]  {"associated_with": [{"id": "5fbf4ed77163-001", "class": "staircase"}]}
+  handrail             0.24  [1149,471,1280,904]  {}
+  handrail             0.23  [130,489,704,642]  {"associated_with": [{"id": "5fbf4ed77163-001", "class": "staircase"}]}
+  handrail             0.23  [457,135,913,554]  {"associated_with": [{"id": "5fbf4ed77163-001", "class": "staircase"}]}
+  handrail             0.21  [656,140,785,236]  {"associated_with": [{"id": "5fbf4ed77163-001", "class": "staircase"}]}
+  handrail             0.20  [972,137,1187,157]  {"associated_with": [{"id": "5fbf4ed77163-001", "class": "staircase"}]}
+  corridor             0.18  [0,6,1114,960]  {"objects_on_path": [{"id": "5fbf4ed77163-009", "class": "obstacle", "type": "trash can"}]}
+  handrail             0.17  [3,201,636,472]  {"associated_with": [{"id": "5fbf4ed77163-001", "class": "staircase"}]}
+  handrail             0.16  [145,73,857,487]  {"associated_with": [{"id": "5fbf4ed77163-001", "class": "staircase"}]}
+  handrail             0.15  [853,462,971,570]  {"associated_with": [{"id": "5fbf4ed77163-001", "class": "staircase"}]}
+  ! NO_STEP_FREE_ALTERNATIVE_IN_VIEW: Stairs visible but no ramp or lift detected in this view.
+  annotated: samples/demo_outputs/ramp_arts_annotated.jpg
+  json:      samples/demo_outputs/ramp_arts.json
+
+== ramp_hull_museum.jpg  (1280x853)  model=campus_ensemble  inference=952ms
+  handrail             0.58  [758,320,1277,652]  {}
+  staircase            0.45  [318,457,581,572]  {"tactile_warning_surface": true}
+  handrail             0.39  [783,360,1241,405]  {}
+  walkway              0.36  [8,458,1269,851]  {"objects_on_path": [{"id": "2ae86421c1ad-013", "class": "obstacle", "type": "barrier"}]}
+  handrail             0.33  [160,420,238,441]  {}
+  signboard            0.27  [698,179,736,240]  {"sign_kind": "signboard"}
+  entrance_exit        0.24  [152,347,249,504]  {}
+  handrail             0.23  [787,396,1250,426]  {}
+  entrance_exit        0.23  [914,10,996,394]  {}
+  ramp                 0.21  [629,467,771,506]  {"image_plane_edge_angle_deg": -25.8, "approx_orientation": "edges rise toward image left"}
+  entrance_exit        0.19  [959,32,1000,355]  {}
+  entrance_exit        0.18  [458,236,510,333]  {}
+  entrance_exit        0.17  [698,181,736,347]  {}
+  obstacle             0.17  [4,344,610,522]  {"obstacle_type": "barrier", "relative_to_walkway": {"path_id": "2ae86421c1ad-003", "path_class": "walkway", "lateral_position": "left side"}, "image_width_frac
+  tactile_paving       0.16  [173,521,319,574]  {"high_contrast_yellow": false}
+  handrail             0.16  [635,371,672,455]  {}
+  ! STAIRS_WITHOUT_VISIBLE_HANDRAIL: Staircase(s) detected with no handrail detection nearby (verify on site).
+  ! STEP_FREE_FACILITY_VISIBLE: Ramp or lift detected in view.
+  ! POTENTIAL_PATH_OBSTRUCTION: Object(s) located on a detected walkway/corridor may obstruct the route.
+  ! TACTILE_PAVING_PRESENT: Tactile paving detected.
+  annotated: samples/demo_outputs/ramp_hull_museum_annotated.jpg
+  json:      samples/demo_outputs/ramp_hull_museum.json
+
+== stairs_handrail_sydney.jpg  (1280x1912)  model=campus_ensemble  inference=1044ms
+  staircase            0.58  [0,744,1280,1912]  {"handrail_present": true, "handrail_ids": ["320204ac54d5-008", "320204ac54d5-009", "320204ac54d5-010"], "handrail_sides_visible": ["left", "right"], "visible_s
+  obstacle             0.57  [659,1270,1280,1417]  {"obstacle_type": "bench"}
+  obstacle             0.55  [879,1130,1280,1180]  {"obstacle_type": "chair"}
+  obstacle             0.51  [822,1169,1277,1245]  {"obstacle_type": "chair"}
+  obstacle             0.47  [743,1212,1280,1320]  {"obstacle_type": "chair"}
+  obstacle             0.46  [925,1095,1280,1141]  {"obstacle_type": "chair"}
+  obstacle             0.41  [545,1339,1280,1534]  {"obstacle_type": "bench"}
+  obstacle             0.37  [4,1411,1276,1910]  {"obstacle_type": "couch"}
+  handrail             0.29  [265,725,1142,996]  {"associated_with": [{"id": "320204ac54d5-000", "class": "staircase"}]}
+  handrail             0.24  [23,575,1147,1117]  {"associated_with": [{"id": "320204ac54d5-000", "class": "staircase"}]}
+  handrail             0.16  [772,796,1134,952]  {"associated_with": [{"id": "320204ac54d5-000", "class": "staircase"}]}
+  ! NO_STEP_FREE_ALTERNATIVE_IN_VIEW: Stairs visible but no ramp or lift detected in this view.
+  annotated: samples/demo_outputs/stairs_handrail_sydney_annotated.jpg
+  json:      samples/demo_outputs/stairs_handrail_sydney.json
+
+== stairs_oau_campus.jpg  (720x1280)  model=campus_ensemble  inference=962ms
+  staircase            0.57  [163,648,600,1113]  {"handrail_present": true, "handrail_ids": ["7a588f422158-003"], "visible_step_count": 15}
+  signboard            0.23  [31,834,90,911]  {"sign_kind": "signboard"}
+  entrance_exit        0.19  [0,786,128,930]  {}
+  handrail             0.17  [387,572,440,637]  {"associated_with": [{"id": "7a588f422158-000", "class": "staircase"}]}
+  obstacle             0.16  [13,892,28,915]  {"obstacle_type": "trash can"}
+  ! NO_STEP_FREE_ALTERNATIVE_IN_VIEW: Stairs visible but no ramp or lift detected in this view.
+  annotated: samples/demo_outputs/stairs_oau_campus_annotated.jpg
+  json:      samples/demo_outputs/stairs_oau_campus.json
+
+== tactile_paving_doncaster.jpg  (1200x1800)  model=campus_ensemble  inference=896ms
+  person               0.64  [829,606,853,670]  {"dynamic": true, "relative_to_walkway": "outside detected path", "potential_obstruction": false}
+  person               0.49  [850,605,878,671]  {"dynamic": true, "relative_to_walkway": "outside detected path", "potential_obstruction": false}
+  tactile_paving       0.41  [1,714,1196,1800]  {"high_contrast_yellow": true}
+  person               0.36  [310,620,331,672]  {"dynamic": true, "relative_to_walkway": "outside detected path", "potential_obstruction": false}
+  obstacle             0.34  [1077,621,1115,682]  {"obstacle_type": "trash can", "relative_to_walkway": "outside detected path", "potential_obstruction": false}
+  signboard            0.32  [1035,419,1081,466]  {"sign_kind": "directional sign"}
+  signboard            0.29  [646,483,671,509]  {"sign_kind": "directional sign"}
+  signboard            0.28  [247,754,281,818]  {"sign_kind": "information sign"}
+  signboard            0.28  [1089,411,1163,444]  {"sign_kind": "information sign"}
+  signboard            0.28  [648,531,670,566]  {"sign_kind": "directional sign"}
+  signboard            0.24  [627,576,653,595]  {"sign_kind": "directional sign"}
+  obstacle             0.24  [1163,607,1199,692]  {"obstacle_type": "trash can", "relative_to_walkway": {"path_id": "23c2203c8d4c-015", "path_class": "walkway", "lateral_position": "right side"}, "image_width_f
+  signboard            0.23  [838,326,854,353]  {"sign_kind": "exit sign"}
+  signboard            0.22  [915,499,944,528]  {"sign_kind": "directional sign"}
+  signboard            0.21  [1034,466,1083,521]  {"sign_kind": "information sign"}
+  walkway              0.21  [9,689,1195,1720]  {"objects_on_path": [{"id": "23c2203c8d4c-011", "class": "obstacle", "type": "trash can"}, {"id": "23c2203c8d4c-017", "class": "obstacle", "type": "trash can"},
+  signboard            0.20  [646,481,671,572]  {"sign_kind": "directional sign"}
+  obstacle             0.19  [1141,629,1182,703]  {"obstacle_type": "trash can", "relative_to_walkway": {"path_id": "23c2203c8d4c-015", "path_class": "walkway", "lateral_position": "right side"}, "image_width_f
+  obstacle             0.18  [4,656,605,756]  {"obstacle_type": "barrier", "relative_to_walkway": {"path_id": "23c2203c8d4c-015", "path_class": "walkway", "lateral_position": "left side"}, "image_width_frac
+  ! POTENTIAL_PATH_OBSTRUCTION: Object(s) located on a detected walkway/corridor may obstruct the route.
+  ! TACTILE_PAVING_PRESENT: Tactile paving detected.
+  annotated: samples/demo_outputs/tactile_paving_doncaster_annotated.jpg
+  json:      samples/demo_outputs/tactile_paving_doncaster.json
+
+== tactile_paving_singapore.jpg  (1280x2277)  model=campus_ensemble  inference=946ms
+  tactile_paving       0.54  [1,155,1280,2249]  {"high_contrast_yellow": false}
+  signboard            0.33  [210,2,645,155]  {"sign_kind": "information sign"}
+  tactile_paving       0.17  [658,0,1277,71]  {"high_contrast_yellow": false}
+  obstacle             0.16  [0,0,1280,182]  {"obstacle_type": "barrier"}
+  ! TACTILE_PAVING_PRESENT: Tactile paving detected.
+  annotated: samples/demo_outputs/tactile_paving_singapore_annotated.jpg
+  json:      samples/demo_outputs/tactile_paving_singapore.json
