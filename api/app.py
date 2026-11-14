@@ -53,15 +53,35 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="PS32 Campus Facility Vision Engine", version=vision.__version__, lifespan=lifespan)
+
+
+@app.middleware("http")
+async def write_token(request, call_next):
+    """If ACCESSMAP_API_TOKEN is set, every write (POST/PUT/PATCH/DELETE) needs it as `X-AccessMap-Token` or a
+    Bearer token. Reads stay open so phones can sync maps; leave it unset on a trusted LAN."""
+    tok = os.environ.get("ACCESSMAP_API_TOKEN", "").strip()
+    if tok and request.method not in ("GET", "HEAD", "OPTIONS"):
+        import hmac
+        got = request.headers.get("x-accessmap-token") or request.headers.get("authorization", "").removeprefix("Bearer ")
+        if not hmac.compare_digest(got.strip().encode(), tok.encode()):
+            return JSONResponse({"detail": "missing or invalid API token"}, status_code=401)
+    return await call_next(request)
+
+
+# added last = outermost, so CORS headers are present even on 401 responses
 app.add_middleware(CORSMiddleware, allow_origins=os.environ.get("CORS_ORIGINS", "*").split(","),
                    allow_methods=["*"], allow_headers=["*"])
 from api.measurements import router as measurements_router  # noqa: E402
 from api.spatial import router as spatial_router  # noqa: E402
 from api.platform import router as platform_router  # noqa: E402
+from api.mobile import router as mobile_router  # noqa: E402
+from api.building import router as building_router  # noqa: E402
 
 app.include_router(measurements_router)
 app.include_router(spatial_router)
 app.include_router(platform_router)
+app.include_router(mobile_router)
+app.include_router(building_router)
 app.mount("/vision/outputs", StaticFiles(directory=str(get_settings().output_dir), check_dir=False), name="outputs")
 
 

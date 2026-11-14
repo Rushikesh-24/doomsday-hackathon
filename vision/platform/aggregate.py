@@ -148,13 +148,16 @@ def facilities(q: str | None = None, cls: str | None = None, status: str | None 
                                           "provisional_value": m.get("provisional_value")} for m in ms],
                         "review": reviews.get(d["id"])})
     for f in spatial_facilities():
-        out.append({"id": f["facility_id"], "kind": "reconstruction_facility", "class_name": f["class_name"],
+        # facility_id comes from the source video, so two reconstructions of one video share ids: scope it.
+        uid = f"{f['reconstruction_id']}:{f['facility_id']}"
+        out.append({"id": uid, "facility_id": f["facility_id"], "kind": "reconstruction_facility",
+                    "class_name": f["class_name"],
                     "confidence": f.get("registration_confidence"), "source_name": f.get("video_name"),
                     "reconstruction_id": f["reconstruction_id"], "position_local": f.get("position_local"),
                     "position_units": f.get("position_units"), "observations": len(f.get("observations", [])),
                     "registered": f.get("position_sfm") is not None, "reason": f.get("reason"),
                     "provenance": provenance(f.get("video_name") or ""),
-                    "measurements": f.get("measurements", []), "review": reviews.get(f["facility_id"])})
+                    "measurements": f.get("measurements", []), "review": reviews.get(uid)})
     if q:
         ql = q.lower()
         out = [x for x in out if ql in x["class_name"] or ql in (x.get("source_name") or "").lower() or ql in x["id"]]

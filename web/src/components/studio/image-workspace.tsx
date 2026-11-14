@@ -46,7 +46,7 @@ export function ImageWorkspace({ initialId }: { initialId?: string | null }) {
   return (
     <div className="grid gap-6 lg:grid-cols-[300px_1fr]">
       <div className="space-y-4">
-        <Card className="shadow-none">
+        <Card>
           <CardContent className="p-4">
             <button onClick={() => fileRef.current?.click()}
               onDragOver={(e) => e.preventDefault()}
@@ -94,7 +94,7 @@ export function ImageWorkspace({ initialId }: { initialId?: string | null }) {
         {id && !detail && !loadErr && <Loading label="Loading analysis…" />}
         {detail && (
           <>
-            <Card className="shadow-none">
+            <Card>
               <CardHeader>
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div>

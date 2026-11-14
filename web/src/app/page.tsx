@@ -43,8 +43,23 @@ export default function OverviewPage() {
   const { data, error, loading, reload } = useApi<Overview>("/platform/overview");
   return (
     <>
-      <PageHeader title="Overview" description="Live state of the campus accessibility intelligence platform. Every number below is computed from stored AI results (repeated analyses of the same photo count once)."
-        actions={<Link href="/studio"><Button><Wand2 /> Open AI Studio</Button></Link>} />
+      <div className="hero-gradient relative mb-6 overflow-hidden rounded-[2rem] px-6 py-8 text-white shadow-xl md:px-10 md:py-10">
+        <div className="pointer-events-none absolute -right-16 -top-16 size-72 rounded-full border border-white/10" />
+        <div className="pointer-events-none absolute -right-32 -top-32 size-[28rem] rounded-full border border-white/5" />
+        <div className="relative grid gap-6 xl:grid-cols-[1fr_auto] xl:items-end">
+          <div className="max-w-2xl">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-violet-200">Campus accessibility intelligence</div>
+            <h1 className="font-display mt-2 text-3xl font-bold leading-[1.1] tracking-tight xl:text-[44px]">One walkthrough video in.<br /><span className="bg-gradient-to-r from-violet-200 to-teal-200 bg-clip-text text-transparent">An accessible map out.</span></h1>
+            <p className="mt-3 text-sm text-white/70">Detect stairs, ramps, lifts and signage, rebuild the space in 3D, tag rooms, and give everyone directions that fit how they move.</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Link href="/studio"><Button className="rounded-full bg-white text-slate-900 hover:bg-white/90"><Wand2 /> AI Studio</Button></Link>
+            <Link href="/explorer"><Button variant="outline" className="rounded-full border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white"><Box /> 3D Explorer</Button></Link>
+            <Link href="/navigation"><Button variant="outline" className="rounded-full border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white"><ArrowRight /> Get directions</Button></Link>
+          </div>
+        </div>
+      </div>
+      <PageHeader title="Platform at a glance" description="Every number below is computed from stored AI results (repeated analyses of the same photo count once)." />
       {loading && <Loading />}
       {error && <ErrorState message={error} onRetry={reload} />}
       {data && (
@@ -56,11 +71,11 @@ export default function OverviewPage() {
             <Stat label="Possible issues" value={data.compliance.issues} hint="screening, not certification" icon={<AlertTriangle className="size-4" />} />
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
-            <Card className="shadow-none lg:col-span-2">
+            <Card className="lg:col-span-2">
               <CardHeader><CardTitle className="text-base">Detections by class</CardTitle><CardDescription>OWLv2 + YOLO11 ensemble on the latest analysis of each photo</CardDescription></CardHeader>
               <CardContent><Bars data={data.detections_by_class} colors={CLASS_COLORS} /></CardContent>
             </Card>
-            <Card className="shadow-none">
+            <Card>
               <CardHeader><CardTitle className="flex items-center gap-2 text-base"><Activity className="size-4" /> Recent activity</CardTitle></CardHeader>
               <CardContent className="space-y-1">
                 {data.activity.map((a, i) => {
@@ -78,15 +93,15 @@ export default function OverviewPage() {
             </Card>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
-            <Card className="shadow-none">
+            <Card>
               <CardHeader><CardTitle className="flex items-center gap-2 text-base"><Ruler className="size-4" /> Measurement status</CardTitle><CardDescription>Absolute sizes are withheld without a scale reference</CardDescription></CardHeader>
               <CardContent><Bars data={data.measurements.latest_by_status} /></CardContent>
             </Card>
-            <Card className="shadow-none">
+            <Card>
               <CardHeader><CardTitle className="flex items-center gap-2 text-base"><ClipboardCheck className="size-4" /> Screening outcomes</CardTitle><CardDescription>Rules applied to measured facilities</CardDescription></CardHeader>
               <CardContent><Bars data={data.compliance.outcomes} /></CardContent>
             </Card>
-            <Card className="shadow-none">
+            <Card>
               <CardHeader><CardTitle className="flex items-center gap-2 text-base"><AlertTriangle className="size-4" /> Accessibility insights</CardTitle><CardDescription>Scene-level findings from detection</CardDescription></CardHeader>
               <CardContent className="space-y-3">
                 {Object.entries(data.compliance.gaps).map(([k, v]) => (

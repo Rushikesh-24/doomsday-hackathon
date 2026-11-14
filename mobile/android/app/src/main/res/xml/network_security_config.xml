@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The AccessMap server usually runs on the same desk (USB: 127.0.0.1 via adb reverse) or the local Wi-Fi,
+     which means plain HTTP to a LAN address. Cleartext is therefore allowed; use an https:// server address
+     when the API is exposed beyond a trusted network. -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system"/>
+        </trust-anchors>
+    </base-config>
+</network-security-config>

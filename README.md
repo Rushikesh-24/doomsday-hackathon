@@ -26,8 +26,26 @@ python3.11 -m venv .venv
 .venv/bin/python scripts/download_models.py          # default model; add --all for every model
 ```
 
-Requires Python 3.10+ and `ffmpeg` (for browser-playable H.264 annotated videos; without it a
-MPEG-4 file is still written).
+Requires Python 3.11+ (the pinned transformers/numpy need it) and `ffmpeg` (for browser-playable H.264
+annotated videos and audio transcription; without it a MPEG-4 file is still written).
+
+**Windows + NVIDIA:** torch 2.15 has no CUDA wheel for Windows yet, so install the CUDA 13.0 build first, then
+the rest (paths use `.venv\Scripts\` instead of `.venv/bin/`):
+
+```bash
+py -3.11 -m venv .venv
+```
+```bash
+.venv/Scripts/python -m pip install torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cu130
+```
+```bash
+grep -v -E "^(torch|torchvision)==" requirements.txt > req-win.txt && .venv/Scripts/python -m pip install -r req-win.txt
+```
+
+Stage demo (pre-built 3D scan with tagged rooms, sample floor plan, 5-minute script): [demo/README.md](demo/README.md).
+
+**Phone app** (Android, offline-first wayfinding, Groq assistant): [mobile/README.md](mobile/README.md).
+**AI assistant:** put your Groq key in `.env` as `GROQ_API_KEY=` (see `.env.example`). It is used only by the server.
 
 ## Run the platform (API + web app)
 

@@ -30,7 +30,7 @@ function FlorenceDemo() {
     try { setRes(await apiUpload<Describe>("/ai/describe", fd)); } catch (e) { setErr((e as Error).message); } finally { setBusy(false); }
   }
   return (
-    <Card className="shadow-none">
+    <Card>
       <CardHeader><CardTitle className="flex items-center gap-2 text-base"><ImageIcon className="size-4" /> Florence-2 · scene description &amp; sign reading</CardTitle>
         <CardDescription>Describe a photo for blind and low-vision users, or read text on signs. First run loads the model (~10 s).</CardDescription></CardHeader>
       <CardContent className="space-y-3 text-sm">
@@ -75,7 +75,7 @@ function WhisperDemo() {
     try { setRes(await apiUpload<Transcript>("/ai/transcribe", fd)); } catch (e) { setErr((e as Error).message); } finally { setBusy(false); }
   }
   return (
-    <Card className="shadow-none">
+    <Card>
       <CardHeader><CardTitle className="flex items-center gap-2 text-base"><Mic className="size-4" /> Whisper · multilingual voice requests</CardTitle>
         <CardDescription>Speak a destination (&ldquo;where is the lift?&rdquo;, &ldquo;लिफ्ट कहाँ है&rdquo;). The transcript is matched to a facility class used by Navigation. whisper-base is weak on Hindi without a language hint.</CardDescription></CardHeader>
       <CardContent className="space-y-3 text-sm">
@@ -119,7 +119,7 @@ function LocalizeDemo() {
     try { setRes(await apiUpload<Loc>(`/ai/localize/${r}`, fd)); } catch (e) { setErr((e as Error).message); } finally { setBusy(false); }
   }
   return (
-    <Card className="shadow-none">
+    <Card>
       <CardHeader><CardTitle className="flex items-center gap-2 text-base"><MapPin className="size-4" /> DINOv2 · visual localisation</CardTitle>
         <CardDescription>Match a photo against a reconstruction&rsquo;s registered keyframes to estimate where it was taken (keyframe-level, not a 6-DoF pose).</CardDescription></CardHeader>
       <CardContent className="space-y-3 text-sm">
@@ -155,7 +155,7 @@ export default function AILabPage() {
   return (
     <>
       <PageHeader title="AI Lab" description="Additional open-source models running locally on this machine. Licences verified before integration; nothing is sent to a third-party service." />
-      <Card className="mb-6 shadow-none">
+      <Card className="mb-6">
         <CardContent className="overflow-auto p-0">
           <table className="w-full text-sm">
             <thead className="bg-muted text-left text-xs text-muted-foreground"><tr><th className="px-4 py-2">Model</th><th className="px-4 py-2">Task</th><th className="px-4 py-2">Licence</th><th className="px-4 py-2">State</th></tr></thead>

@@ -37,7 +37,7 @@ export function MeasurePanel({ result, initial }: { result: ImageResult; initial
   }
 
   return (
-    <Card className="shadow-none">
+    <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-base"><Ruler className="size-4" /> Accessibility measurements</CardTitle>
         <CardDescription>Metric depth + segmentation + geometry on the detected facilities. Absolute sizes need a scale reference; without one they are withheld.</CardDescription>
@@ -142,7 +142,7 @@ export function SignReader({ requestId, hasSigns }: { requestId: string; hasSign
   const [err, setErr] = useState<string | null>(null);
   if (!hasSigns) return null;
   return (
-    <Card className="shadow-none">
+    <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-base"><ScanText className="size-4" /> Read signs</CardTitle>
         <CardDescription>Florence-2 (MIT) OCR on each detected signboard / accessibility symbol crop.</CardDescription>

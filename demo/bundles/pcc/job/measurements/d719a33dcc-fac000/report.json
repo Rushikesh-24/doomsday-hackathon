@@ -1,0 +1,306 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "db89a83b9e4a",
+  "image": {
+    "name": "frame_000895.jpg",
+    "width": 576,
+    "height": 1024,
+    "format": "JPEG",
+    "channels": 3,
+    "exif_transposed": false
+  },
+  "vision_request_id": "306f4531a0e9",
+  "detections_source": "provided",
+  "camera": {
+    "fx": 706.0173117172442,
+    "fy": 706.0173117172442,
+    "cx": 288.0,
+    "cy": 512.0,
+    "width": 576,
+    "height": 1024,
+    "hfov_deg": 44.38,
+    "source": "prior",
+    "focal_rel_sigma": 0.15,
+    "distortion_corrected": false
+  },
+  "scale": {
+    "status": "uncalibrated_monocular",
+    "scale_factor": 1.0,
+    "rel_sigma": 0.45,
+    "reference_depth_m": null,
+    "references": [],
+    "notes": [
+      "no reference available: absolute lengths are withheld (REQUIRES_CALIBRATION)"
+    ]
+  },
+  "models": [
+    {
+      "role": "detection",
+      "key": "campus_ensemble",
+      "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "version": "ensemble(owlv2_base + yolo11_coco)",
+      "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+      "device": "cuda",
+      "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+    },
+    {
+      "role": "depth",
+      "key": "da2_metric_indoor_small",
+      "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+      "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+      "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+      "device": "cuda",
+      "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+    },
+    {
+      "role": "semantic_segmentation",
+      "key": "upernet_ade20k",
+      "name": "openmmlab/upernet-convnext-tiny",
+      "version": "UperNet ConvNeXt-T ADE20K-150",
+      "license": "MIT",
+      "device": "cuda",
+      "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+    },
+    {
+      "role": "box_segmenter",
+      "key": "slimsam",
+      "name": "Zigeng/SlimSAM-uniform-50",
+      "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+      "license": "Apache-2.0",
+      "device": "cuda",
+      "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+    }
+  ],
+  "scene": {
+    "indoor_outdoor": "indoor",
+    "sky_fraction": 0.0,
+    "depth_model": "da2_metric_indoor_small",
+    "analysis_size": [
+      576,
+      1024
+    ],
+    "gravity_source": "ground_plane",
+    "gravity_sigma_deg": 0.6,
+    "gravity_ground_vs_vp_deg": 3.34,
+    "vertical_lines": 19,
+    "ground_plane_inlier_ratio": 0.823,
+    "camera_height_m": null,
+    "measured_detections": 1,
+    "detections_total": 9
+  },
+  "facilities": [
+    {
+      "detection_id": "306f4531a0e9-004",
+      "class_name": "corridor",
+      "detection_confidence": 0.254,
+      "bbox": [
+        240.3,
+        313.12,
+        323.24,
+        391.55
+      ],
+      "mask_area_px": null,
+      "mask_source": null,
+      "truncated_sides": [],
+      "mean_depth_m": null,
+      "measurements": [
+        {
+          "id": "db89a83b9e4a-m001",
+          "detection_id": "306f4531a0e9-004",
+          "facility_class": "corridor",
+          "name": "clear_width",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "INSUFFICIENT_DATA",
+          "method": "-",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "cuda",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_indoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "cuda",
+              "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cuda",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "cuda",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "not measured",
+          "provisional_value": null,
+          "refusal_reason": "walkable floor not segmented in this region",
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T19:50:54.346+00:00"
+        },
+        {
+          "id": "db89a83b9e4a-m002",
+          "detection_id": "306f4531a0e9-004",
+          "facility_class": "corridor",
+          "name": "min_available_clearance",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "INSUFFICIENT_DATA",
+          "method": "-",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "cuda",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_indoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "cuda",
+              "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cuda",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "cuda",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "not measured",
+          "provisional_value": null,
+          "refusal_reason": "walkable floor not segmented in this region",
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T19:50:54.346+00:00"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "assessment": [
+    {
+      "rule_id": "route_clear_width",
+      "profile": "ada_2010",
+      "clause": "403.5.1",
+      "detection_id": "306f4531a0e9-004",
+      "facility_class": "corridor",
+      "measurement_id": "db89a83b9e4a-m001",
+      "measurement_name": "clear_width",
+      "outcome": "CANNOT_ASSESS",
+      "severity": "standard",
+      "threshold": 0.915,
+      "measured_value": null,
+      "uncertainty": null,
+      "message": "INSUFFICIENT_DATA: walkable floor not segmented in this region"
+    },
+    {
+      "rule_id": "route_available_clearance",
+      "profile": "ada_2010",
+      "clause": "403.5.1 exception",
+      "detection_id": "306f4531a0e9-004",
+      "facility_class": "corridor",
+      "measurement_id": "db89a83b9e4a-m002",
+      "measurement_name": "min_available_clearance",
+      "outcome": "CANNOT_ASSESS",
+      "severity": "standard",
+      "threshold": 0.815,
+      "measured_value": null,
+      "uncertainty": null,
+      "message": "INSUFFICIENT_DATA: walkable floor not segmented in this region"
+    },
+    {
+      "rule_id": "route_obstruction",
+      "profile": "ada_2010",
+      "clause": "403.5 (clear width)",
+      "detection_id": "306f4531a0e9-004",
+      "facility_class": "corridor",
+      "measurement_id": null,
+      "measurement_name": "permanent_obstruction_present",
+      "outcome": "CANNOT_ASSESS",
+      "severity": "advisory",
+      "threshold": null,
+      "measured_value": null,
+      "uncertainty": null,
+      "message": "measurement not produced for this facility"
+    }
+  ],
+  "assessment_summary": {
+    "profile": "ada_2010",
+    "profile_title": "2010 ADA Standards for Accessible Design (US)",
+    "counts": {
+      "CANNOT_ASSESS": 3
+    },
+    "statement": "Screening only. No compliance determination is made; flagged items and all unverified measurements require on-site verification by a qualified assessor."
+  },
+  "timing_ms": {
+    "decode": 12.4,
+    "detections": 0.0,
+    "segmentation": 123.5,
+    "depth": 110.8,
+    "masks": 271.1,
+    "scale": 574.2,
+    "analysis": 8.0,
+    "total": 1296.5
+  },
+  "processed_at": "2026-11-13T19:50:55.393+00:00",
+  "annotated_image": "D:\\other projects\\doomsday-hackathon\\outputs\\spatial\\jobs\\5eecc657ba9a\\measurements\\d719a33dcc-fac000\\frame_000895_measured.jpg",
+  "json_path": "D:\\other projects\\doomsday-hackathon\\outputs\\spatial\\jobs\\5eecc657ba9a\\measurements\\d719a33dcc-fac000\\report.json",
+  "warnings": [
+    "no calibration/EXIF: assumed 26 mm-equivalent focal (+-15%)"
+  ]
+}

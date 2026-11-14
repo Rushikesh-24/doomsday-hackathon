@@ -6,6 +6,7 @@ import logging
 import shutil
 import sqlite3
 import threading
+import time
 import uuid
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
@@ -53,6 +54,12 @@ def get_video(vid: str) -> dict | None:
     with _lock, _db() as c:
         r = c.execute("SELECT id,name,path,meta,created FROM videos WHERE id=?", (vid,)).fetchone()
     return None if r is None else {"id": r[0], "name": r[1], "path": r[2], "meta": json.loads(r[3]), "created": r[4]}
+
+
+def list_videos() -> list[dict]:
+    with _lock, _db() as c:
+        rows = c.execute("SELECT id,name,path,meta,created FROM videos ORDER BY created DESC").fetchall()
+    return [{"id": r[0], "name": r[1], "path": r[2], "meta": json.loads(r[3] or "{}"), "created": r[4]} for r in rows]
 
 
 def job_dir(job_id: str) -> Path:
@@ -103,6 +110,23 @@ def list_jobs(video_id: str | None = None) -> list[dict]:
 
 def _alive(pid: int) -> bool:
     import os
+    import sys
+    if sys.platform == "win32":
+        # os.kill(pid, 0) is NOT a liveness probe on Windows: signal 0 is CTRL_C_EVENT and is delivered to the
+        # target's console process group (it can stop another server). Query the process handle instead.
+        import ctypes
+        from ctypes import wintypes
+        k32 = ctypes.WinDLL("kernel32", use_last_error=True)
+        k32.OpenProcess.restype = wintypes.HANDLE
+        h = k32.OpenProcess(0x1000, False, int(pid))          # PROCESS_QUERY_LIMITED_INFORMATION
+        if not h:
+            return ctypes.get_last_error() == 5                # access denied => exists
+        try:
+            code = wintypes.DWORD()
+            ok = k32.GetExitCodeProcess(h, ctypes.byref(code))
+            return bool(ok) and code.value == 259              # STILL_ACTIVE
+        finally:
+            k32.CloseHandle(h)
     try:
         os.kill(pid, 0)
         return True
@@ -114,7 +138,7 @@ def mark_interrupted() -> int:
     """At startup: jobs left 'running'/'queued' whose owning process is gone are marked resumable
     ('interrupted'). Jobs still running in another live process (e.g. the CLI) are left alone."""
     with _lock, _db() as c:
-        rows = c.execute("SELECT id FROM jobs WHERE status IN ('running','queued')").fetchall()
+        rows = c.execute("SELECT id FROM jobs WHERE status IN ('running','queued','paused')").fetchall()
     n = 0
     for (jid,) in rows:
         lock = job_dir(jid) / "RUNNING"
@@ -135,18 +159,112 @@ class Runner:
         self.pool.submit(self._run, jid, set(force or ()))
 
     def _run(self, jid: str, force: set[str]) -> None:
+        from vision.spatial import control as C
         from vision.spatial.pipeline import SpatialPipeline
         j = get_job(jid)
+        if j is None or j["status"] == "stopped" or jid in _deleted:   # stopped / deleted while queued
+            return
         v = get_video(j["video_id"])
+        ctl = C.create(jid)
         update_job(jid, status="running")
+        pipe = None
         try:
             pipe = SpatialPipeline(job_dir(jid), Path(v["path"]), j["options"], video_id=v["id"],
-                                   on_progress=lambda p: update_job(jid, progress=p))
+                                   on_progress=lambda p: update_job(jid, progress=p), control=ctl)
             st = pipe.run(force=force)
             update_job(jid, status=st["status"], progress=pipe.progress())
+        except C.JobStopped:
+            update_job(jid, status="stopped", error=None, **({"progress": pipe.progress()} if pipe else {}))
         except Exception as e:
             log.exception("spatial job %s crashed", jid)
             update_job(jid, status="failed", error=f"{e.__class__.__name__}: {e}")
+        finally:
+            C.release(jid)
+            if jid in _deleted:                        # deleted while running: drop anything it wrote since
+                _rmtree(job_dir(jid))
+                _deleted.discard(jid)
+
+    # ---------------------------------------------------------------- user controls
+    def pause(self, jid: str) -> str:
+        from vision.spatial import control as C
+        c = C.get(jid)
+        if c is None:
+            raise ValueError("only a running job can be paused")
+        c.pause()
+        update_job(jid, status="paused")
+        return "paused"
+
+    def resume(self, jid: str) -> str:
+        from vision.spatial import control as C
+        c = C.get(jid)
+        if c is None or not c.paused:
+            raise ValueError("job is not paused")
+        c.resume()
+        update_job(jid, status="running")
+        return "running"
+
+    def stop(self, jid: str) -> str:
+        from vision.spatial import control as C
+        j = get_job(jid)
+        if j is None:
+            raise KeyError(jid)
+        c = C.get(jid)
+        if c is not None:
+            c.stop()                     # the runner thread marks it 'stopped' once the stage unwinds
+            return "stopping"
+        if j["status"] == "queued":
+            update_job(jid, status="stopped")
+            return "stopped"
+        raise ValueError(f"job is {j['status']}, nothing to stop")
+
+
+_deleted: set[str] = set()      # jobs deleted while their runner thread may still be unwinding
+
+
+def _rmtree(d: Path, tries: int = 8) -> bool:
+    """Remove a job folder; on Windows a just-killed worker can hold files for a moment, so retry."""
+    for k in range(tries):
+        if not d.exists():
+            return True
+        try:
+            shutil.rmtree(d)
+            return True
+        except OSError:
+            time.sleep(0.25 * (k + 1))
+    shutil.rmtree(d, ignore_errors=True)
+    return not d.exists()
+
+
+def delete_job(jid: str, wait: float = 30.0) -> dict:
+    """Permanently remove a reconstruction in any state: its database row, its output folder and its
+    phone-map entry. An active job (queued / running / paused) is stopped first - worker processes are
+    killed and the runner thread is given `wait` seconds to unwind. The source video is kept."""
+    from vision.spatial import control as C
+    j = get_job(jid)
+    if j is None:
+        raise KeyError(jid)
+    _deleted.add(jid)
+    was = j["status"]
+    if was in ("queued", "running", "paused"):
+        c = C.get(jid)
+        if c is not None:
+            c.stop()                                   # kills workers, wakes a paused checkpoint
+        update_job(jid, status="stopped")             # a queued job will not start
+        t0 = time.time()
+        while C.get(jid) is not None and time.time() - t0 < wait:
+            time.sleep(0.1)
+    with _lock, _db() as c:
+        c.execute("DELETE FROM jobs WHERE id=?", (jid,))
+    try:
+        from vision.navigation import mappack
+        with mappack._lock, mappack._db() as c:
+            c.execute("DELETE FROM maps WHERE id=?", (jid,))
+    except Exception:
+        log.warning("could not remove map registry entry for %s", jid)
+    clean = _rmtree(job_dir(jid))
+    if C.get(jid) is None and clean:
+        _deleted.discard(jid)
+    return {"id": jid, "deleted": True, "was": was, "video_id": j["video_id"], "files_removed": clean}
 
 
 _runner: Runner | None = None

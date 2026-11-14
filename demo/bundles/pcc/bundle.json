@@ -1,0 +1,27 @@
+{
+  "name": "pcc",
+  "title": "PCC block - stairs, lobby and lab corridor",
+  "source_job": "demopcc",
+  "status": "completed",
+  "options": {
+    "preset": "balanced"
+  },
+  "video_name": "pcc.mp4",
+  "video_meta": {
+    "file": "upload.mp4",
+    "size_bytes": 5845943,
+    "fps": 29.970760233918128,
+    "frame_count": 1025,
+    "decoded_width": 576,
+    "decoded_height": 1024,
+    "duration_s": 34.2
+  },
+  "places": [
+    "Upper landing",
+    "Main staircase",
+    "Lobby",
+    "CC Lab",
+    "CG Lab"
+  ],
+  "exported": "2026-11-13T21:24:07+00:00"
+}

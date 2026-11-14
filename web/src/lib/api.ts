@@ -1,5 +1,8 @@
 // Centralised client for the PS32 Python backend (FastAPI). All screens go through here.
 export const API_BASE = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000").replace(/\/$/, "");
+// Optional write token (server: ACCESSMAP_API_TOKEN). Only needed when the API is exposed beyond a trusted LAN.
+const TOKEN = process.env.NEXT_PUBLIC_ACCESSMAP_API_TOKEN || "";
+const authHeaders = (): Record<string, string> => (TOKEN ? { "x-accessmap-token": TOKEN } : {});
 
 export class ApiError extends Error {
   status: number;
@@ -48,7 +51,7 @@ export async function apiSend<T>(path: string, body?: unknown, method = "POST"):
   try {
     res = await fetch(apiUrl(path), {
       method,
-      headers: body === undefined ? undefined : { "content-type": "application/json" },
+      headers: { ...authHeaders(), ...(body === undefined ? {} : { "content-type": "application/json" }) },
       body: body === undefined ? undefined : JSON.stringify(body),
     });
   } catch {
@@ -62,6 +65,7 @@ export function apiUpload<T>(path: string, form: FormData, onProgress?: (fractio
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open("POST", apiUrl(path));
+    for (const [k, v] of Object.entries(authHeaders())) xhr.setRequestHeader(k, v);
     xhr.upload.onprogress = (e) => e.lengthComputable && onProgress?.(e.loaded / e.total);
     xhr.onload = () => {
       let body: unknown = null;

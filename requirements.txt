@@ -1,4 +1,7 @@
 # Core runtime (versions verified on macOS arm64 / Python 3.11, 2026-11-13)
+# Windows + NVIDIA: torch 2.15 has no CUDA wheel yet; install first with
+#   pip install torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cu130
+# then install this file with the two torch lines removed.
 torch==2.15.0
 torchvision==0.29.2
 ultralytics==8.4.211
@@ -7,6 +10,7 @@ timm==1.0.31
 huggingface_hub==2.4.0
 opencv-python-headless==5.0.0.93
 pillow==13.0.0
+pi-heif==1.4.0  # Ultralytics' Image.open patch imports it when a file fails to decode
 numpy==2.4.6
 PyYAML==6.0.3
 fastapi==0.162.5
@@ -19,6 +23,8 @@ regex
 # Spatial pipeline: COLMAP SfM (BSD-3) and ByteTrack's assignment solver (BSD-2)
 pycolmap==4.2.1
 lap==0.5.14
+# Pause / resume / stop of worker processes (suspend works on Windows too)
+psutil==7.2.2
 # Dev / test
 pytest==9.2.0
 httpx==0.28.1

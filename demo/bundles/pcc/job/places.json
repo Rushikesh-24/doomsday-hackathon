@@ -1,0 +1,114 @@
+{
+ "places": [
+  {
+   "id": "place-9e7655b2",
+   "description": "Top of the main staircase where the walk starts.",
+   "aliases": [],
+   "floor": null,
+   "access": {
+    "step_free": null,
+    "accessible_toilet": null,
+    "notes": null
+   },
+   "is_start": false,
+   "name": "Upper landing",
+   "kind": "other",
+   "position": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "created": "2026-11-13T20:06:35+00:00"
+  },
+  {
+   "id": "place-e9346125",
+   "description": "Stair flight down to the lobby (about 2 m drop).",
+   "aliases": [],
+   "floor": null,
+   "access": {
+    "step_free": null,
+    "accessible_toilet": null,
+    "notes": null
+   },
+   "is_start": false,
+   "name": "Main staircase",
+   "kind": "stairs",
+   "position": [
+    0.6,
+    -1.0,
+    -2.7
+   ],
+   "created": "2026-11-13T20:06:35+00:00"
+  },
+  {
+   "id": "place-e0f528d5",
+   "description": "Lobby with the illuminated display wall.",
+   "aliases": [
+    "display wall",
+    "reception"
+   ],
+   "floor": null,
+   "access": {
+    "step_free": null,
+    "accessible_toilet": null,
+    "notes": null
+   },
+   "is_start": true,
+   "name": "Lobby",
+   "kind": "meeting_point",
+   "position": [
+    0.4,
+    -2.0,
+    -4.8
+   ],
+   "created": "2026-11-13T20:06:35+00:00"
+  },
+  {
+   "id": "place-a68669f5",
+   "description": "Computer centre lab, along the corridor.",
+   "aliases": [
+    "computer centre",
+    "computer lab"
+   ],
+   "floor": null,
+   "access": {
+    "step_free": true,
+    "accessible_toilet": null,
+    "notes": "Level threshold."
+   },
+   "is_start": false,
+   "name": "CC Lab",
+   "kind": "lab",
+   "position": [
+    -5.5,
+    -2.0,
+    -7.2
+   ],
+   "created": "2026-11-13T20:06:35+00:00"
+  },
+  {
+   "id": "place-ad088221",
+   "description": "Computer graphics lab at the far end of the corridor.",
+   "aliases": [
+    "graphics lab",
+    "computer graphics lab"
+   ],
+   "floor": null,
+   "access": {
+    "step_free": true,
+    "accessible_toilet": null,
+    "notes": "Double door - push to open."
+   },
+   "is_start": false,
+   "name": "CG Lab",
+   "kind": "lab",
+   "position": [
+    -10.7,
+    -2.8,
+    -7.6
+   ],
+   "created": "2026-11-13T20:06:35+00:00"
+  }
+ ],
+ "updated": "2026-11-13T20:43:41+00:00"
+}

@@ -1,0 +1,17 @@
+{
+ "generated": {
+  "file": "generated.png",
+  "width": 1400,
+  "height": 548,
+  "px_per_unit": 31.565638593246554,
+  "origin": [
+   -36.68369246063232,
+   -14.29335634765625
+  ],
+  "axes": "image x = local x, image y = local z",
+  "points_used": 37012,
+  "units": "m",
+  "created": "2026-11-13T21:23:36+00:00"
+ },
+ "uploaded": null
+}

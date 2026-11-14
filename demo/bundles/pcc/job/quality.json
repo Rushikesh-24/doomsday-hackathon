@@ -1,0 +1,59 @@
+{
+  "video": {
+    "file": "source.mp4",
+    "size_bytes": 5845943,
+    "fps": 29.970760233918128,
+    "frame_count": 1025,
+    "decoded_width": 576,
+    "decoded_height": 1024,
+    "duration_s": 34.2,
+    "letterbox_active_area": null
+  },
+  "analysis_fps": 6.0,
+  "frames_analysed": 205,
+  "stats": {
+    "blurry_fraction": 0.19,
+    "underexposed_fraction": 0.122,
+    "overexposed_fraction": 0.0,
+    "near_duplicate_fraction": 0.0,
+    "scene_cuts": 0,
+    "fast_motion_fraction": 0.015,
+    "low_overlap_fraction": 0.01,
+    "median_motion_px_per_analysed_frame": 3.87,
+    "p90_motion_px": 26.71,
+    "median_overlap": 0.904,
+    "shake_rotation_jitter_deg": 0.196,
+    "p90_abs_rotation_deg": 1.65,
+    "median_sharpness": 221.3,
+    "revisits": 0,
+    "total_translation_proxy_px": 1794.7
+  },
+  "issues": [],
+  "recommendations": [
+    "Capture looks suitable; keep the same technique."
+  ],
+  "suitability_score": 89.7,
+  "suitability": "good",
+  "thresholds": {
+    "blur_rel": 0.35,
+    "blur_abs": 25.0,
+    "dark_mean": 45,
+    "bright_mean": 215,
+    "clip_frac": 0.25,
+    "fast_motion_px": 45.0,
+    "shake_rot_deg": 4.0,
+    "min_overlap": 0.35,
+    "scene_cut_hist": 0.55,
+    "dup_motion_px": 0.6,
+    "revisit_hash_bits": 6,
+    "min_duration_s": 4.0,
+    "min_parallax_frames": 8
+  },
+  "segments": [
+    {
+      "start_t": 0.0,
+      "end_t": 34.033,
+      "frames": 205
+    }
+  ]
+}

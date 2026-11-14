@@ -37,7 +37,7 @@ export default function CampusPage() {
       {data && (
         <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
           <div className="space-y-4">
-            <Card className="shadow-none">
+            <Card>
               <CardContent className="flex flex-wrap items-end gap-2 p-4">
                 <div className="flex-1"><label className="text-xs text-muted-foreground">Building name</label><Input value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Main Library" /></div>
                 <div className="flex-1"><label className="text-xs text-muted-foreground">Description (optional)</label><Input value={desc} onChange={(e) => setDesc(e.target.value)} placeholder="e.g. North entrance, 3 floors" /></div>
@@ -46,11 +46,12 @@ export default function CampusPage() {
             </Card>
             {!data.buildings.length && <Empty title="No buildings yet">Add a building above, then assign photos and reconstructions to it.</Empty>}
             {data.buildings.map((b) => (
-              <Card key={b.id} className="shadow-none">
+              <Card key={b.id}>
                 <CardHeader className="flex flex-row items-start justify-between">
                   <div>
                     <CardTitle className="flex items-center gap-2 text-base"><Building2 className="size-4 text-primary" /> {b.name}</CardTitle>
                     {b.description && <div className="text-sm text-muted-foreground">{b.description}</div>}
+                    <Link href={`/buildings?id=${b.id}`} className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary underline"><Layers className="size-3" /> Open as a multi-floor building (3D, lifts, routes)</Link>
                   </div>
                   <Button size="sm" variant="ghost" onClick={() => confirm(`Delete building "${b.name}"? Its floors and assignments are removed; the photos and reconstructions themselves are kept.`) && act(() => apiSend(`/platform/campus/buildings/${b.id}`, undefined, "DELETE"))}><Trash2 /></Button>
                 </CardHeader>
@@ -88,7 +89,7 @@ export default function CampusPage() {
               </Card>
             ))}
           </div>
-          <Card className="h-fit shadow-none">
+          <Card className="h-fit">
             <CardHeader><CardTitle className="text-base">Unassigned assets ({data.unassigned.length})</CardTitle></CardHeader>
             <CardContent className="max-h-[70vh] space-y-2 overflow-auto">
               {data.unassigned.map((a) => {

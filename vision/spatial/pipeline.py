@@ -65,13 +65,15 @@ def _now() -> str:
 
 
 class SpatialPipeline:
-    def __init__(self, job_dir: Path, video: Path, options: dict | None = None, on_progress=None, video_id: str = "vid"):
+    def __init__(self, job_dir: Path, video: Path, options: dict | None = None, on_progress=None, video_id: str = "vid",
+                 control=None):
         self.dir = job_dir
         self.video = video
         self.video_id = video_id
         self.dir.mkdir(parents=True, exist_ok=True)
         self.opts = {**DEFAULTS, **(options or {})}
         self.on_progress = on_progress
+        self.control = control            # vision.spatial.control.JobControl (pause / stop), optional
         sp = self.dir / "state.json"
         self.state = json.loads(sp.read_text()) if sp.exists() else {
             "stages": {s: {"status": "pending"} for s in STAGES}, "created": _now(), "options": self.opts}
@@ -99,6 +101,11 @@ class SpatialPipeline:
         self._set(stage, fraction=round(float(frac), 4), message=msg)
         if self.on_progress:
             self.on_progress(self.progress())
+        self._checkpoint()
+
+    def _checkpoint(self):
+        if self.control is not None:
+            self.control.checkpoint()
 
     # ------------------------------------------------------------------ run
     def run(self, force: set[str] | None = None, only: list[str] | None = None) -> dict:
@@ -129,6 +136,7 @@ class SpatialPipeline:
             if bad and stage != "export":
                 self._set(stage, status="blocked", error=f"prerequisite stage(s) not done: {bad}")
                 continue
+            self._checkpoint()
             t0 = time.time()
             self._set(stage, status="running", started=_now(), fraction=0.0, error=None, message=None)
             try:
@@ -136,6 +144,10 @@ class SpatialPipeline:
                 self._set(stage, status=out.pop("_status", "done"), seconds=round(time.time() - t0, 1),
                           finished=_now(), fraction=1.0, summary=out)
             except Exception as e:
+                from vision.spatial.control import JobStopped
+                if isinstance(e, JobStopped):      # user stop: this stage is redone when the job is started again
+                    self._set(stage, status="pending", fraction=None, message="stopped by user", started=None)
+                    raise
                 log.exception("stage %s failed", stage)
                 self._set(stage, status="failed", seconds=round(time.time() - t0, 1), finished=_now(),
                           error=f"{e.__class__.__name__}: {e}", traceback=traceback.format_exc()[-2000:])
@@ -204,8 +216,9 @@ class SpatialPipeline:
 
     def _stage_sfm(self):
         from vision.spatial.sfm import run_in_subprocess
-        self._report("sfm", 0.05, "COLMAP feature extraction / matching / mapping (worker process)")
-        rep = run_in_subprocess(self.dir / "frames", self.dir / "sfm", self.opts.get("sfm", {}))
+        self._report("sfm", 0.01, "Starting COLMAP (feature extraction -> matching -> camera poses)")
+        rep = run_in_subprocess(self.dir / "frames", self.dir / "sfm", self.opts.get("sfm", {}),
+                                on_progress=lambda f, m: self._report("sfm", max(0.01, f), m), control=self.control)
         if rep.get("status") == "failed" or not rep.get("primary_model"):
             raise RuntimeError("SfM failed: " + "; ".join(rep.get("reasons", [])))
         prim = rep["models"]["0"]
@@ -219,16 +232,25 @@ class SpatialPipeline:
                self.opts["splat_backend"]]
         log_f = open(self.dir / "splat.log", "w")
         p = subprocess.Popen(cmd, stdout=log_f, stderr=subprocess.STDOUT, cwd=str(Path(__file__).resolve().parents[2]))
+        if self.control is not None:
+            self.control.register(p)
         prog = self.dir / "splat" / "progress.json"
-        while p.poll() is None:
-            time.sleep(3)
-            if prog.exists():
-                try:
-                    j = json.loads(prog.read_text())
+        try:
+            while p.poll() is None:
+                time.sleep(3)
+                self._checkpoint()
+                if prog.exists():
+                    try:
+                        j = json.loads(prog.read_text())
+                    except Exception:
+                        continue
                     self._report("reconstruction", j["fraction"], j["message"])
-                except Exception:
-                    pass
-        log_f.close()
+        finally:
+            if self.control is not None:
+                self.control.unregister(p)
+            if p.poll() is None:          # stopped: never leave a GPU trainer running
+                p.kill()
+            log_f.close()
         sj = self.dir / "splat" / "splat.json"
         info = json.loads(sj.read_text()) if sj.exists() else {"status": "failed", "error": f"worker exit {p.returncode}"}
         if info.get("status") != "done":

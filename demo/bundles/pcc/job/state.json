@@ -1,0 +1,182 @@
+{
+  "stages": {
+    "quality": {
+      "status": "done",
+      "started": "2026-11-13T19:41:38+00:00",
+      "fraction": 1.0,
+      "error": null,
+      "message": "analysed 200 frames",
+      "seconds": 9.8,
+      "finished": "2026-11-13T19:41:48+00:00",
+      "summary": {
+        "suitability": "good",
+        "score": 89.7,
+        "issues": []
+      }
+    },
+    "frames": {
+      "status": "done",
+      "started": "2026-11-13T19:41:48+00:00",
+      "fraction": 1.0,
+      "error": null,
+      "message": null,
+      "seconds": 2.9,
+      "finished": "2026-11-13T19:41:51+00:00",
+      "summary": {
+        "keyframes": 115,
+        "forced_imperfect": 28,
+        "cropped_letterbox": false
+      }
+    },
+    "tracking": {
+      "status": "done",
+      "started": "2026-11-13T19:41:51+00:00",
+      "fraction": 1.0,
+      "error": null,
+      "message": "detected 115/115 frames",
+      "seconds": 68.9,
+      "finished": "2026-11-13T19:43:00+00:00",
+      "summary": {
+        "detections": 799,
+        "confirmed_tracks": 101,
+        "per_class": {
+          "handrail": 27,
+          "signboard": 22,
+          "door": 13,
+          "entrance_exit": 12,
+          "obstacle": 7,
+          "staircase": 7,
+          "corridor": 5,
+          "elevator": 5,
+          "tactile_paving": 3
+        },
+        "comparison": {
+          "bytetrack": {
+            "confirmed_tracks": 20,
+            "per_class_confirmed": {
+              "handrail": 7,
+              "corridor": 5,
+              "staircase": 4,
+              "door": 2,
+              "obstacle": 1,
+              "signboard": 1
+            }
+          }
+        }
+      }
+    },
+    "sfm": {
+      "status": "done",
+      "started": "2026-11-13T19:43:00+00:00",
+      "fraction": 1.0,
+      "error": null,
+      "message": "COLMAP feature extraction / matching / mapping (worker process)",
+      "seconds": 136.2,
+      "finished": "2026-11-13T19:45:16+00:00",
+      "summary": {
+        "status": "ok",
+        "registered": 76,
+        "frames": 115,
+        "points": 4591,
+        "models": 5,
+        "reasons": [
+          "reconstruction split into 5 disconnected models (each has its own coordinate frame); facilities are only placed in the model of their frames"
+        ]
+      }
+    },
+    "reconstruction": {
+      "status": "done",
+      "started": "2026-11-13T21:11:23+00:00",
+      "fraction": 1.0,
+      "error": null,
+      "message": "iter 3000/3000, loss 0.0268, 68966 gaussians",
+      "seconds": 724.2,
+      "finished": "2026-11-13T21:23:27+00:00",
+      "summary": {
+        "num_gaussians": 66877,
+        "iterations": 3000,
+        "seconds": 714.6,
+        "device": "cuda",
+        "test_psnr": 26.47,
+        "test_ssim": 0.899,
+        "train_psnr": 27.57,
+        "cpu_fallback": null,
+        "backend": "pytorch"
+      }
+    },
+    "alignment": {
+      "status": "done",
+      "started": "2026-11-13T19:49:22+00:00",
+      "fraction": 1.0,
+      "error": null,
+      "message": null,
+      "seconds": 60.6,
+      "finished": "2026-11-13T19:50:22+00:00",
+      "summary": {
+        "scale_status": "approximate_metric",
+        "metres_per_sfm_unit": 1.3036683140457717,
+        "scale_rel_sigma": 0.1042292372877179,
+        "gravity_method": "ground_plane",
+        "trajectory_length": 18.479,
+        "trajectory_units": "m",
+        "georeferenced": false
+      }
+    },
+    "registration": {
+      "status": "done",
+      "started": "2026-11-13T19:50:22+00:00",
+      "fraction": 1.0,
+      "error": null,
+      "message": null,
+      "seconds": 35.8,
+      "finished": "2026-11-13T19:50:58+00:00",
+      "summary": {
+        "facilities_total": 77,
+        "facilities_registered": 34,
+        "facilities_unregistered": 43
+      }
+    },
+    "export": {
+      "status": "done",
+      "started": "2026-11-13T21:23:27+00:00",
+      "fraction": 1.0,
+      "error": null,
+      "message": null,
+      "seconds": 0.1,
+      "finished": "2026-11-13T21:23:27+00:00",
+      "summary": {
+        "assets": [
+          "splat_ply",
+          "splat_local_ply",
+          "splat_preview",
+          "sparse_points_ply",
+          "colmap_model",
+          "trajectory_json",
+          "trajectory_png",
+          "facilities_json",
+          "tracks_json",
+          "quality_json",
+          "frames_preview",
+          "alignment_json",
+          "metadata_json"
+        ]
+      }
+    }
+  },
+  "created": "2026-11-13T19:41:38+00:00",
+  "options": {
+    "preset": "balanced",
+    "tracker": "iou_centre",
+    "vision_model": null,
+    "measure_facilities": true,
+    "max_measured_facilities": 6,
+    "splat_backend": "auto",
+    "references": [],
+    "markers": [],
+    "gcps": [],
+    "camera_height_m": 1.4,
+    "sfm": {},
+    "ground_truth": []
+  },
+  "status": "completed"
+}

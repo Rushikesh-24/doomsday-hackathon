@@ -14,7 +14,7 @@ const STAGES = ["quality", "frames", "tracking", "sfm", "reconstruction", "align
 const LABEL: Record<string, string> = { quality: "Capture quality", frames: "Keyframes", tracking: "Facility tracking", sfm: "Camera poses (COLMAP)", reconstruction: "Gaussian splat", alignment: "Scale & gravity", registration: "Facility → 3D", export: "Export assets" };
 
 export function JobMonitor({ jobId }: { jobId: string }) {
-  const { data, error } = usePoll<JobProgress>(`/spatial/jobs/${jobId}/progress`, (d) => !d || ["queued", "running"].includes(d.status), 2500);
+  const { data, error } = usePoll<JobProgress>(`/spatial/jobs/${jobId}/progress`, (d) => !d || ["queued", "running", "paused"].includes(d.status), 2500);
   if (error) return <ErrorState message={error} />;
   if (!data) return null;
   return (
@@ -48,7 +48,7 @@ export function JobMonitor({ jobId }: { jobId: string }) {
   );
 }
 
-export function VideoPanel() {
+export function VideoPanel({ onStarted }: { onStarted?: (jobId: string) => void } = {}) {
   const ref = useRef<HTMLInputElement>(null);
   const [video, setVideo] = useState<{ video_id: string; metadata: Record<string, unknown> } | null>(null);
   const [pct, setPct] = useState<number | null>(null);
@@ -62,15 +62,15 @@ export function VideoPanel() {
   }
   async function start() {
     setErr(null);
-    try { setJob((await apiSend<{ job_id: string }>(`/spatial/videos/${video!.video_id}/analyze`, { preset })).job_id); }
+    try { const id = (await apiSend<{ job_id: string }>(`/spatial/videos/${video!.video_id}/analyze`, { preset })).job_id; setJob(id); onStarted?.(id); }
     catch (e) { setErr((e as Error).message); }
   }
   const m = video?.metadata as Record<string, number | string> | undefined;
   return (
-    <Card className="shadow-none">
+    <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-base"><Clapperboard className="size-4" /> Walkthrough video → 3D</CardTitle>
-        <CardDescription>Quality analysis, facility tracking, COLMAP camera poses, Gaussian-splat training (Brush) and facility registration. A fast run takes ~10–15 min on Apple M2.</CardDescription>
+        <CardDescription>Quality analysis, facility tracking, COLMAP camera poses, Gaussian-splat training (Brush) and facility registration. A fast run takes ~10–15 min.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <button onClick={() => ref.current?.click()} className="flex w-full flex-col items-center gap-1 rounded-lg border-2 border-dashed p-6 hover:bg-muted">
@@ -95,7 +95,7 @@ export function VideoPanel() {
             )}
           </div>
         )}
-        {job && <JobMonitor jobId={job} />}
+        {job && <div className="rounded-lg bg-emerald-50 p-3 text-xs text-emerald-800">Started. Follow it, pause or stop it in the processing queue.</div>}
       </CardContent>
     </Card>
   );

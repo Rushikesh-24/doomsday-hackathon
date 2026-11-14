@@ -4,10 +4,12 @@ import { useSearchParams } from "next/navigation";
 import { PageHeader, Loading } from "@/components/app/common";
 import { ImageWorkspace } from "@/components/studio/image-workspace";
 import { VideoPanel } from "@/components/studio/video-panel";
+import { JobQueue } from "@/components/studio/job-queue";
 
 function Studio() {
   const sp = useSearchParams();
   const [tab, setTab] = useState(sp.get("tab") === "video" ? "video" : "image");
+  const [started, setStarted] = useState<string | null>(sp.get("job"));
   return (
     <>
       <PageHeader title="AI Studio" description="Run the real AI pipelines: facility detection, accessibility measurement, sign reading and video-to-3D reconstruction."
@@ -18,7 +20,7 @@ function Studio() {
             ))}
           </div>
         } />
-      {tab === "image" ? <ImageWorkspace initialId={sp.get("id")} /> : <div className="max-w-3xl"><VideoPanel /></div>}
+      {tab === "image" ? <ImageWorkspace initialId={sp.get("id")} /> : <div className="grid items-start gap-5 xl:grid-cols-[420px_1fr]"><VideoPanel onStarted={setStarted} /><JobQueue key={started ?? "q"} highlight={started} /></div>}
     </>
   );
 }

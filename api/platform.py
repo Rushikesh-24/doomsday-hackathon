@@ -150,14 +150,20 @@ def _job_dir(rid: str) -> Path:
     return d
 
 
-@router.get("/navigation/{rid}/graph")
-def nav_graph(rid: str):
-    from vision.navigation.graph import PROFILES, build
+def _graph(rid: str) -> dict:
+    from vision.navigation.graph import build
+    from vision.navigation.places import attach_places
+    d = _job_dir(rid)
     try:
-        g = build(_job_dir(rid))
+        return attach_places(build(d), d)
     except ValueError as e:
         raise HTTPException(422, str(e))
-    return {**g, "profiles": {k: v["label"] for k, v in PROFILES.items()}}
+
+
+@router.get("/navigation/{rid}/graph")
+def nav_graph(rid: str):
+    from vision.navigation.graph import PROFILES
+    return {**_graph(rid), "profiles": {k: v["label"] for k, v in PROFILES.items()}}
 
 
 @router.get("/spatial/reconstructions/{rid}/frames/{frame}")
@@ -177,14 +183,135 @@ def recon_frame(rid: str, frame: str):
 
 @router.post("/navigation/{rid}/route")
 def nav_route(rid: str, body: dict[str, Any] = Body(...)):
-    from vision.navigation.graph import build, route
-    g = build(_job_dir(rid))
+    """start/goal: node id, tagged place name or alias ('CG Lab'), facility class, or 'start'."""
+    from vision.navigation.graph import route
+    from vision.navigation.places import directions, resolve
+    g = _graph(rid)
     try:
-        return route(g, body.get("start", "cam0"), body["goal"], body.get("profile", "standard"))
+        if "goal" not in body:
+            raise ValueError("goal is required")
+        start = resolve(g, body.get("start") or "start")
+        return directions(g, route(g, start, resolve(g, body["goal"]), body.get("profile", "standard")))
     except KeyError as e:
         raise HTTPException(404, str(e).strip("'\""))
     except ValueError as e:
         raise HTTPException(400, str(e))
+
+
+@router.post("/navigation/{rid}/ask")
+def nav_ask(rid: str, body: dict[str, Any] = Body(...)):
+    """Free-text request ('take me to the CG lab', 'from CC lab to CG lab') -> interpreted start/goal + route."""
+    from vision.navigation.graph import route
+    from vision.navigation.places import directions, parse_request, resolve
+    text = str(body.get("text") or "").strip()
+    if not text:
+        raise HTTPException(400, "text is required")
+    g = _graph(rid)
+    try:
+        q = parse_request(g, text)
+        start = resolve(g, q["start"] or body.get("start") or "start")
+        rt = directions(g, route(g, start, q["goal"], body.get("profile", "standard")))
+    except KeyError as e:
+        raise HTTPException(404, str(e).strip("'\""))
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    return {"interpreted": {**q, "start": start}, "route": rt}
+
+
+# ------------------------------------------------------------------ places + floor plan
+@router.get("/navigation/{rid}/places")
+def places_list(rid: str):
+    from vision.navigation.places import KINDS, list_places
+    return {"places": list_places(_job_dir(rid)), "kinds": KINDS}
+
+
+@router.post("/navigation/{rid}/places", status_code=201)
+def places_add(rid: str, body: dict[str, Any] = Body(...)):
+    from vision.navigation.places import add_place
+    try:
+        return add_place(_job_dir(rid), body)
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+
+
+@router.patch("/navigation/{rid}/places/{pid}")
+def places_update(rid: str, pid: str, body: dict[str, Any] = Body(...)):
+    from vision.navigation.places import update_place
+    try:
+        return update_place(_job_dir(rid), pid, body)
+    except KeyError as e:
+        raise HTTPException(404, str(e).strip("'\""))
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+
+
+@router.delete("/navigation/{rid}/places/{pid}", status_code=204)
+def places_delete(rid: str, pid: str):
+    from vision.navigation.places import delete_place
+    try:
+        delete_place(_job_dir(rid), pid)
+    except KeyError as e:
+        raise HTTPException(404, str(e).strip("'\""))
+
+
+def _plan_out(rid: str, info: dict) -> dict:
+    out = dict(info)
+    for k in ("generated", "uploaded"):
+        if out.get(k):
+            out[k] = {**out[k], "url": f"/navigation/{rid}/plan/image/{k}?v={out[k].get('created', '')}"}
+    return out
+
+
+@router.get("/navigation/{rid}/plan")
+def plan_get(rid: str):
+    from vision.navigation.places import ensure_plan
+    return _plan_out(rid, ensure_plan(_job_dir(rid)))
+
+
+@router.post("/navigation/{rid}/plan/generate")
+def plan_generate(rid: str):
+    from vision.navigation.places import generate_plan
+    return _plan_out(rid, generate_plan(_job_dir(rid)))
+
+
+@router.get("/navigation/{rid}/plan/image/{which}")
+def plan_image(rid: str, which: str):
+    from fastapi.responses import FileResponse
+    from vision.navigation.places import plan_info
+    d = _job_dir(rid)
+    if which not in ("generated", "uploaded"):
+        raise HTTPException(404, "unknown plan image")
+    meta = plan_info(d).get(which)
+    if not meta or not (d / "plan" / meta["file"]).is_file():
+        raise HTTPException(404, f"no {which} plan")
+    return FileResponse(d / "plan" / meta["file"], headers={"Cache-Control": "no-cache"})
+
+
+@router.post("/navigation/{rid}/plan/upload")
+async def plan_upload(rid: str, file: UploadFile = File(...)):
+    from vision.navigation.places import save_uploaded_plan
+    data = await file.read()
+    if len(data) > 25e6:
+        raise HTTPException(413, "plan image exceeds 25 MB")
+    try:
+        return _plan_out(rid, save_uploaded_plan(_job_dir(rid), data, file.filename or "plan"))
+    except ValueError as e:
+        raise HTTPException(422, str(e))
+
+
+@router.patch("/navigation/{rid}/plan/transform")
+def plan_transform(rid: str, body: dict[str, Any] = Body(...)):
+    from vision.navigation.places import set_plan_transform
+    try:
+        return _plan_out(rid, set_plan_transform(_job_dir(rid), body))
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+
+
+@router.delete("/navigation/{rid}/plan/uploaded")
+def plan_remove_uploaded(rid: str):
+    from vision.navigation.places import remove_uploaded_plan
+    return _plan_out(rid, remove_uploaded_plan(_job_dir(rid)))
 
 
 # ------------------------------------------------------------------ additional AI

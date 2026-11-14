@@ -8,7 +8,6 @@ import json
 import logging
 import os
 import platform
-import resource
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -22,6 +21,23 @@ log = logging.getLogger(__name__)
 
 
 def _rss_mb() -> float:
+    if platform.system() == "Windows":  # no `resource` module: read PeakWorkingSetSize via psapi
+        import ctypes
+        from ctypes import wintypes
+
+        class _PMC(ctypes.Structure):
+            _fields_ = [("cb", wintypes.DWORD), ("PageFaultCount", wintypes.DWORD),
+                        ("PeakWorkingSetSize", ctypes.c_size_t), ("WorkingSetSize", ctypes.c_size_t),
+                        ("QuotaPeakPagedPoolUsage", ctypes.c_size_t), ("QuotaPagedPoolUsage", ctypes.c_size_t),
+                        ("QuotaPeakNonPagedPoolUsage", ctypes.c_size_t), ("QuotaNonPagedPoolUsage", ctypes.c_size_t),
+                        ("PagefileUsage", ctypes.c_size_t), ("PeakPagefileUsage", ctypes.c_size_t)]
+        pmc = _PMC()
+        pmc.cb = ctypes.sizeof(_PMC)
+        get = ctypes.windll.psapi.GetProcessMemoryInfo
+        get.argtypes = [wintypes.HANDLE, ctypes.POINTER(_PMC), wintypes.DWORD]
+        get(ctypes.windll.kernel32.GetCurrentProcess(), ctypes.byref(pmc), pmc.cb)
+        return pmc.PeakWorkingSetSize / 1e6
+    import resource
     r = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     return r / 1e6 if platform.system() == "Darwin" else r / 1e3  # macOS bytes, Linux KB
 

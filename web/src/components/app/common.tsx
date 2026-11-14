@@ -1,7 +1,6 @@
 "use client";
 import { AlertTriangle, Inbox, Loader2, ShieldCheck, FlaskConical, User } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import type { Provenance } from "@/lib/types";
 import type { ReactNode } from "react";
@@ -10,8 +9,8 @@ export function PageHeader({ title, description, actions }: { title: string; des
   return (
     <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
-        {description && <p className="mt-1 max-w-3xl text-sm text-muted-foreground">{description}</p>}
+        <h1 className="font-display text-3xl font-semibold tracking-tight">{title}</h1>
+        {description && <p className="mt-1.5 max-w-3xl text-sm text-muted-foreground">{description}</p>}
       </div>
       {actions}
     </div>
@@ -20,16 +19,14 @@ export function PageHeader({ title, description, actions }: { title: string; des
 
 export function Stat({ label, value, hint, icon }: { label: string; value: ReactNode; hint?: string; icon?: ReactNode }) {
   return (
-    <Card className="shadow-none">
-      <CardContent className="p-4">
-        <div className="flex items-center justify-between text-xs font-medium text-muted-foreground">
-          {label}
-          {icon}
-        </div>
-        <div className="mt-2 text-2xl font-semibold tabular-nums">{value}</div>
-        {hint && <div className="mt-1 text-xs text-muted-foreground">{hint}</div>}
-      </CardContent>
-    </Card>
+    <div className="surface p-5">
+      <div className="flex items-center justify-between text-xs font-medium text-muted-foreground">
+        {label}
+        {icon && <span className="grid size-9 place-items-center rounded-xl bg-accent text-accent-foreground">{icon}</span>}
+      </div>
+      <div className="font-display mt-2 text-3xl font-bold tabular-nums">{value}</div>
+      {hint && <div className="mt-1 text-xs text-muted-foreground">{hint}</div>}
+    </div>
   );
 }
 

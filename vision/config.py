@@ -8,6 +8,26 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
+def load_dotenv(path: Path = REPO_ROOT / ".env") -> None:
+    """Load KEY=VALUE lines from the repo's .env (no dependency). Real environment variables win, so a
+    deployment can override anything; quotes around values are stripped. Secrets never leave the server."""
+    if not path.is_file():
+        return
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        k, v = k.strip().removeprefix("export ").strip(), v.strip()
+        if len(v) >= 2 and v[0] == v[-1] and v[0] in "\"'":
+            v = v[1:-1]
+        if k and k not in os.environ:
+            os.environ[k] = v
+
+
+load_dotenv()
+
+
 def _env_path(name: str, default: Path) -> Path:
     return Path(os.environ.get(name, str(default))).expanduser().resolve()
 

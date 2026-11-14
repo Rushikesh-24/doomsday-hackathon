@@ -30,6 +30,7 @@ export function useScene(rid: string | null) {
         const scene: SceneData = {
           T: recon.alignment.T_local_from_sfm, splatUrl: assets.splat_ply?.url, pointsUrl: assets.sparse_points_ply?.url,
           trajectory: traj.cameras, facilities: fac.facilities.filter((f) => f.position_sfm),
+          metric: recon.alignment.scale_status !== "relative",
         };
         if (alive) setState({ rid, recon, assets, scene, facilities: fac.facilities });
       } catch (e) {

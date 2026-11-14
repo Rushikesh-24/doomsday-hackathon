@@ -1,0 +1,83 @@
+{
+  "scale_status": "approximate_metric",
+  "metres_per_sfm_unit": 1.3036683140457717,
+  "scale_rel_sigma": 0.1042292372877179,
+  "metric": false,
+  "gravity": {
+    "up": [
+      -0.03661480273773822,
+      -0.811873131986585,
+      -0.5826846263449635
+    ],
+    "method": "ground_plane",
+    "camera_up_spread_deg": 12.44,
+    "confidence": "medium-high",
+    "ground_inliers": 298,
+    "ground_point": [
+      1.7710612792234006,
+      0.06943971671932446,
+      2.0645612137190517
+    ],
+    "camera_height_sfm_units": 1.08523,
+    "agreement_with_camera_up_deg": 15.67
+  },
+  "sources": {
+    "aruco": [],
+    "segments": [],
+    "camera_height_prior": {
+      "used": true,
+      "scale_m_per_unit": 1.2900491140126977,
+      "rel_sigma": 0.10714285714285715,
+      "note": "assumes the phone was held ~1.4 m above the floor (+-0.15 m)"
+    },
+    "monocular_depth": {
+      "used": true,
+      "scale_m_per_unit": 1.5689921553780186,
+      "rel_sigma": 0.45,
+      "per_frame": [
+        1.3834,
+        1.5026,
+        1.5974,
+        1.0903,
+        1.8963,
+        1.7599,
+        1.6591,
+        1.5406
+      ],
+      "note": "monocular metric depth (DA-V2) vs SfM depth; validated scale error ~45% (docs/MEASUREMENT.md)"
+    }
+  },
+  "frames": {
+    "sfm": "COLMAP world (arbitrary similarity)",
+    "local": "gravity-aligned (+Y up), origin = first registered camera; units = metres if scale_status is scale_calibrated/approximate_metric, else SfM units",
+    "geo": "local ENU metres (only when georeferenced)"
+  },
+  "T_local_from_sfm": [
+    [
+      1.2943780152477142,
+      0.04773355815422569,
+      -0.14784496648946088,
+      -2.4354135889284994
+    ],
+    [
+      -0.04773355815422569,
+      -1.0584132771960115,
+      -0.759627484447529,
+      -1.6689701129087486
+    ],
+    [
+      -0.14784496648946088,
+      0.759627484447529,
+      -1.0491229783979545,
+      -5.057285883442776
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "georeferenced": false,
+  "T_geo_from_local": null
+}

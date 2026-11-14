@@ -1,7 +1,84 @@
 {
   "version": "0.0.1",
   "configurations": [
-    {"name": "vision-api", "runtimeExecutable": ".venv/bin/uvicorn", "runtimeArgs": ["api.app:app", "--host", "127.0.0.1", "--port", "8000"], "port": 8000},
-    {"name": "web", "runtimeExecutable": "pnpm", "runtimeArgs": ["--dir", "web", "dev", "--port", "3000"], "port": 3000}
+    {
+      "name": "vision-api",
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "api.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000"
+      ],
+      "port": 8000
+    },
+    {
+      "name": "web",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--dir",
+        "web",
+        "dev",
+        "--port",
+        "3000"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "vision-api-test",
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "api.app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8001"
+      ],
+      "port": 8001,
+      "env": {
+        "VISION_PRELOAD": "0"
+      }
+    },
+    {
+      "name": "web-test",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "--dir",
+        "web",
+        "exec",
+        "next",
+        "dev",
+        "--port",
+        "3001"
+      ],
+      "port": 3001,
+      "env": {
+        "NEXT_PUBLIC_API_URL": "http://localhost:8001",
+        "NEXT_DIST_DIR": ".next-test"
+      }
+    },
+    {
+      "name": "building-demo-api",
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "api.app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8002"
+      ],
+      "port": 8002,
+      "env": {
+        "VISION_PRELOAD": "0",
+        "VISION_OUTPUT_DIR": "C:\\Users\\HP\\AppData\\Local\\Temp\\claude\\890e60988e539f60\\7a436827-63d8-4467-9a08-eb03d5f0dded\\scratchpad\\bdemo"
+      }
+    }
   ]
 }

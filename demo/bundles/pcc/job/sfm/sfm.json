@@ -1,0 +1,166 @@
+{
+  "frames": 115,
+  "attempts": [
+    {
+      "attempt": "sequential",
+      "seconds": 133.8,
+      "models": {
+        "0": 2,
+        "1": 76,
+        "2": 25,
+        "3": 7,
+        "4": 20
+      },
+      "temporal_jumps": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0
+      },
+      "consistent_frames": {
+        "0": 2,
+        "1": 76,
+        "2": 25,
+        "3": 7,
+        "4": 20
+      }
+    }
+  ],
+  "models": {
+    "0": {
+      "registered": 76,
+      "points": 4591,
+      "camera": {
+        "model": "SIMPLE_RADIAL",
+        "params": [
+          686.2563264411093,
+          288.0,
+          512.0,
+          -0.0028229042597539672
+        ],
+        "width": 576,
+        "height": 1024
+      },
+      "mean_reprojection_error_px": 0.688,
+      "mean_track_length": 9.39,
+      "mean_observations_per_image": 567.0,
+      "attempt": "sequential",
+      "temporal_check": {
+        "suspect_frames": [],
+        "jumps": 0,
+        "consistent": 76,
+        "median_step": 0.14017666659478947
+      }
+    },
+    "1": {
+      "registered": 25,
+      "points": 1648,
+      "camera": {
+        "model": "SIMPLE_RADIAL",
+        "params": [
+          591.412985456034,
+          288.0,
+          512.0,
+          -0.04631361788007332
+        ],
+        "width": 576,
+        "height": 1024
+      },
+      "mean_reprojection_error_px": 0.606,
+      "mean_track_length": 7.55,
+      "mean_observations_per_image": 497.7,
+      "attempt": "sequential",
+      "temporal_check": {
+        "suspect_frames": [],
+        "jumps": 0,
+        "consistent": 25,
+        "median_step": 0.6440782162278189
+      }
+    },
+    "2": {
+      "registered": 20,
+      "points": 514,
+      "camera": {
+        "model": "SIMPLE_RADIAL",
+        "params": [
+          723.3851811310699,
+          288.0,
+          512.0,
+          0.08413465543486835
+        ],
+        "width": 576,
+        "height": 1024
+      },
+      "mean_reprojection_error_px": 0.879,
+      "mean_track_length": 4.85,
+      "mean_observations_per_image": 124.8,
+      "attempt": "sequential",
+      "temporal_check": {
+        "suspect_frames": [],
+        "jumps": 0,
+        "consistent": 20,
+        "median_step": 0.591607684172294
+      }
+    },
+    "3": {
+      "registered": 7,
+      "points": 88,
+      "camera": {
+        "model": "SIMPLE_RADIAL",
+        "params": [
+          673.18134606464,
+          288.0,
+          512.0,
+          -0.02856336025183037
+        ],
+        "width": 576,
+        "height": 1024
+      },
+      "mean_reprojection_error_px": 0.729,
+      "mean_track_length": 4.26,
+      "mean_observations_per_image": 53.6,
+      "attempt": "sequential",
+      "temporal_check": {
+        "suspect_frames": [],
+        "jumps": 0,
+        "consistent": 7,
+        "median_step": 1.9366342327112727
+      }
+    },
+    "4": {
+      "registered": 2,
+      "points": 784,
+      "camera": {
+        "model": "SIMPLE_RADIAL",
+        "params": [
+          1341.8715704774843,
+          288.0,
+          512.0,
+          3.788940123523999
+        ],
+        "width": 576,
+        "height": 1024
+      },
+      "mean_reprojection_error_px": 0.274,
+      "mean_track_length": 2.0,
+      "mean_observations_per_image": 784.0,
+      "attempt": "sequential",
+      "temporal_check": {
+        "suspect_frames": [],
+        "jumps": 0,
+        "consistent": 2
+      }
+    }
+  },
+  "primary_model": "0",
+  "status": "ok",
+  "tool": "pycolmap 4.2.1 (COLMAP, BSD-3)",
+  "reasons": [
+    "reconstruction split into 5 disconnected models (each has its own coordinate frame); facilities are only placed in the model of their frames"
+  ],
+  "registration_rate": 0.661,
+  "consistent_rate": 0.661,
+  "registered_any_model": 130,
+  "unregistered_frames": -15
+}

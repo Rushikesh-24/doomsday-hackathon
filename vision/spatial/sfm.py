@@ -11,6 +11,7 @@ Outputs only plain files so downstream stages never import pycolmap:
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import sys
 import time
@@ -207,19 +208,89 @@ def run_sfm(frames_dir: Path, out_dir: Path, opts: dict) -> dict:
     return report
 
 
+_RE_EXTRACT = re.compile(r"Processed file \[(\d+)/(\d+)\]")
+_RE_MATCH = re.compile(r"Processing image \[(\d+)/(\d+)\]")
+_RE_BLOCK = re.compile(r"Processing block \[(\d+)/(\d+), (\d+)/(\d+)\]")     # exhaustive matcher
+_RE_REG = re.compile(r"num_reg_frames=(\d+)")
+_RE_ATTEMPT = re.compile(r"=== Feature extraction ===")
+
+
+def parse_progress(lines: list[str], n_frames: int) -> tuple[float, str] | None:
+    """Map COLMAP's log to (fraction in [0,1], message) for the latest phase of the latest attempt.
+    Extraction 0-25 %, matching 25-50 %, incremental mapping 50-100 % (by registered frames)."""
+    start = max((i for i, l in enumerate(lines) if _RE_ATTEMPT.search(l)), default=0)
+    attempt = sum(1 for l in lines if _RE_ATTEMPT.search(l))
+    tag = f" (retry {attempt})" if attempt > 1 else ""
+    best = None
+    placed_prev, placed_cur = 0, 0          # COLMAP restarts num_reg_frames for every new (split) model
+    for l in lines[start:]:
+        if m := _RE_EXTRACT.search(l):
+            i, n = int(m[1]), int(m[2])
+            best = (0.25 * i / n, f"Extracting features {i}/{n}{tag}")
+        elif m := _RE_MATCH.search(l):
+            i, n = int(m[1]), int(m[2])
+            best = (0.25 + 0.25 * i / n, f"Matching frames {i}/{n}{tag}")
+        elif m := _RE_BLOCK.search(l):
+            i, n, j, k = (int(v) for v in m.groups())
+            done, total = (i - 1) * k + j, n * k
+            best = (0.25 + 0.25 * done / total, f"Matching all frame pairs: block {done}/{total}{tag}")
+        elif m := _RE_REG.search(l):
+            placed_cur = max(placed_cur, int(m[1]))
+            k = min(placed_prev + placed_cur, n_frames)
+            best = (min(0.5 + 0.5 * k / max(n_frames, 1), 0.97), f"Solving camera poses: {k}/{n_frames} frames placed{tag}")
+        elif "Finding good initial image pair" in l and best and best[0] >= 0.5:
+            placed_prev, placed_cur = placed_prev + placed_cur, 0
+            best = (best[0], f"Scene split - starting another model ({min(placed_prev, n_frames)}/{n_frames} frames placed){tag}")
+    return best
+
+
 def run_in_subprocess(frames_dir: Path, out_dir: Path, opts: dict, timeout: float = 7200,
-                      log_path: Path | None = None) -> dict:
-    """Launch the worker; returns sfm.json content (status=failed with reason on crash/timeout)."""
+                      log_path: Path | None = None, on_progress=None, control=None) -> dict:
+    """Launch the worker; returns sfm.json content (status=failed with reason on crash/timeout).
+    on_progress(fraction, message) is called every few seconds from the worker's COLMAP log."""
     cmd = [sys.executable, "-m", "vision.spatial.sfm", str(frames_dir), str(out_dir), json.dumps(opts)]
     out_dir.mkdir(parents=True, exist_ok=True)
-    log = open(log_path or out_dir / "sfm.log", "w")
+    (out_dir / "sfm.json").unlink(missing_ok=True)          # never report a previous run's result
+    log_path = log_path or out_dir / "sfm.log"
+    n_frames = len(list(frames_dir.glob("*.jpg")))
+    log = open(log_path, "w")
+    t0 = time.time()
     try:
-        r = subprocess.run(cmd, stdout=log, stderr=subprocess.STDOUT, timeout=timeout,
-                           cwd=str(Path(__file__).resolve().parents[2]))
-        rc = r.returncode
-    except subprocess.TimeoutExpired:
-        rc = "timeout"
+        proc = subprocess.Popen(cmd, stdout=log, stderr=subprocess.STDOUT,
+                                cwd=str(Path(__file__).resolve().parents[2]))
+        if control is not None:
+            control.register(proc)
+        last = None
+        while True:
+            try:
+                rc = proc.wait(timeout=2)
+                break
+            except subprocess.TimeoutExpired:
+                pass
+            if control is not None:
+                try:
+                    control.checkpoint()          # blocks while paused, raises JobStopped on stop
+                except BaseException:
+                    if proc.poll() is None:
+                        proc.kill()
+                    raise
+            paused = control.paused_seconds if control is not None else 0.0
+            if time.time() - t0 - paused > timeout:
+                proc.kill()
+                rc = "timeout"
+                break
+            if on_progress:
+                try:
+                    with open(log_path, encoding="utf-8", errors="replace") as f:
+                        prog = parse_progress(f.readlines(), n_frames)
+                    if prog and prog != last:
+                        on_progress(*prog)
+                        last = prog
+                except Exception:
+                    pass
     finally:
+        if control is not None:
+            control.unregister(proc)
         log.close()
     p = out_dir / "sfm.json"
     if rc == 0 and p.exists():

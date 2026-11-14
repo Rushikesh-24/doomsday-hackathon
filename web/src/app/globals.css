@@ -128,34 +128,82 @@
     @apply font-sans;
   }
 }
-/* PS32 theme: light geospatial palette (teal primary, calm neutrals) */
+/* AccessMap theme - "wayfinding studio": ink sidebar, violet primary, teal paths, rose routes */
 :root {
-  --primary: oklch(0.47 0.1 205);
-  --primary-foreground: oklch(0.985 0 0);
-  --ring: oklch(0.6 0.1 205);
-  --accent: oklch(0.96 0.02 205);
-  --accent-foreground: oklch(0.3 0.06 205);
-  --background: oklch(0.985 0.003 230);
+  --primary: oklch(0.52 0.21 280);
+  --primary-foreground: oklch(0.99 0 0);
+  --ring: oklch(0.62 0.17 280);
+  --accent: oklch(0.955 0.03 285);
+  --accent-foreground: oklch(0.38 0.16 280);
+  --background: oklch(0.975 0.008 280);
+  --foreground: oklch(0.2 0.03 275);
   --card: oklch(1 0 0);
-  --border: oklch(0.915 0.006 230);
-  --muted: oklch(0.965 0.005 230);
-  --chart-1: oklch(0.55 0.11 205);
-  --chart-2: oklch(0.68 0.13 160);
-  --chart-3: oklch(0.75 0.14 75);
-  --chart-4: oklch(0.62 0.17 30);
-  --chart-5: oklch(0.55 0.12 290);
-  --success: oklch(0.6 0.13 155);
-  --warning: oklch(0.76 0.15 75);
-  --sidebar: oklch(0.99 0.002 230);
-  --radius: 0.75rem;
+  --border: oklch(0.92 0.012 280);
+  --input: oklch(0.9 0.012 280);
+  --muted: oklch(0.962 0.01 280);
+  --muted-foreground: oklch(0.52 0.03 275);
+  --secondary: oklch(0.96 0.012 280);
+  --chart-1: oklch(0.55 0.2 280);
+  --chart-2: oklch(0.7 0.13 175);
+  --chart-3: oklch(0.78 0.15 75);
+  --chart-4: oklch(0.64 0.2 15);
+  --chart-5: oklch(0.6 0.14 230);
+  --success: oklch(0.62 0.14 160);
+  --warning: oklch(0.78 0.15 75);
+  --sidebar: oklch(0.19 0.04 275);
+  --sidebar-foreground: oklch(0.86 0.02 275);
+  --radius: 0.9rem;
 }
 @theme inline {
   --color-success: var(--success);
   --color-warning: var(--warning);
 }
-body { font-feature-settings: "cv11", "ss01"; }
+body {
+  font-feature-settings: "cv11", "ss01";
+  background:
+    radial-gradient(1200px 500px at 85% -10%, oklch(0.93 0.06 285 / 0.7), transparent 60%),
+    radial-gradient(900px 400px at 10% 0%, oklch(0.95 0.05 190 / 0.6), transparent 60%),
+    var(--background);
+  background-attachment: fixed;
+}
+.font-display { font-family: var(--font-display), var(--font-sans), system-ui, sans-serif; letter-spacing: -0.02em; }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary); }
+.surface {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  box-shadow: 0 1px 2px oklch(0.2 0.03 275 / 0.04), 0 12px 32px -12px oklch(0.3 0.08 280 / 0.12);
+}
+.glass {
+  background: oklch(1 0 0 / 0.78);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  border: 1px solid oklch(1 0 0 / 0.7);
+  box-shadow: 0 8px 24px -10px oklch(0.25 0.06 280 / 0.35);
+}
+.hud-btn {
+  display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 0.8rem;
+  background: oklch(1 0 0 / 0.9); border: 1px solid var(--border); touch-action: none; user-select: none;
+}
+.hud-btn:active { background: var(--primary); color: var(--primary-foreground); }
+.field {
+  width: 100%; border-radius: 0.75rem; border: 1px solid var(--input); background: white; padding: 0.45rem 0.7rem;
+  font-size: 0.8125rem; outline: none;
+}
+.field:focus { border-color: var(--ring); box-shadow: 0 0 0 3px oklch(0.62 0.17 280 / 0.18); }
+.chip {
+  display: inline-flex; align-items: center; gap: 0.25rem; border-radius: 9999px; border: 1px solid var(--border);
+  background: white; padding: 0.15rem 0.55rem; font-size: 11px; font-weight: 500;
+}
+.chip:hover { background: var(--muted); }
+.hero-gradient {
+  background:
+    radial-gradient(600px 300px at 90% 10%, oklch(0.7 0.18 300 / 0.55), transparent 60%),
+    radial-gradient(500px 300px at 0% 100%, oklch(0.75 0.13 185 / 0.45), transparent 60%),
+    linear-gradient(135deg, oklch(0.27 0.09 280), oklch(0.2 0.05 270));
+}
 .grid-bg {
-  background-image: linear-gradient(to right, oklch(0.92 0.01 230 / 0.6) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.92 0.01 230 / 0.6) 1px, transparent 1px);
+  background-image: linear-gradient(to right, oklch(0.92 0.01 280 / 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.92 0.01 280 / 0.6) 1px, transparent 1px);
   background-size: 32px 32px;
 }

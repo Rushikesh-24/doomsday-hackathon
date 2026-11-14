@@ -1,0 +1,67 @@
+{
+ "splat_ply": {
+  "path": "splat/splat.ply",
+  "bytes": 4548051,
+  "description": "3D Gaussian splat (3DGS PLY, SfM frame)"
+ },
+ "splat_local_ply": {
+  "path": "splat/splat_local.ply",
+  "bytes": 4548051,
+  "description": "3D Gaussian splat in the gravity-aligned local frame (base colour only: higher-order SH are not rotated; use splat_ply for view-dependent colour)"
+ },
+ "splat_preview": {
+  "path": "splat/preview_gt_vs_render.jpg",
+  "bytes": 230436,
+  "description": "held-out frames: ground truth (left) vs render (right)"
+ },
+ "sparse_points_ply": {
+  "path": "sfm/sparse_points.ply",
+  "bytes": 69043,
+  "description": "COLMAP sparse point cloud (SfM frame)"
+ },
+ "colmap_model": {
+  "path": "sfm/models/0/colmap/cameras.bin",
+  "bytes": 64,
+  "description": "COLMAP binary model (cameras/images/points3D .bin)"
+ },
+ "trajectory_json": {
+  "path": "trajectory.json",
+  "bytes": 48583,
+  "description": "camera poses per keyframe (SfM + local frames)"
+ },
+ "trajectory_png": {
+  "path": "trajectory.png",
+  "bytes": 128997,
+  "description": "trajectory plot"
+ },
+ "facilities_json": {
+  "path": "facilities.json",
+  "bytes": 321003,
+  "description": "facility-to-3D registration"
+ },
+ "tracks_json": {
+  "path": "tracks.json",
+  "bytes": 279578,
+  "description": "2D facility tracks across keyframes"
+ },
+ "quality_json": {
+  "path": "quality.json",
+  "bytes": 1464,
+  "description": "capture quality report"
+ },
+ "frames_preview": {
+  "path": "frames_preview.jpg",
+  "bytes": 61508,
+  "description": "extracted keyframe examples"
+ },
+ "alignment_json": {
+  "path": "alignment.json",
+  "bytes": 2109,
+  "description": "scale + coordinate transforms"
+ },
+ "metadata_json": {
+  "path": "metadata.json",
+  "bytes": 4858,
+  "description": "reconstruction metadata & quality evaluation"
+ }
+}

@@ -1,0 +1,459 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "8485c8fc3859",
+  "image": {
+    "name": "frame_000990.jpg",
+    "width": 576,
+    "height": 1024,
+    "format": "JPEG",
+    "channels": 3,
+    "exif_transposed": false
+  },
+  "vision_request_id": "9d3b3b4bd875",
+  "detections_source": "provided",
+  "camera": {
+    "fx": 706.0173117172442,
+    "fy": 706.0173117172442,
+    "cx": 288.0,
+    "cy": 512.0,
+    "width": 576,
+    "height": 1024,
+    "hfov_deg": 44.38,
+    "source": "prior",
+    "focal_rel_sigma": 0.15,
+    "distortion_corrected": false
+  },
+  "scale": {
+    "status": "uncalibrated_monocular",
+    "scale_factor": 1.0,
+    "rel_sigma": 0.45,
+    "reference_depth_m": null,
+    "references": [],
+    "notes": [
+      "no reference available: absolute lengths are withheld (REQUIRES_CALIBRATION)"
+    ]
+  },
+  "models": [
+    {
+      "role": "detection",
+      "key": "campus_ensemble",
+      "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "version": "ensemble(owlv2_base + yolo11_coco)",
+      "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+      "device": "cuda",
+      "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+    },
+    {
+      "role": "depth",
+      "key": "da2_metric_indoor_small",
+      "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+      "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+      "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+      "device": "cuda",
+      "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+    },
+    {
+      "role": "semantic_segmentation",
+      "key": "upernet_ade20k",
+      "name": "openmmlab/upernet-convnext-tiny",
+      "version": "UperNet ConvNeXt-T ADE20K-150",
+      "license": "MIT",
+      "device": "cuda",
+      "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+    },
+    {
+      "role": "box_segmenter",
+      "key": "slimsam",
+      "name": "Zigeng/SlimSAM-uniform-50",
+      "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+      "license": "Apache-2.0",
+      "device": "cuda",
+      "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+    }
+  ],
+  "scene": {
+    "indoor_outdoor": "indoor",
+    "sky_fraction": 0.0,
+    "depth_model": "da2_metric_indoor_small",
+    "analysis_size": [
+      576,
+      1024
+    ],
+    "gravity_source": "ground_plane",
+    "gravity_sigma_deg": 0.6,
+    "gravity_ground_vs_vp_deg": 3.92,
+    "vertical_lines": 11,
+    "ground_plane_inlier_ratio": 0.829,
+    "camera_height_m": null,
+    "measured_detections": 1,
+    "detections_total": 10
+  },
+  "facilities": [
+    {
+      "detection_id": "9d3b3b4bd875-001",
+      "class_name": "corridor",
+      "detection_confidence": 0.43,
+      "bbox": [
+        1.37,
+        368.32,
+        576.0,
+        1009.84
+      ],
+      "mask_area_px": null,
+      "mask_source": null,
+      "truncated_sides": [],
+      "mean_depth_m": null,
+      "measurements": [
+        {
+          "id": "8485c8fc3859-m001",
+          "detection_id": "9d3b3b4bd875-001",
+          "facility_class": "corridor",
+          "name": "clear_width",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "REQUIRES_CALIBRATION",
+          "method": "minimum floor width over 10 cross-sections along the corridor axis (ray-plane intersection with fitted floor plane)",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "cuda",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_indoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "cuda",
+              "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cuda",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "cuda",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "no metric calibration: provide a reference measurement, marker or known object",
+          "provisional_value": 2.603,
+          "refusal_reason": null,
+          "notes": [
+            "floor = ADE20K floor/road/sidewalk/path/... pixels inside the detection, minus objects",
+            "width is between the visible floor boundaries; skirting, mats or mis-segmentation shift it",
+            "6/10 cross-sections with both floor edges visible (others truncated or occluded by objects/people)",
+            "provisional value from uncalibrated monocular depth (typical scale error +-45%); not a measurement"
+          ],
+          "ground_truth": null,
+          "overlay": {
+            "lines": [
+              [
+                579.3,
+                893.6,
+                -5.4,
+                882.1
+              ],
+              [
+                577.5,
+                752.2,
+                -2.0,
+                741.3
+              ],
+              [
+                573.0,
+                661.9,
+                2.1,
+                651.4
+              ],
+              [
+                552.4,
+                599.0,
+                20.9,
+                589.4
+              ],
+              [
+                507.9,
+                552.2,
+                108.6,
+                545.2
+              ],
+              [
+                478.6,
+                516.6,
+                127.1,
+                510.5
+              ],
+              [
+                450.2,
+                488.3,
+                143.6,
+                483.0
+              ],
+              [
+                431.2,
+                465.5,
+                157.8,
+                460.9
+              ],
+              [
+                414.0,
+                446.7,
+                167.4,
+                442.5
+              ],
+              [
+                397.3,
+                430.8,
+                176.9,
+                427.0
+              ]
+            ],
+            "points": [],
+            "polygon": null,
+            "label_at": null
+          },
+          "timestamp": "2026-11-13T19:50:55.739+00:00"
+        },
+        {
+          "id": "8485c8fc3859-m002",
+          "detection_id": "9d3b3b4bd875-001",
+          "facility_class": "corridor",
+          "name": "min_available_clearance",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": true,
+          "confidence": 0.0,
+          "status": "REQUIRES_CALIBRATION",
+          "method": "largest free lateral gap beside the obstacle footprint (box bottom edge on floor plane) in the nearest cross-section",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "cuda",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_indoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "cuda",
+              "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cuda",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "cuda",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "no metric calibration: provide a reference measurement, marker or known object",
+          "provisional_value": 3.238,
+          "refusal_reason": null,
+          "notes": [
+            "limiting object: cardboard box (9d3b3b4bd875-003)",
+            "footprint from the 2D box bottom edge: wide-based objects may be underestimated",
+            "object truncated by the image border or occluded: value is a lower bound",
+            "provisional value from uncalibrated monocular depth (typical scale error +-45%); not a measurement"
+          ],
+          "ground_truth": null,
+          "overlay": {
+            "lines": [
+              [
+                0.1,
+                589.3,
+                26.2,
+                589.3
+              ]
+            ],
+            "points": [],
+            "polygon": null,
+            "label_at": null
+          },
+          "timestamp": "2026-11-13T19:50:55.739+00:00"
+        },
+        {
+          "id": "8485c8fc3859-m003",
+          "detection_id": "9d3b3b4bd875-001",
+          "facility_class": "corridor",
+          "name": "permanent_obstruction_present",
+          "value": true,
+          "unit": null,
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.55,
+          "status": "ESTIMATED",
+          "method": "non-person obstacle detections standing on the floor region",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "cuda",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_indoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "cuda",
+              "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cuda",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "cuda",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": false,
+          "verification_required": true,
+          "verification_reason": "image-based estimate; confirm on site",
+          "provisional_value": null,
+          "refusal_reason": null,
+          "notes": [
+            "1 objects on this path (0 people)"
+          ],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T19:50:55.739+00:00"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "assessment": [
+    {
+      "rule_id": "route_clear_width",
+      "profile": "ada_2010",
+      "clause": "403.5.1",
+      "detection_id": "9d3b3b4bd875-001",
+      "facility_class": "corridor",
+      "measurement_id": "8485c8fc3859-m001",
+      "measurement_name": "clear_width",
+      "outcome": "CANNOT_ASSESS",
+      "severity": "standard",
+      "threshold": 0.915,
+      "measured_value": null,
+      "uncertainty": null,
+      "message": "needs metric calibration. Provisional (uncalibrated) value 2.60 would satisfy 0.915 - calibrate to assess."
+    },
+    {
+      "rule_id": "route_available_clearance",
+      "profile": "ada_2010",
+      "clause": "403.5.1 exception",
+      "detection_id": "9d3b3b4bd875-001",
+      "facility_class": "corridor",
+      "measurement_id": "8485c8fc3859-m002",
+      "measurement_name": "min_available_clearance",
+      "outcome": "CANNOT_ASSESS",
+      "severity": "standard",
+      "threshold": 0.815,
+      "measured_value": null,
+      "uncertainty": null,
+      "message": "needs metric calibration. Provisional (uncalibrated) value 3.24 would satisfy 0.815 - calibrate to assess."
+    },
+    {
+      "rule_id": "route_obstruction",
+      "profile": "ada_2010",
+      "clause": "403.5 (clear width)",
+      "detection_id": "9d3b3b4bd875-001",
+      "facility_class": "corridor",
+      "measurement_id": "8485c8fc3859-m003",
+      "measurement_name": "permanent_obstruction_present",
+      "outcome": "POSSIBLE_ISSUE",
+      "severity": "advisory",
+      "threshold": null,
+      "measured_value": true,
+      "uncertainty": null,
+      "message": "permanent_obstruction_present = True in image evidence - may be missed by the detector; verify"
+    }
+  ],
+  "assessment_summary": {
+    "profile": "ada_2010",
+    "profile_title": "2010 ADA Standards for Accessible Design (US)",
+    "counts": {
+      "CANNOT_ASSESS": 2,
+      "POSSIBLE_ISSUE": 1
+    },
+    "statement": "Screening only. No compliance determination is made; flagged items and all unverified measurements require on-site verification by a qualified assessor."
+  },
+  "timing_ms": {
+    "decode": 11.8,
+    "detections": 0.0,
+    "segmentation": 129.8,
+    "depth": 153.5,
+    "masks": 317.9,
+    "scale": 399.1,
+    "analysis": 308.7,
+    "total": 1536.8
+  },
+  "processed_at": "2026-11-13T19:50:56.977+00:00",
+  "annotated_image": "D:\\other projects\\doomsday-hackathon\\outputs\\spatial\\jobs\\5eecc657ba9a\\measurements\\d719a33dcc-fac001\\frame_000990_measured.jpg",
+  "json_path": "D:\\other projects\\doomsday-hackathon\\outputs\\spatial\\jobs\\5eecc657ba9a\\measurements\\d719a33dcc-fac001\\report.json",
+  "warnings": [
+    "no calibration/EXIF: assumed 26 mm-equivalent focal (+-15%)"
+  ]
+}

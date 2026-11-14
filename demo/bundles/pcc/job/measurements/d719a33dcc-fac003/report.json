@@ -1,0 +1,338 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "bd69fa756788",
+  "image": {
+    "name": "frame_000875.jpg",
+    "width": 576,
+    "height": 1024,
+    "format": "JPEG",
+    "channels": 3,
+    "exif_transposed": false
+  },
+  "vision_request_id": "030ef5ce8392",
+  "detections_source": "provided",
+  "camera": {
+    "fx": 706.0173117172442,
+    "fy": 706.0173117172442,
+    "cx": 288.0,
+    "cy": 512.0,
+    "width": 576,
+    "height": 1024,
+    "hfov_deg": 44.38,
+    "source": "prior",
+    "focal_rel_sigma": 0.15,
+    "distortion_corrected": false
+  },
+  "scale": {
+    "status": "uncalibrated_monocular",
+    "scale_factor": 1.0,
+    "rel_sigma": 0.45,
+    "reference_depth_m": null,
+    "references": [],
+    "notes": [
+      "no reference available: absolute lengths are withheld (REQUIRES_CALIBRATION)"
+    ]
+  },
+  "models": [
+    {
+      "role": "detection",
+      "key": "campus_ensemble",
+      "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+      "version": "ensemble(owlv2_base + yolo11_coco)",
+      "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+      "device": "cuda",
+      "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+    },
+    {
+      "role": "depth",
+      "key": "da2_metric_indoor_small",
+      "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+      "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+      "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+      "device": "cuda",
+      "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+    },
+    {
+      "role": "semantic_segmentation",
+      "key": "upernet_ade20k",
+      "name": "openmmlab/upernet-convnext-tiny",
+      "version": "UperNet ConvNeXt-T ADE20K-150",
+      "license": "MIT",
+      "device": "cuda",
+      "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+    },
+    {
+      "role": "box_segmenter",
+      "key": "slimsam",
+      "name": "Zigeng/SlimSAM-uniform-50",
+      "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+      "license": "Apache-2.0",
+      "device": "cuda",
+      "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+    }
+  ],
+  "scene": {
+    "indoor_outdoor": "indoor",
+    "sky_fraction": 0.0,
+    "depth_model": "da2_metric_indoor_small",
+    "analysis_size": [
+      576,
+      1024
+    ],
+    "gravity_source": "ground_plane",
+    "gravity_sigma_deg": 0.6,
+    "gravity_ground_vs_vp_deg": 1.16,
+    "vertical_lines": 21,
+    "ground_plane_inlier_ratio": 0.794,
+    "camera_height_m": null,
+    "measured_detections": 1,
+    "detections_total": 12
+  },
+  "facilities": [
+    {
+      "detection_id": "030ef5ce8392-003",
+      "class_name": "door",
+      "detection_confidence": 0.3298,
+      "bbox": [
+        397.86,
+        354.35,
+        423.44,
+        558.77
+      ],
+      "mask_area_px": 2377,
+      "mask_source": "sam",
+      "truncated_sides": [],
+      "mean_depth_m": 9.49,
+      "measurements": [
+        {
+          "id": "bd69fa756788-m001",
+          "detection_id": "030ef5ce8392-003",
+          "facility_class": "door",
+          "name": "doorway_width",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "INSUFFICIENT_DATA",
+          "method": "-",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "cuda",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_indoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "cuda",
+              "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cuda",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "cuda",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "not measured",
+          "provisional_value": null,
+          "refusal_reason": "viewed too obliquely (85 deg from the surface normal)",
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T19:50:51.186+00:00"
+        },
+        {
+          "id": "bd69fa756788-m002",
+          "detection_id": "030ef5ce8392-003",
+          "facility_class": "door",
+          "name": "clear_width_estimate",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "INSUFFICIENT_DATA",
+          "method": "-",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "cuda",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_indoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "cuda",
+              "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cuda",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "cuda",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "not measured",
+          "provisional_value": null,
+          "refusal_reason": "viewed too obliquely (85 deg from the surface normal)",
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T19:50:51.186+00:00"
+        },
+        {
+          "id": "bd69fa756788-m003",
+          "detection_id": "030ef5ce8392-003",
+          "facility_class": "door",
+          "name": "door_height",
+          "value": null,
+          "unit": "m",
+          "uncertainty": null,
+          "interval_95": null,
+          "lower_bound": false,
+          "confidence": 0.0,
+          "status": "INSUFFICIENT_DATA",
+          "method": "-",
+          "models": [
+            {
+              "role": "detection",
+              "key": "campus_ensemble",
+              "name": "google/owlv2-base-patch16-ensemble+yolo11m.pt",
+              "version": "ensemble(owlv2_base + yolo11_coco)",
+              "license": "Apache-2.0 (OWLv2) + AGPL-3.0 (Ultralytics YOLO11)",
+              "device": "cuda",
+              "revision": "owlv2_base:cfd3195ba4ea;yolo11_coco:d5ffc1a67495"
+            },
+            {
+              "role": "depth",
+              "key": "da2_metric_indoor_small",
+              "name": "depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf",
+              "version": "Depth-Anything-V2-Metric-Indoor-Small (Hypersim fine-tune)",
+              "license": "Apache-2.0 (DA-V2 Small, per upstream README; metric fine-tune card states no licence - verify)",
+              "device": "cuda",
+              "revision": "8078d68a9c75a972131914f6afd0c1723be0da7f"
+            },
+            {
+              "role": "semantic_segmentation",
+              "key": "upernet_ade20k",
+              "name": "openmmlab/upernet-convnext-tiny",
+              "version": "UperNet ConvNeXt-T ADE20K-150",
+              "license": "MIT",
+              "device": "cuda",
+              "revision": "876ffc56b819a829448f7e81e9f8606deef6fb65"
+            },
+            {
+              "role": "box_segmenter",
+              "key": "slimsam",
+              "name": "Zigeng/SlimSAM-uniform-50",
+              "version": "SlimSAM-uniform-50 (pruned SAM ViT-B)",
+              "license": "Apache-2.0",
+              "device": "cuda",
+              "revision": "d67c795ed0caaec7423d799da25cdeded48aac40"
+            }
+          ],
+          "scale_status": "uncalibrated_monocular",
+          "scale_dependent": true,
+          "verification_required": true,
+          "verification_reason": "not measured",
+          "provisional_value": null,
+          "refusal_reason": "viewed too obliquely (85 deg from the surface normal)",
+          "notes": [],
+          "ground_truth": null,
+          "overlay": null,
+          "timestamp": "2026-11-13T19:50:51.186+00:00"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "assessment": [
+    {
+      "rule_id": "door_clear_width",
+      "profile": "ada_2010",
+      "clause": "404.2.3",
+      "detection_id": "030ef5ce8392-003",
+      "facility_class": "door",
+      "measurement_id": "bd69fa756788-m002",
+      "measurement_name": "clear_width_estimate",
+      "outcome": "CANNOT_ASSESS",
+      "severity": "standard",
+      "threshold": 0.815,
+      "measured_value": null,
+      "uncertainty": null,
+      "message": "INSUFFICIENT_DATA: viewed too obliquely (85 deg from the surface normal)"
+    }
+  ],
+  "assessment_summary": {
+    "profile": "ada_2010",
+    "profile_title": "2010 ADA Standards for Accessible Design (US)",
+    "counts": {
+      "CANNOT_ASSESS": 1
+    },
+    "statement": "Screening only. No compliance determination is made; flagged items and all unverified measurements require on-site verification by a qualified assessor."
+  },
+  "timing_ms": {
+    "decode": 11.5,
+    "detections": 0.0,
+    "segmentation": 112.6,
+    "depth": 105.1,
+    "masks": 343.6,
+    "scale": 760.0,
+    "analysis": 47.4,
+    "total": 1640.2
+  },
+  "processed_at": "2026-11-13T19:50:52.593+00:00",
+  "annotated_image": "D:\\other projects\\doomsday-hackathon\\outputs\\spatial\\jobs\\5eecc657ba9a\\measurements\\d719a33dcc-fac003\\frame_000875_measured.jpg",
+  "json_path": "D:\\other projects\\doomsday-hackathon\\outputs\\spatial\\jobs\\5eecc657ba9a\\measurements\\d719a33dcc-fac003\\report.json",
+  "warnings": [
+    "no calibration/EXIF: assumed 26 mm-equivalent focal (+-15%)"
+  ]
+}

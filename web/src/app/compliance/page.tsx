@@ -48,7 +48,7 @@ export default function CompliancePage() {
             <Stat label="Marked fixed" value={p!.fixed} hint="improvement tracking" icon={<Wrench className="size-4" />} />
             <Stat label="Cannot assess" value={data.outcome_counts.CANNOT_ASSESS ?? 0} hint="measurement withheld or missing" icon={<AlertTriangle className="size-4" />} />
           </div>
-          <Card className="shadow-none">
+          <Card>
             <CardContent className="grid gap-6 p-5 md:grid-cols-3">
               <div>
                 <div className="mb-2 text-sm font-medium">Review progress</div>
@@ -67,7 +67,7 @@ export default function CompliancePage() {
           </Card>
           {err && <ErrorState message={err} />}
           <div className="grid gap-6 lg:grid-cols-[1fr_380px]">
-            <Card className="shadow-none">
+            <Card>
               <CardHeader><CardTitle className="text-base">Issues</CardTitle><CardDescription>{data.statement}</CardDescription></CardHeader>
               <CardContent className="space-y-2">
                 {!data.issues.length && <Empty title="No issues">Run measurements in AI Studio to screen facilities.</Empty>}
@@ -105,7 +105,7 @@ export default function CompliancePage() {
                 ))}
               </CardContent>
             </Card>
-            <Card className="h-fit shadow-none">
+            <Card className="h-fit">
               <CardHeader><CardTitle className="text-base">Accessibility gaps</CardTitle><CardDescription>Scene-level findings from detection (e.g. stairs without a detected handrail). &ldquo;Not detected&rdquo; is not &ldquo;absent&rdquo;.</CardDescription></CardHeader>
               <CardContent className="space-y-2">
                 {data.gaps.map((g, k) => (
