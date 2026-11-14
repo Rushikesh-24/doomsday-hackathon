@@ -14,6 +14,8 @@ import { cn } from "@/lib/utils";
 import { Empty, ErrorState, Loading } from "@/components/app/common";
 import type { BModel } from "@/components/three/building-view";
 
+const ScanWalkthrough = dynamic(() => import("@/components/three/scan-walkthrough"), { ssr: false, loading: () => <Loading label="Starting 3D viewer…" /> });
+
 const BuildingView = dynamic(() => import("@/components/three/building-view"), { ssr: false, loading: () => <Loading label="Starting 3D view…" /> });
 
 type Place = { id: string; name: string; kind: string; position: number[]; scan: string };
@@ -27,7 +29,7 @@ type Building = { id: string; name: string; floor_height: number; floors: Floor[
   summary: { step_free_floors: number; total_floors: number; floors: { level: number; name: string; step_free_from_entrance: boolean; score: { score: number; grade: string } | null }[] } | null; error?: string };
 type MapRow = { id: string; name: string; kind?: string };
 type Step = { kind: string; text: string; notes?: string[]; floor: number; to_floor?: number };
-type Route = { feasible: boolean; reason?: string; length?: number; directions: Step[]; path: number[][]; path_floors: number[]; floors: number[];
+type Route = { feasible: boolean; reason?: string; length?: number; directions: Step[]; path: number[][]; path_floors: number[]; floors: number[]; nodes?: string[];
   rides?: { name: string; kind: string; from_floor: number; to_floor: number }[]; start_name?: string; goal_name?: string };
 type Tab = "floors" | "connectors" | "route";
 
@@ -48,6 +50,8 @@ function Buildings() {
   const [newName, setNewName] = useState("");
   const [newFloors, setNewFloors] = useState(4);
   const [activeFloor, setActiveFloor] = useState<number | null>(null);
+  const [area, setArea] = useState<"building" | "walk">("building");
+  const [walkScan, setWalkScan] = useState<string | null>(null);
   const [gap, setGap] = useState(2);   // floors spread apart: corridors are long, floors only ~3.5 m apart
   const [route, setRoute] = useState<Route | null>(null);
   const [from, setFrom] = useState("");
@@ -102,14 +106,53 @@ function Buildings() {
       {b.data && (
         <div className="grid gap-4 xl:grid-cols-[1fr_420px]">
           <div className="surface relative h-[calc(100vh-200px)] min-h-[560px] overflow-hidden p-0">
-            {model.data && model.data.floors.length ? (
+            {area === "walk" ? (() => {
+              // walk through one floor's 3D render (the 3D Explorer viewer), floor picked with G / 1 / 2 / 3
+              const lv = activeFloor ?? b.data.floors.find((f) => f.ready)?.level ?? 0;
+              const onFloor = b.data.scans.filter((x) => x.ready && (x.level === lv || x.to_level === lv));
+              const onRoute = route?.feasible ? onFloor.find((x) => x.level === x.to_level && (route.nodes ?? []).some((n) => n.startsWith(`${x.scan}|`))) : undefined;
+              const rid = onFloor.some((x) => x.scan === walkScan) ? walkScan!
+                : onRoute?.scan ?? onFloor.find((x) => x.level === x.to_level)?.scan ?? onFloor[0]?.scan;
+              const ids = route?.feasible && rid ? (route.nodes ?? []).filter((n) => n.startsWith(`${rid}|`)).map((n) => n.slice(rid.length + 1)) : null;
+              const picker = (
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="glass inline-flex rounded-full p-1 text-xs">
+                    <button onClick={() => setArea("building")} className="rounded-full px-3 py-1.5 font-medium text-foreground/70 hover:text-foreground"><Layers className="mr-1 inline size-3.5" />Building</button>
+                    <button className="rounded-full bg-primary px-3 py-1.5 font-medium text-primary-foreground">Walk through</button>
+                  </div>
+                  <div className="glass inline-flex rounded-full p-1 text-xs">
+                    {b.data!.floors.map((f) => (
+                      <button key={f.id} onClick={() => { setActiveFloor(f.level); setWalkScan(null); }} disabled={!f.ready}
+                        className={cn("rounded-full px-3 py-1.5 font-medium disabled:opacity-40", lv === f.level ? "bg-primary text-primary-foreground" : "")}>{f.level === 0 ? "G" : f.level}</button>
+                    ))}
+                  </div>
+                  {onFloor.length > 1 && (
+                    <div className="glass inline-flex max-w-[52vw] flex-wrap rounded-2xl p-1 text-[11px]">
+                      {onFloor.map((x) => (
+                        <button key={x.scan} onClick={() => setWalkScan(x.scan)} title={x.name}
+                          className={cn("max-w-44 truncate rounded-full px-2.5 py-1 font-medium", x.scan === rid ? "bg-slate-900 text-white" : "text-foreground/70")}>
+                          {x.level !== x.to_level ? "↗ " : ""}{x.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+              return rid
+                ? <ScanWalkthrough key={rid} rid={rid} title={b.data.floors.find((f) => f.level === lv)?.name} routeIds={ids} topLeft={picker} />
+                : <div className="grid h-full place-items-center text-sm text-muted-foreground"><div className="space-y-3 text-center">{picker}<div>No finished walk on this floor yet.</div></div></div>;
+            })() : model.data && model.data.floors.length ? (
               <BuildingView model={model.data} route={route?.feasible ? route : null} activeFloor={activeFloor} gap={gap} />
             ) : (
               <div className="grid h-full place-items-center p-8 text-center text-sm text-muted-foreground">
                 {model.loading ? <Loading label="Stacking floors…" /> : <div><Layers className="mx-auto mb-2 size-8 text-violet-400" />Assign a finished scan to at least one floor to see the building.</div>}
               </div>
             )}
-            <div className="pointer-events-none absolute inset-x-3 top-3 flex flex-wrap items-center gap-2">
+            {area === "building" && <div className="pointer-events-none absolute inset-x-3 top-3 flex flex-wrap items-center gap-2">
+              <div className="glass pointer-events-auto inline-flex rounded-full p-1 text-xs">
+                <button className="rounded-full bg-primary px-3 py-1.5 font-medium text-primary-foreground"><Layers className="mr-1 inline size-3.5" />Building</button>
+                <button onClick={() => setArea("walk")} disabled={!b.data.scans.some((x) => x.ready)} className="rounded-full px-3 py-1.5 font-medium text-foreground/70 hover:text-foreground disabled:opacity-40">Walk through</button>
+              </div>
               <div className="glass pointer-events-auto inline-flex rounded-full p-1 text-xs">
                 <button onClick={() => setActiveFloor(null)} className={cn("rounded-full px-3 py-1.5 font-medium", activeFloor === null ? "bg-primary text-primary-foreground" : "")}>All floors</button>
                 {b.data.floors.map((f) => (
@@ -120,8 +163,8 @@ function Buildings() {
               <label className="glass pointer-events-auto flex items-center gap-2 rounded-full px-3 py-1.5 text-xs"><ArrowDownUp className="size-3.5" /> Spread
                 <input type="range" min={1} max={3} step={0.1} value={gap} onChange={(e) => setGap(+e.target.value)} className="w-24 accent-[var(--primary)]" />
               </label>
-            </div>
-            {b.data.summary && (
+            </div>}
+            {area === "building" && b.data.summary && (
               <div className="glass absolute bottom-3 left-3 rounded-2xl px-3 py-2 text-xs">
                 <div className="font-semibold">{b.data.summary.step_free_floors}/{b.data.summary.total_floors} floors reachable step-free from the entrance</div>
                 <div className="mt-0.5 flex flex-wrap gap-1">
